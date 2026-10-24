@@ -177,13 +177,16 @@
 
     function navLinks(root) {
         return [
-            { id: 'download',    href: sub(root, 'download/index.html'),    label: T.navDownload },
-            { id: 'docs',        href: sub(root, 'docs/index.html'),        label: T.navGuide },
-            { id: 'support',     href: sub(root, 'support/index.html'),     label: T.navSupport }
+            { id: 'download',    href: loc(root, 'download/index.html'),    label: T.navDownload },
+            { id: 'docs',        href: loc(root, 'docs/index.html'),        label: T.navGuide },
+            { id: 'support',     href: loc(root, 'support/index.html'),     label: T.navSupport }
         ];
     }
 
+    var LANG = 'en';
     function langPrefix(l) { return l === 'en' ? '' : l + '/'; }
+
+    function loc(root, path) { return root + langPrefix(LANG) + path; }
 
     function renderLangMenu(root, pageId) {
         var cur = (document.querySelector('[data-site-header]') || {}).dataset || {};
@@ -208,7 +211,7 @@
         var actions =
             '<a href="' + EXT.github + '" rel="noopener" title="GitHub">' +
                 icon('github', 16) + '<span>GitHub</span></a>' +
-            '<a href="' + sub(root, 'donate/index.html') + '"' +
+            '<a href="' + loc(root, 'donate/index.html') + '"' +
                 (active === 'donate' ? ' class="on" aria-current="page"' : '') + '>' +
                 icon('heart', 16) + '<span>' + T.support + '</span></a>';
             actions += renderLangMenu(root, pageId) +
@@ -217,7 +220,7 @@
                 '<button type="button" data-theme-set="light" title="' + T.themeLight + '">' + icon('sun', 16) + '</button>' +
             '</span>';
         return '<div class="container">' +
-            '<a class="brand" href="' + root + 'index.html">' +
+            '<a class="brand" href="' + loc(root, 'index.html') + '">' +
                 '<img src="' + root + 'assets/img/logo.svg" alt="" width="24" height="25">' +
                 '<span>Errant <span class="accent">Launcher</span></span>' +
             '</a>' +
@@ -235,21 +238,21 @@
                     '<p>' + t.footerTag + '</p>' +
                 '</div>' +
                 '<div class="footer-col"><b>' + t.fProduct + '</b>' +
-                    '<a href="' + sub(root, 'download/index.html') + '">' + t.fDownload + '</a>' +
-                    '<a href="' + sub(root, 'docs/index.html') + '">' + t.fGuide + '</a>' +
+                    '<a href="' + loc(root, 'download/index.html') + '">' + t.fDownload + '</a>' +
+                    '<a href="' + loc(root, 'docs/index.html') + '">' + t.fGuide + '</a>' +
                     '<a href="' + EXT.releases + '" rel="noopener">' + t.fAllVersions + '</a>' +
                 '</div>' +
                 '<div class="footer-col"><b>' + t.fLegal + '</b>' +
-                    '<a href="' + sub(root, 'license/index.html') + '">' + t.fLicense + '</a>' +
-                    '<a href="' + sub(root, 'third-party-notices/index.html') + '">' + t.fThirdParty + '</a>' +
-                    '<a href="' + sub(root, 'privacy/index.html') + '">' + t.fPrivacy + '</a>' +
-                    '<a href="' + sub(root, 'eula/index.html') + '">' + t.fEula + '</a>' +
+                    '<a href="' + loc(root, 'license/index.html') + '">' + t.fLicense + '</a>' +
+                    '<a href="' + loc(root, 'third-party-notices/index.html') + '">' + t.fThirdParty + '</a>' +
+                    '<a href="' + loc(root, 'privacy/index.html') + '">' + t.fPrivacy + '</a>' +
+                    '<a href="' + loc(root, 'eula/index.html') + '">' + t.fEula + '</a>' +
                 '</div>' +
                 '<div class="footer-col"><b>' + t.fSupport + '</b>' +
-                    '<a href="' + sub(root, 'support/index.html') + '">' + t.fHelp + '</a>' +
-                    '<a href="' + sub(root, 'support/index.html') + '">' + t.fIssue + '</a>' +
+                    '<a href="' + loc(root, 'support/index.html') + '">' + t.fHelp + '</a>' +
+                    '<a href="' + loc(root, 'support/index.html') + '">' + t.fIssue + '</a>' +
                     '<a href="' + EXT.github + '" rel="noopener">' + t.fGithub + '</a>' +
-                    '<a href="' + sub(root, 'donate/index.html') + '">' + t.fDonate + '</a>' +
+                    '<a href="' + loc(root, 'donate/index.html') + '">' + t.fDonate + '</a>' +
                 '</div>' +
             '</div>' +
             '<div class="footer-bottom">' +
@@ -263,7 +266,7 @@
 
     function renderDocsNav(el, root) {
         var active = el.dataset.active || '';
-        var base = sub(root, 'docs/');
+        var base = loc(root, 'docs/');
         el.innerHTML = DOCS_SLUGS.map(function (s, i) {
             var href = base + (s ? s + '/index.html' : 'index.html');
             return '<a href="' + href + '"' +
@@ -375,6 +378,7 @@
         var ds = ((header || footer || {}).dataset) || {};
         var root = ds.root || '';
         var lang = ds.lang || 'en';
+        LANG = lang;
         T = L10N[lang] || L10N.en;
 
         if (header) {
