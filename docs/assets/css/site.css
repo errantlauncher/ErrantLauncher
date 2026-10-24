@@ -263,7 +263,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .dl-block { max-width: 560px; }
 .dl-os { color: var(--text-3); font-size: 12.5px; text-transform: uppercase;
     letter-spacing: .06em; margin-bottom: 6px; }
-.dl-ver { font-size: 17px; margin-bottom: 18px; }
+.dl-ver { font-size: 17px; margin-bottom: 18px;
+    display: flex; align-items: center; gap: 10px; }
 .dl-badge { display: inline-flex; align-items: center; padding: 2px 9px;
     border-radius: var(--radius-pill); font-size: 11.5px; font-weight: 600;
     color: var(--warn); background: rgba(237, 166, 60, .12); }
@@ -275,7 +276,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
     letter-spacing: .06em; margin-bottom: 8px; }
 .dl-sha-line { max-width: 520px; }
 .dl-sha-field { font-size: 13px; }
-.dl-sha-field code { word-break: break-all; }
+.dl-sha-field code { word-break: break-all; box-shadow: none; background: none; padding: 0; }
 .dl-hint { color: var(--text-3); font-size: 13px; margin-top: 12px; }
 .dl-hint a { color: var(--accent); }
 
