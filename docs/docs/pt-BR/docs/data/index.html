@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dados, backups e portabilidade — Errant Launcher</title>
+<meta name="description" content="Dados, backups e portabilidade">
+<link rel="canonical" href="https://errantlauncher.com/pt-BR/docs/data/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/data/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/data/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/data/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/data/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/data/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/data/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/data/">
+<link rel="icon" type="image/svg+xml" href="../../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../../" data-lang="pt-BR" data-page="docs/data" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="data"></aside><div class="docs-content page-body"><h1 id="dados-backups-e-portabilidade">Dados, backups e portabilidade</h1>
+<p>O Errant Launcher é um programa portátil: todos os seus dados ficam
+em uma única pasta ao lado do executável. Este documento explica onde
+cada coisa é armazenada, como fazer backups e como transportar a
+coleção entre computadores.</p>
+<hr>
+<h2 id="conteúdo">Conteúdo</h2>
+<ul>
+<li><a href="#onde-os-dados-são-armazenados">Onde os dados são armazenados</a></li>
+<li><a href="#conteúdo-da-pasta-de-dados">Conteúdo da pasta de dados</a></li>
+<li><a href="#backup">Backup</a></li>
+<li><a href="#transferência-para-outro-computador">Transferência para outro computador</a></li>
+<li><a href="#atualização-sem-perda-de-dados">Atualização sem perda de dados</a></li>
+<li><a href="#antes-de-reinstalar-ou-desinstalar">Antes de reinstalar ou desinstalar</a></li>
+<li><a href="#se-os-arquivos-não-estiverem-disponíveis">Se os arquivos não estiverem disponíveis</a></li>
+<li><a href="#restauração-a-partir-de-backup">Restauração a partir de backup</a></li>
+<li><a href="#particularidades-de-unidades-usb">Particularidades de unidades USB</a></li>
+</ul>
+<hr>
+<h2 id="onde-os-dados-são-armazenados">Onde os dados são armazenados</h2>
+<p>Na primeira execução o programa cria a pasta <strong><code>ErrantLauncher</code></strong> ao
+lado do exe — por exemplo, se o programa está em <code>D:\Tools\</code>, os
+dados ficarão em <code>D:\Tools\ErrantLauncher\</code>.</p>
+<p>O programa <strong>não escreve nada</strong> no registro do Windows nem nas pastas
+do perfil do usuário (<code>Documents</code>, <code>AppData</code> etc.). Toda a coleção,
+configurações e arquivos de serviço ficam somente dentro dessa pasta.</p>
+<h2 id="conteúdo-da-pasta-de-dados">Conteúdo da pasta de dados</h2>
+<table>
+<thead>
+<tr>
+<th>Caminho</th>
+<th>Conteúdo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ErrantLauncher\sections\*.json</code></td>
+<td>Seções, categorias e cartões — um arquivo por seção</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\settings.json</code></td>
+<td>Configurações de aparência e comportamento: tema, idioma, bandeja etc.</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\state.json</code></td>
+<td>Estado da janela, última seção aberta, contadores de execuções</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\custom-icons\</code></td>
+<td>Ícones adicionados por você ou extraídos de programas</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\logs\</code></td>
+<td>Registros locais de diagnóstico (<code>app.log</code>, <code>bootstrap.log</code>)</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\.backup\</code></td>
+<td>Backups automáticos dos arquivos de dados</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\.mass-import-backups\</code></td>
+<td>Cópias criadas antes da importação em massa</td>
+</tr>
+</tbody>
+</table>
+<p>As pastas <code>.backup</code>, <code>.mass-import-backups</code> e a de serviço
+<code>.import-staging</code> são diretórios ocultos de serviço; não é preciso
+excluí-los manualmente, mas também não convém mexer no conteúdo deles
+sem necessidade.</p>
+<h2 id="backup">Backup</h2>
+<p>O programa ajuda de duas formas:</p>
+<ol>
+<li><strong>Exportar configuração</strong> — função integrada
+   («Configurações» → <strong>«Exportar configuração»</strong>):
+   - <em>Backup completo</em> — tudo: seções, ícones, configurações e
+     estado; nome de arquivo sugerido — <code>ErrantLauncher-Backup.zip</code>;
+   - <em>Compartilhar coleção</em> — seções e ícones selecionados, com
+     marcas de favoritos, mas sem configurações; nome sugerido —
+     <code>ErrantLauncher-Collection.zip</code>.</li>
+<li><strong>Copiar a pasta manualmente</strong> — com o programa fechado, copie a
+   pasta <code>ErrantLauncher</code> inteira para um local seguro. É um
+   retrato completo dos seus dados.</li>
+</ol>
+<p>Além disso, o próprio programa cria cópias em <code>.backup\</code> durante
+operações com dados e em <code>.mass-import-backups\</code> antes da importação
+em massa — mas isso é um seguro contra falhas, não um substituto de
+backups regulares.</p>
+<div class="callout callout-tip"><b>Dica</b><p>Antes de grandes mudanças (importação em massa, mudança,
+atualização) faça um «Backup completo» via exportação — é o mais
+fácil de restaurar.</p>
+</div>
+<h2 id="transferência-para-outro-computador">Transferência para outro computador</h2>
+<p><strong>Método 1 — transferir tudo:</strong></p>
+<ol>
+<li>Feche o programa.</li>
+<li>Copie o exe e a pasta <code>ErrantLauncher</code> para o novo computador ou
+   unidade — juntos, mantendo a posição relativa.</li>
+<li>Execute o exe no novo local.</li>
+</ol>
+<p><strong>Método 2 — transportar apenas a coleção:</strong> use «Exportar
+configuração» no modo «Compartilhar coleção» → «Importar
+configuração» em outra cópia do programa (aceita <code>.zip</code>, <code>.json</code> e
+uma pasta de configuração).</p>
+<div class="callout callout-note"><b>Nota</b><p><strong>Sobre caminhos:</strong> cartões que referenciam arquivos por letra de
+unidade (<code>D:\Tools\app.exe</code>) funcionam no novo computador apenas
+se os arquivos existirem lá nos mesmos caminhos. O assistente de
+importação em massa avisa sobre esses cartões. Os próprios dados
+do launcher não memorizam letras de unidade — a pasta de dados é
+procurada ao lado do exe.</p>
+</div>
+<h2 id="atualização-sem-perda-de-dados">Atualização sem perda de dados</h2>
+<p>Não há atualização automática, mas atualizar não toca nos dados:</p>
+<ol>
+<li>Feche o programa.</li>
+<li>Substitua <code>ErrantLauncher-x64.exe</code> pela nova versão.</li>
+<li>Execute. A pasta <code>ErrantLauncher</code> permanece no lugar — todos os
+   cartões e configurações são preservados.</li>
+</ol>
+<h2 id="antes-de-reinstalar-ou-desinstalar">Antes de reinstalar ou desinstalar</h2>
+<ul>
+<li><strong>Guardar:</strong> a pasta <code>ErrantLauncher</code> inteira (ou pelo menos
+  <code>sections\</code>, <code>settings.json</code> e <code>custom-icons\</code> se os registros não
+  forem necessários).</li>
+<li><strong>Desinstalar:</strong> exclua o exe e a pasta <code>ErrantLauncher</code>. O
+  programa não deixa outros rastros no sistema. Adicionalmente você
+  pode excluir os diretórios temporários <code>%TEMP%\.net\ErrantLauncher</code>
+  — são criados a cada execução e não são limpos automaticamente.</li>
+<li>A função <strong>«Excluir todos os dados»</strong> nas configurações apaga o
+  conteúdo da pasta de dados após duas confirmações — use-a apenas
+  se não precisar de backup.</li>
+</ul>
+<h2 id="se-os-arquivos-não-estiverem-disponíveis">Se os arquivos não estiverem disponíveis</h2>
+<p>O programa distingue as situações e se comporta de forma previsível:</p>
+<table>
+<thead>
+<tr>
+<th>Situação</th>
+<th>Comportamento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pasta de dados somente leitura</td>
+<td>Modo «Somente leitura»: os cartões ficam visíveis e executáveis, as alterações são rejeitadas com aviso e não se perdem silenciosamente</td>
+</tr>
+<tr>
+<td>Mídia temporariamente indisponível</td>
+<td>Indicador «Sem mídia»; as alterações ficam em memória e serão salvas após a reconexão</td>
+</tr>
+<tr>
+<td>Pasta de dados totalmente ilegível</td>
+<td>Mensagem de armazenamento indisponível; o aplicativo se encerra</td>
+</tr>
+<tr>
+<td>Arquivo de dados individual corrompido</td>
+<td>Diálogo «Arquivo corrompido»: o arquivo é ignorado e não modificado; pode ser excluído ou mantido</td>
+</tr>
+<tr>
+<td>Arquivo criado por versão mais nova</td>
+<td>O arquivo é lido, mas não sobrescrito — recomenda-se atualizar o programa</td>
+</tr>
+<tr>
+<td>Vários arquivos da mesma seção</td>
+<td>O conteúdo é mesclado automaticamente, uma notificação é exibida</td>
+</tr>
+</tbody>
+</table>
+<h2 id="restauração-a-partir-de-backup">Restauração a partir de backup</h2>
+<p><strong>De um arquivo exportado:</strong> «Configurações» → <strong>«Importar
+configuração»</strong> → escolha o arquivo → marque as seções,
+configurações, ícones e favoritos necessários → «Importar».</p>
+<p><strong>De uma cópia da pasta:</strong> com o programa fechado, substitua o
+conteúdo da pasta <code>ErrantLauncher</code> pelo conteúdo do backup.</p>
+<p><strong>Após falha de importação em massa:</strong> o programa informa o caminho
+da cópia criada antes da importação (em <code>.mass-import-backups\</code>) —
+siga a dica na mensagem de erro: copie o conteúdo dela sobre a pasta
+de dados ou repita a importação.</p>
+<h2 id="particularidades-de-unidades-usb">Particularidades de unidades USB</h2>
+<ul>
+<li>A execução a partir de USB é totalmente suportada — é um cenário
+  padrão.</li>
+<li>Remover a unidade durante o funcionamento pode encerrar o
+  processo: feche sempre o programa antes de remover.</li>
+<li>Se a unidade se desconectar e reconectar, o programa detectará o
+  retorno e continuará salvando dados.</li>
+<li>Em mídias protegidas contra gravação funciona o modo «Somente
+  leitura».</li>
+<li>Não há garantia absoluta de portabilidade dos cartões: se eles
+  referenciam arquivos locais de outro computador, verifique os
+  status dos cartões após o transporte («Arquivo ausente», «Mídia
+  ausente»).</li>
+</ul>
+<hr>
+<p><em>Veja também: <a href="../../../pt-BR/docs/guide/">Guia do usuário</a>,
+<a href="../../../pt-BR/docs/requirements/">Requisitos de sistema</a>.</em></p></div></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../../" data-lang="pt-BR"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support and error reports — Errant Launcher</title>
+<meta name="description" content="Support and error reports">
+<link rel="canonical" href="https://errantlauncher.com/support/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/support/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/support/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/support/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/support/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/support/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/support/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/support/">
+<link rel="icon" type="image/svg+xml" href="../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../" data-lang="en" data-page="support" data-active="support"></header>
+<main>
+<div class="container page-body"><h1 id="support-and-error-reports">Support and error reports</h1>
+<p>Where to turn with questions about Errant Launcher and how to write
+an error report so the problem can be found and fixed quickly.</p>
+<hr>
+<h2 id="support-channels">Support channels</h2>
+<p>Official project channels (the same links are inside the app —
+the "About" window; the channels work from the release publication):</p>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documentation</td>
+<td><a href="../docs/">Documentation on the site</a></td>
+</tr>
+<tr>
+<td>Report an error</td>
+<td><a href="https://github.com/errantlauncher/ErrantLauncher/issues">GitHub Issues</a></td>
+</tr>
+<tr>
+<td>Releases</td>
+<td><a href="https://github.com/errantlauncher/ErrantLauncher/releases">GitHub Releases</a></td>
+</tr>
+</tbody>
+</table>
+<p>Before writing, check the
+<a href="../docs/faq/">FAQ and troubleshooting</a> — many questions
+(SmartScreen, "Read-only", card statuses, window size) are already
+covered there.</p>
+<h2 id="how-to-describe-an-error">How to describe an error</h2>
+<p>A good report answers three questions:</p>
+<ol>
+<li><strong>What you were doing</strong> — reproduction steps, in order. For
+   example: "opened Editor → Mass import → picked the D:\Tools
+   folder → clicked 'Scan'".</li>
+<li><strong>What you expected</strong> — "a list of candidates was supposed to
+   appear".</li>
+<li><strong>What happened</strong> — "the app closed" / "a message appeared
+   …" — quote the message text verbatim or attach a screenshot.</li>
+</ol>
+<h2 id="what-to-attach-to-the-report">What to attach to the report</h2>
+<table>
+<thead>
+<tr>
+<th>Information</th>
+<th>Where to get it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App version</td>
+<td>"About" window (e.g. <code>1.0.0-beta.1</code>)</td>
+</tr>
+<tr>
+<td>Windows version and bitness</td>
+<td>Win+R → <code>winver</code>; architecture — in "Settings → System → About"</td>
+</tr>
+<tr>
+<td>Display scale</td>
+<td>Settings → System → Display → Scale (if the problem is with display)</td>
+</tr>
+<tr>
+<td>Where the app is launched from</td>
+<td>Path to the exe file; local disk or USB</td>
+</tr>
+<tr>
+<td>Logs</td>
+<td><code>ErrantLauncher\logs\app.log</code> and <code>bootstrap.log</code> — the <code>ErrantLauncher</code> folder is next to the exe file</td>
+</tr>
+<tr>
+<td>Reproduction steps</td>
+<td>See above — the more precise, the better</td>
+</tr>
+<tr>
+<td>Error message text</td>
+<td>Verbatim or a screenshot</td>
+</tr>
+</tbody>
+</table>
+<p>Before sending a log, open it in Notepad and check the contents:
+logs may contain paths to your files and folders — remove anything
+you don't want to disclose.</p>
+<h2 id="what-not-to-send">What NOT to send</h2>
+<ul>
+<li>Passwords, keys, tokens — the app neither stores nor asks for
+  them, but they can accidentally end up in copied text or a
+  screenshot.</li>
+<li>Your entire card contents if it contains personal data: paths,
+  commands, links — send only fragments related to the problem.</li>
+<li>The whole <code>ErrantLauncher</code> folder unless asked: export the
+  configuration only at support's request and only after checking
+  its contents.</li>
+</ul>
+<h2 id="what-to-expect">What to expect</h2>
+<p>This is a free independent project at the beta stage: there are no
+promises about response times, but every clearly described report
+helps ship the stable version faster. Watch the releases page —
+fixes arrive in new versions.</p>
+<hr></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../" data-lang="en"></footer>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

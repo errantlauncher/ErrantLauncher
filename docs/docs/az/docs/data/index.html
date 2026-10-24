@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Məlumatlar, ehtiyat nüsxələr və portativlik — Errant Launcher</title>
+<meta name="description" content="Məlumatlar, ehtiyat nüsxələr və portativlik">
+<link rel="canonical" href="https://errantlauncher.com/az/docs/data/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/data/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/data/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/data/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/data/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/data/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/data/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/data/">
+<link rel="icon" type="image/svg+xml" href="../../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../../" data-lang="az" data-page="docs/data" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="data"></aside><div class="docs-content page-body"><h1 id="məlumatlar-ehtiyat-nüsxələr-və-portativlik">Məlumatlar, ehtiyat nüsxələr və portativlik</h1>
+<p>Errant Launcher portativ proqramdır: bütün məlumatları icra faylının
+yanındakı bir qovluqda yerləşir. Bu sənəd nəyin harada saxlandığını,
+ehtiyat nüsxələrin necə çıxarıldığını və kolleksiyanın kompüterlər
+arasında necə köçürüldüyünü izah edir.</p>
+<hr>
+<h2 id="mündəricat">Mündəricat</h2>
+<ul>
+<li><a href="#məlumatlar-harada-saxlanılır">Məlumatlar harada saxlanılır</a></li>
+<li><a href="#məlumat-qovluğunun-tərkibi">Məlumat qovluğunun tərkibi</a></li>
+<li><a href="#ehtiyat-nüsxələmə">Ehtiyat nüsxələmə</a></li>
+<li><a href="#başqa-kompüterə-köçürmə">Başqa kompüterə köçürmə</a></li>
+<li><a href="#məlumat-itirmədən-yeniləmə">Məlumat itirmədən yeniləmə</a></li>
+<li><a href="#yenidən-quraşdırmadan-və-ya-silməzdən-əvvəl">Yenidən quraşdırmadan və ya silməzdən əvvəl</a></li>
+<li><a href="#fayllar-əlçatan-deyilsə">Fayllar əlçatan deyilsə</a></li>
+<li><a href="#ehtiyat-nüsxədən-bərpa">Ehtiyat nüsxədən bərpa</a></li>
+<li><a href="#usb-yaddaşların-xüsusiyyətləri">USB-yaddaşların xüsusiyyətləri</a></li>
+</ul>
+<hr>
+<h2 id="məlumatlar-harada-saxlanılır">Məlumatlar harada saxlanılır</h2>
+<p>İlk başlanğıcda proqram exe faylının yanında <strong><code>ErrantLauncher</code></strong>
+qovluğu yaradır — məsələn, proqram <code>D:\Tools\</code>-dədirsə, məlumatlar
+<code>D:\Tools\ErrantLauncher\</code>-də olacaq.</p>
+<p>Proqram <strong>heç nə yazmır</strong> Windows reyestrinə və istifadəçi profilinin
+qovluqlarına (<code>Documents</code>, <code>AppData</code> və s.). Bütün kolleksiya,
+parametrlər və xidməti fayllar yalnız bu qovluğun içindədir.</p>
+<h2 id="məlumat-qovluğunun-tərkibi">Məlumat qovluğunun tərkibi</h2>
+<table>
+<thead>
+<tr>
+<th>Yol</th>
+<th>Məzmun</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ErrantLauncher\sections\*.json</code></td>
+<td>Bölmələr, kateqoriyalar və kartlar — hər bölməyə bir fayl</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\settings.json</code></td>
+<td>Görünüş və davranış parametrləri: mövzu, dil, trey və s.</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\state.json</code></td>
+<td>Pəncərə vəziyyəti, son açılmış bölmə, icra sayğacları</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\custom-icons\</code></td>
+<td>Sizin əlavə etdiyiniz və ya proqramlardan çıxarılmış ikonlar</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\logs\</code></td>
+<td>Lokal diaqnostika jurnalları (<code>app.log</code>, <code>bootstrap.log</code>)</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\.backup\</code></td>
+<td>Məlumat fayllarının avtomatik ehtiyat nüsxələri</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\.mass-import-backups\</code></td>
+<td>Toplu idxaldan əvvəl yaradılan nüsxələr</td>
+</tr>
+</tbody>
+</table>
+<p><code>.backup</code>, <code>.mass-import-backups</code> qovluqları və xidməti
+<code>.import-staging</code> — gizli xidməti kataloqlardır; onları əllə silmək
+tələb olunmur, lakin ehtiyacsız yerə məzmunlarına toxunmaq da olmaz.</p>
+<h2 id="ehtiyat-nüsxələmə">Ehtiyat nüsxələmə</h2>
+<p>Proqram iki üsulla kömək edir:</p>
+<ol>
+<li><strong>Konfiqurasiya ixracı</strong> — daxili funksiya («Parametrlər» →
+   <strong>«Konfiqurasiya ixracı»</strong>):
+   - <em>Tam ehtiyat nüsxə</em> — hər şey: bölmələr, ikonlar, parametrlər
+     və vəziyyət; təklif olunan fayl adı — <code>ErrantLauncher-Backup.zip</code>;
+   - <em>Kolleksiyanı paylaş</em> — seçilmiş bölmələr və ikonlar, seçilmiş
+     işarələri ilə, lakin parametrlərsiz; təklif olunan fayl adı —
+     <code>ErrantLauncher-Collection.zip</code>.</li>
+<li><strong>Qovluğu əllə köçürmək</strong> — proqram bağlı ikən <code>ErrantLauncher</code>
+   qovluğunu tamamilə təhlükəsiz yerə köçürün. Bu, məlumatlarınızın
+   tam surətidir.</li>
+</ol>
+<p>Əlavə olaraq proqram məlumat əməliyyatları zamanı <code>.backup\</code>-də və
+toplu idxaldan əvvəl <code>.mass-import-backups\</code>-də nüsxələr yaradır —
+amma bu, qəza halına qarşı sığortadır, müntəzəm ehtiyat nüsxələrin
+əvəzedicisi deyil.</p>
+<div class="callout callout-tip"><b>Məsləhət</b><p>Böyük dəyişikliklərdən əvvəl (toplu idxal, köçmə, yeniləmə) ixrac
+vasitəsilə «Tam ehtiyat nüsxə» çıxarın — onu bərpa etmək ən
+rahatdır.</p>
+</div>
+<h2 id="başqa-kompüterə-köçürmə">Başqa kompüterə köçürmə</h2>
+<p><strong>Üsul 1 — hər şeyi köçürmək:</strong></p>
+<ol>
+<li>Proqramı bağlayın.</li>
+<li>exe faylını və <code>ErrantLauncher</code> qovluğunu yeni kompüterə və ya
+   daşıyıcıya köçürün — birlikdə, qarşılıqlı yerləşməni saxlayaraq.</li>
+<li>Yeni yerdə exe-ni işə salın.</li>
+</ol>
+<p><strong>Üsul 2 — yalnız kolleksiyanı köçürmək:</strong> «Konfiqurasiya ixracı»nı
+«Kolleksiyanı paylaş» rejimində istifadə edin → proqramın başqa
+nüsxəsində «Konfiqurasiya idxalı» (<code>.zip</code>, <code>.json</code> və konfiqurasiya
+qovluğunu qəbul edir).</p>
+<div class="callout callout-note"><b>Qeyd</b><p><strong>Yollar haqqında:</strong> disk hərfi ilə fayllara istinad edən kartlar
+(<code>D:\Tools\app.exe</code>) yeni kompüterdə yalnız fayllar orada eyni
+yollarla mövcuddursa işləyir. Toplu idxal ustası belə kartlar
+barədə xəbərdar edir. Launcherin öz məlumatları disk hərfini
+yadda saxlamır — məlumat qovluğu exe-nin yanında axtarılır.</p>
+</div>
+<h2 id="məlumat-itirmədən-yeniləmə">Məlumat itirmədən yeniləmə</h2>
+<p>Avtomatik yeniləmə yoxdur, lakin yeniləmə məlumatlara toxunmur:</p>
+<ol>
+<li>Proqramı bağlayın.</li>
+<li><code>ErrantLauncher-x64.exe</code>-ni yeni versiya ilə əvəz edin.</li>
+<li>İşə salın. <code>ErrantLauncher</code> qovluğu yerində qalır — bütün kartlar
+   və parametrlər saxlanılır.</li>
+</ol>
+<h2 id="yenidən-quraşdırmadan-və-ya-silməzdən-əvvəl">Yenidən quraşdırmadan və ya silməzdən əvvəl</h2>
+<ul>
+<li><strong>Saxlamaq:</strong> <code>ErrantLauncher</code> qovluğunu tamamilə (və ya ən azı
+  <code>sections\</code>, <code>settings.json</code> və <code>custom-icons\</code>, əgər jurnallar
+  lazım deyilsə).</li>
+<li><strong>Silmək:</strong> exe faylını və <code>ErrantLauncher</code> qovluğunu silin.
+  Proqram sistemdə başqa iz qoymur. Əlavə olaraq müvəqqəti
+  <code>%TEMP%\.net\ErrantLauncher</code> kataloqlarını silmək olar — onlar hər
+  başlanğıcda yaradılır və avtomatik təmizlənmir.</li>
+<li>Parametrlərdəki <strong>«Bütün məlumatları sil»</strong> funksiyası iki
+  təsdiqdən sonra məlumat qovluğunun məzmununu silir — onu yalnız
+  ehtiyat nüsxə lazım deyilsə istifadə edin.</li>
+</ul>
+<h2 id="fayllar-əlçatan-deyilsə">Fayllar əlçatan deyilsə</h2>
+<p>Proqram vəziyyətləri fərqləndirir və proqnozlaşdırıla bilən davranır:</p>
+<table>
+<thead>
+<tr>
+<th>Vəziyyət</th>
+<th>Davranış</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Məlumat qovluğu yalnız oxunur</td>
+<td>«Yalnız oxu» rejimi: kartlar görünür və işə salınır, dəyişikliklər bildirişlə rədd edilir və səssiz itmir</td>
+</tr>
+<tr>
+<td>Daşıyıcı müvəqqəti əlçatan deyil</td>
+<td>«Daşıyıcı yoxdur» göstəricisi; dəyişikliklər yaddaşda qalır və yenidən qoşulduqda saxlanılır</td>
+</tr>
+<tr>
+<td>Məlumat qovluğu ümumiyyətlə oxunmur</td>
+<td>Əlçatmaz anbar mesajı; tətbiq bağlanır</td>
+</tr>
+<tr>
+<td>Ayrıca məlumat faylı zədəlidir</td>
+<td>«Fayl zədəlidir» dialoqu: fayl nəzərə alınmır və dəyişdirilmir; silmək və ya saxlamaq olar</td>
+</tr>
+<tr>
+<td>Fayl daha yeni versiya ilə yaradılıb</td>
+<td>Fayl oxunur, lakin yenidən yazılmır — proqramı yeniləmək tövsiyə olunur</td>
+</tr>
+<tr>
+<td>Bir bölmənin bir neçə faylı</td>
+<td>Məzmun avtomatik birləşdirilir, bildiriş göstərilir</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ehtiyat-nüsxədən-bərpa">Ehtiyat nüsxədən bərpa</h2>
+<p><strong>İxrac edilmiş fayldan:</strong> «Parametrlər» → <strong>«Konfiqurasiya
+idxalı»</strong> → faylı seçin → lazım olan bölmələri, parametrləri,
+ikonları və seçilmişləri işarələyin → «İdxal».</p>
+<p><strong>Qovluq nüsxəsindən:</strong> proqram bağlı ikən <code>ErrantLauncher</code>
+qovluğunun məzmununu ehtiyat nüsxənin məzmunu ilə əvəz edin.</p>
+<p><strong>Toplu idxal qəzasından sonra:</strong> proqram idxaldan əvvəl yaradılmış
+nüsxənin yolunu bildirir (<code>.mass-import-backups\</code>-də) — xəta
+mesajındakı göstərişi izləyin: onun məzmununu məlumat qovluğunun
+üstünə köçürün və ya idxalı təkrarlayın.</p>
+<h2 id="usb-yaddaşların-xüsusiyyətləri">USB-yaddaşların xüsusiyyətləri</h2>
+<ul>
+<li>USB-dən icra tam dəstəklənir — bu, standart ssenaridir.</li>
+<li>İş zamanı daşıyıcını çıxarmaq prosesi dayandıra bilər: çıxarmazdan
+  əvvəl həmişə proqramı bağlayın.</li>
+<li>Daşıyıcı «ayrılıb» yenidən qoşularsa, proqram qayıtmanı aşkar edib
+  məlumatları saxlamağa davam edəcək.</li>
+<li>Yazmadan qorunan daşıyıcılarda «Yalnız oxu» rejimi işləyir.</li>
+<li>Kartların portativliyinə mütləq zəmanət yoxdur: onlar başqa
+  kompüterin lokal fayllarına istinad edirsə, köçürmədən sonra kart
+  statuslarını yoxlayın («Fayl yoxdur», «Daşıyıcı yoxdur»).</li>
+</ul>
+<hr>
+<p><em>Həmçinin baxın: <a href="../../../az/docs/guide/">İstifadəçi təlimatı</a>,
+<a href="../../../az/docs/requirements/">Sistem tələbləri</a>.</em></p></div></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../../" data-lang="az"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

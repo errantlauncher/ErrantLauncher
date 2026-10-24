@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Підтримка та повідомлення про помилки — Errant Launcher</title>
+<meta name="description" content="Підтримка та повідомлення про помилки">
+<link rel="canonical" href="https://errantlauncher.com/uk/support/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/support/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/support/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/support/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/support/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/support/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/support/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/support/">
+<link rel="icon" type="image/svg+xml" href="../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../" data-lang="uk" data-page="support" data-active="support"></header>
+<main>
+<div class="container page-body"><h1 id="підтримка-та-повідомлення-про-помилки">Підтримка та повідомлення про помилки</h1>
+<p>Тут — куди звертатися з питаннями про Errant Launcher і як скласти
+повідомлення про помилку так, щоб проблему вдалося швидко знайти
+та виправити.</p>
+<hr>
+<h2 id="канали-підтримки">Канали підтримки</h2>
+<p>Офіційні канали проєкту (ті самі посилання є всередині програми —
+вікно «Про програму»; канали діють з моменту публікації релізу):</p>
+<table>
+<thead>
+<tr>
+<th>Канал</th>
+<th>Адреса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Документація</td>
+<td><a href="../../uk/docs/">Документація на сайті</a></td>
+</tr>
+<tr>
+<td>Повідомити про помилку</td>
+<td><a href="https://github.com/errantlauncher/ErrantLauncher/issues">GitHub Issues</a></td>
+</tr>
+<tr>
+<td>Релізи</td>
+<td><a href="https://github.com/errantlauncher/ErrantLauncher/releases">GitHub Releases</a></td>
+</tr>
+</tbody>
+</table>
+<p>Перш ніж писати, загляньте до
+<a href="../../uk/docs/faq/">FAQ та розв'язання проблем</a> — багато питань
+(SmartScreen, «Лише читання», статуси карток, розмір вікна) уже
+розібрані там.</p>
+<h2 id="як-описати-помилку">Як описати помилку</h2>
+<p>Гарне повідомлення відповідає на три питання:</p>
+<ol>
+<li><strong>Що ви робили</strong> — кроки відтворення, по порядку. Наприклад:
+   «відкрив Редактор → Масовий імпорт → вибрав папку D:\Tools →
+   натиснув "Сканувати"».</li>
+<li><strong>Чого очікували</strong> — «мав з'явитися список кандидатів».</li>
+<li><strong>Що сталося</strong> — «програма закрилася» / «з'явилося повідомлення
+   …» — наведіть текст повідомлення дослівно або додайте скриншот.</li>
+</ol>
+<h2 id="що-додати-до-повідомлення">Що додати до повідомлення</h2>
+<table>
+<thead>
+<tr>
+<th>Інформація</th>
+<th>Де взяти</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Версія програми</td>
+<td>Вікно «Про програму» (наприклад, <code>1.0.0-beta.1</code>)</td>
+</tr>
+<tr>
+<td>Версія та розрядність Windows</td>
+<td>Win+R → <code>winver</code>; архітектура — у «Параметри → Система → Про систему»</td>
+</tr>
+<tr>
+<td>Масштаб екрана</td>
+<td>Параметри → Система → Дисплей → Масштаб (якщо проблема з відображенням)</td>
+</tr>
+<tr>
+<td>Звідки запущено програму</td>
+<td>Шлях до exe-файлу; локальний диск або USB</td>
+</tr>
+<tr>
+<td>Журнали</td>
+<td><code>ErrantLauncher\logs\app.log</code> і <code>bootstrap.log</code> — папка <code>ErrantLauncher</code> лежить поруч із exe-файлом</td>
+</tr>
+<tr>
+<td>Кроки відтворення</td>
+<td>Див. вище — чим точніше, тим краще</td>
+</tr>
+<tr>
+<td>Текст повідомлення про помилку</td>
+<td>Дослівно або скриншот</td>
+</tr>
+</tbody>
+</table>
+<p>Перед надсиланням журналу відкрийте його в «Блокноті» й перевірте
+вміст: у журналах можуть бути шляхи до ваших файлів і папок —
+приберіть те, що не хочете розкривати.</p>
+<h2 id="що-не-потрібно-надсилати">Що НЕ потрібно надсилати</h2>
+<ul>
+<li>Паролі, ключі, токени — програма їх не зберігає і не запитує,
+  але вони можуть випадково потрапити до скопійованого тексту чи
+  скриншоту.</li>
+<li>Вміст ваших карток цілком, якщо в ньому є особисті дані: шляхи,
+  команди, посилання — надсилайте лише фрагменти, що стосуються
+  проблеми.</li>
+<li>Папку <code>ErrantLauncher</code> цілком, якщо не просили: експортуйте
+  конфігурацію лише на запит підтримки й лише після перевірки її
+  вмісту.</li>
+</ul>
+<h2 id="чого-чекати">Чого чекати</h2>
+<p>Це безкоштовний незалежний проєкт на стадії бети: обіцянок щодо
+строків відповіді немає, але кожне чітко описане повідомлення
+допомагає випустити стабільну версію швидше. Стежте за сторінкою
+релізів — виправлення з'являються в нових версіях.</p>
+<hr></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../" data-lang="uk"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>

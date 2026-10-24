@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datos, copias de seguridad y portabilidad — Errant Launcher</title>
+<meta name="description" content="Datos, copias de seguridad y portabilidad">
+<link rel="canonical" href="https://errantlauncher.com/es/docs/data/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/data/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/data/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/data/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/data/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/data/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/data/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/data/">
+<link rel="icon" type="image/svg+xml" href="../../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../../" data-lang="es" data-page="docs/data" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="data"></aside><div class="docs-content page-body"><h1 id="datos-copias-de-seguridad-y-portabilidad">Datos, copias de seguridad y portabilidad</h1>
+<p>Errant Launcher es un programa portátil: todos sus datos residen en
+una única carpeta junto al ejecutable. Este documento explica dónde
+se guarda cada cosa, cómo hacer copias de seguridad y cómo trasladar
+la colección entre equipos.</p>
+<hr>
+<h2 id="contenido">Contenido</h2>
+<ul>
+<li><a href="#dónde-se-guardan-los-datos">Dónde se guardan los datos</a></li>
+<li><a href="#contenido-de-la-carpeta-de-datos">Contenido de la carpeta de datos</a></li>
+<li><a href="#copia-de-seguridad">Copia de seguridad</a></li>
+<li><a href="#traslado-a-otro-equipo">Traslado a otro equipo</a></li>
+<li><a href="#actualización-sin-pérdida-de-datos">Actualización sin pérdida de datos</a></li>
+<li><a href="#antes-de-reinstalar-o-desinstalar">Antes de reinstalar o desinstalar</a></li>
+<li><a href="#si-los-archivos-no-están-disponibles">Si los archivos no están disponibles</a></li>
+<li><a href="#restauración-desde-una-copia">Restauración desde una copia</a></li>
+<li><a href="#particularidades-de-las-unidades-usb">Particularidades de las unidades USB</a></li>
+</ul>
+<hr>
+<h2 id="dónde-se-guardan-los-datos">Dónde se guardan los datos</h2>
+<p>En el primer inicio el programa crea la carpeta <strong><code>ErrantLauncher</code></strong>
+junto al exe — por ejemplo, si el programa está en <code>D:\Tools\</code>, los
+datos estarán en <code>D:\Tools\ErrantLauncher\</code>.</p>
+<p>El programa <strong>no escribe nada</strong> en el registro de Windows ni en las
+carpetas del perfil de usuario (<code>Documents</code>, <code>AppData</code>, etc.). Toda
+la colección, la configuración y los archivos de servicio están solo
+dentro de esa carpeta.</p>
+<h2 id="contenido-de-la-carpeta-de-datos">Contenido de la carpeta de datos</h2>
+<table>
+<thead>
+<tr>
+<th>Ruta</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ErrantLauncher\sections\*.json</code></td>
+<td>Secciones, categorías y tarjetas — un archivo por sección</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\settings.json</code></td>
+<td>Ajustes de apariencia y comportamiento: tema, idioma, bandeja, etc.</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\state.json</code></td>
+<td>Estado de la ventana, última sección abierta, contadores de ejecuciones</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\custom-icons\</code></td>
+<td>Iconos que añadiste o extraídos de programas</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\logs\</code></td>
+<td>Registros locales de diagnóstico (<code>app.log</code>, <code>bootstrap.log</code>)</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\.backup\</code></td>
+<td>Copias de seguridad automáticas de los archivos de datos</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\.mass-import-backups\</code></td>
+<td>Copias creadas antes de la importación masiva</td>
+</tr>
+</tbody>
+</table>
+<p>Las carpetas <code>.backup</code>, <code>.mass-import-backups</code> y la de servicio
+<code>.import-staging</code> son directorios ocultos de servicio; no hace falta
+eliminarlos a mano, pero tampoco conviene tocar su contenido sin
+necesidad.</p>
+<h2 id="copia-de-seguridad">Copia de seguridad</h2>
+<p>El programa ayuda de dos maneras:</p>
+<ol>
+<li><strong>Exportar configuración</strong> — función integrada
+   («Configuración» → <strong>«Exportar configuración»</strong>):
+   - <em>Copia de seguridad completa</em> — todo: secciones, iconos,
+     configuración y estado; nombre de archivo sugerido —
+     <code>ErrantLauncher-Backup.zip</code>;
+   - <em>Compartir colección</em> — secciones e iconos seleccionados, con
+     marcas de favoritos, pero sin configuración; nombre de archivo
+     sugerido — <code>ErrantLauncher-Collection.zip</code>.</li>
+<li><strong>Copiar la carpeta a mano</strong> — con el programa cerrado, copia la
+   carpeta <code>ErrantLauncher</code> entera a un lugar seguro. Es una
+   instantánea completa de tus datos.</li>
+</ol>
+<p>Además, el propio programa crea copias en <code>.backup\</code> durante las
+operaciones con datos y en <code>.mass-import-backups\</code> antes de la
+importación masiva — pero eso es un seguro ante un fallo, no un
+sustituto de las copias periódicas.</p>
+<div class="callout callout-tip"><b>Consejo</b><p>Antes de cambios grandes (importación masiva, mudanza,
+actualización) haz una «Copia de seguridad completa» mediante la
+exportación — es la más fácil de restaurar.</p>
+</div>
+<h2 id="traslado-a-otro-equipo">Traslado a otro equipo</h2>
+<p><strong>Método 1 — trasladarlo todo:</strong></p>
+<ol>
+<li>Cierra el programa.</li>
+<li>Copia el exe y la carpeta <code>ErrantLauncher</code> al nuevo equipo o
+   unidad — juntos, conservando su posición relativa.</li>
+<li>Ejecuta el exe en el nuevo sitio.</li>
+</ol>
+<p><strong>Método 2 — trasladar solo la colección:</strong> usa «Exportar
+configuración» en modo «Compartir colección» → «Importar
+configuración» en otra copia del programa (acepta <code>.zip</code>, <code>.json</code> y
+una carpeta de configuración).</p>
+<div class="callout callout-note"><b>Nota</b><p><strong>Sobre las rutas:</strong> las tarjetas que referencian archivos por
+letra de unidad (<code>D:\Tools\app.exe</code>) funcionan en el nuevo equipo
+solo si los archivos existen allí en las mismas rutas. El
+asistente de importación masiva avisa de esas tarjetas. Los datos
+del lanzador no recuerdan letras de unidad — la carpeta de datos
+se busca junto al exe.</p>
+</div>
+<h2 id="actualización-sin-pérdida-de-datos">Actualización sin pérdida de datos</h2>
+<p>No hay actualización automática, pero actualizar no toca los datos:</p>
+<ol>
+<li>Cierra el programa.</li>
+<li>Sustituye <code>ErrantLauncher-x64.exe</code> por la nueva versión.</li>
+<li>Ejecútalo. La carpeta <code>ErrantLauncher</code> permanece en su sitio —
+   todas las tarjetas y la configuración se conservan.</li>
+</ol>
+<h2 id="antes-de-reinstalar-o-desinstalar">Antes de reinstalar o desinstalar</h2>
+<ul>
+<li><strong>Conservar:</strong> la carpeta <code>ErrantLauncher</code> entera (o al menos
+  <code>sections\</code>, <code>settings.json</code> y <code>custom-icons\</code> si no necesitas los
+  registros).</li>
+<li><strong>Desinstalar:</strong> elimina el exe y la carpeta <code>ErrantLauncher</code>. El
+  programa no deja más rastros en el sistema. Además puedes borrar
+  los directorios temporales <code>%TEMP%\.net\ErrantLauncher</code> — se crean
+  en cada inicio y no se limpian automáticamente.</li>
+<li>La función <strong>«Eliminar todos los datos»</strong> de la configuración borra
+  el contenido de la carpeta de datos tras dos confirmaciones —
+  úsala solo si no necesitas copia de seguridad.</li>
+</ul>
+<h2 id="si-los-archivos-no-están-disponibles">Si los archivos no están disponibles</h2>
+<p>El programa distingue las situaciones y se comporta de forma
+predecible:</p>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th>Comportamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carpeta de datos de solo lectura</td>
+<td>Modo «Solo lectura»: las tarjetas se ven y se ejecutan, los cambios se rechazan con aviso y no se pierden en silencio</td>
+</tr>
+<tr>
+<td>Medio temporalmente no disponible</td>
+<td>Indicador «Sin medio»; los cambios quedan en memoria y se guardan tras la reconexión</td>
+</tr>
+<tr>
+<td>La carpeta de datos no se lee</td>
+<td>Mensaje de almacenamiento no disponible; la aplicación se cierra</td>
+</tr>
+<tr>
+<td>Un archivo de datos concreto dañado</td>
+<td>Diálogo «Archivo dañado»: el archivo se ignora y no se modifica; se puede eliminar o conservar</td>
+</tr>
+<tr>
+<td>Archivo creado por una versión más nueva</td>
+<td>El archivo se lee pero no se sobrescribe — se recomienda actualizar el programa</td>
+</tr>
+<tr>
+<td>Varios archivos de una misma sección</td>
+<td>El contenido se fusiona automáticamente, se muestra una notificación</td>
+</tr>
+</tbody>
+</table>
+<h2 id="restauración-desde-una-copia">Restauración desde una copia</h2>
+<p><strong>Desde un archivo exportado:</strong> «Configuración» → <strong>«Importar
+configuración»</strong> → elige el archivo → marca las secciones, la
+configuración, los iconos y los favoritos que necesites →
+«Importar».</p>
+<p><strong>Desde una copia de la carpeta:</strong> con el programa cerrado, sustituye
+el contenido de la carpeta <code>ErrantLauncher</code> por el de la copia de
+seguridad.</p>
+<p><strong>Tras un fallo de importación masiva:</strong> el programa informa de la
+ruta de la copia creada antes de la importación (en
+<code>.mass-import-backups\</code>) — sigue la indicación del mensaje de error:
+copia su contenido sobre la carpeta de datos o repite la
+importación.</p>
+<h2 id="particularidades-de-las-unidades-usb">Particularidades de las unidades USB</h2>
+<ul>
+<li>La ejecución desde USB está totalmente soportada — es un escenario
+  estándar.</li>
+<li>Extraer la unidad durante el trabajo puede terminar el proceso:
+  cierra siempre el programa antes de extraerla.</li>
+<li>Si la unidad se desconecta y vuelve a conectarse, el programa
+  detectará el retorno y seguirá guardando datos.</li>
+<li>En medios protegidos contra escritura funciona el modo «Solo
+  lectura».</li>
+<li>No hay garantía absoluta de portabilidad de las tarjetas: si
+  referencian archivos locales de otro equipo, comprueba los estados
+  de las tarjetas tras el traslado («Archivo no encontrado», «Medio
+  no disponible»).</li>
+</ul>
+<hr>
+<p><em>Véase también: <a href="../../../es/docs/guide/">Guía de usuario</a>,
+<a href="../../../es/docs/requirements/">Requisitos del sistema</a>.</em></p></div></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../../" data-lang="es"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

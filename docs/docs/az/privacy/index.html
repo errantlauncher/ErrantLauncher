@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Məxfilik və məlumatların emalı — Errant Launcher</title>
+<meta name="description" content="Məxfilik və məlumatların emalı">
+<link rel="canonical" href="https://errantlauncher.com/az/privacy/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/privacy/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/privacy/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/privacy/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/privacy/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/privacy/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/privacy/">
+<link rel="icon" type="image/svg+xml" href="../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../" data-lang="az" data-page="privacy" data-active=""></header>
+<main>
+<div class="container page-body"><h1 id="məxfilik-və-məlumatların-emalı">Məxfilik və məlumatların emalı</h1>
+<hr>
+<h2 id="qısa">Qısa</h2>
+<ul>
+<li>Proqramın bütün məlumatları <strong>lokal</strong> saxlanılır — icra faylının
+  yanında <code>ErrantLauncher</code> qovluğunda.</li>
+<li><strong>Telemetriya yoxdur.</strong> Proqram tərtibatçıya statistika, istifadə
+  hesabatları və ya diaqnostika göndərmir.</li>
+<li>Tətbiqin özü <strong>heç bir çıxan şəbəkə sorğusu etmir</strong> — nə
+  yeniləmə yoxlaması üçün, nə analitika üçün, nə də aktivləşdirmə
+  üçün.</li>
+<li>Şəbəkə yalnız siz özünüz açanda işləyir: keçid-kartı icrası,
+  istifadəçi əmri və ya öz internet çıxışı olan proqram.</li>
+<li>Hesab, qeydiyyat və internet bağlantısı tələb olunmur.</li>
+</ul>
+<h2 id="tətbiq-hansı-məlumatları-yaradır">Tətbiq hansı məlumatları yaradır</h2>
+<table>
+<thead>
+<tr>
+<th>Məlumatlar</th>
+<th>Harada saxlanılır</th>
+<th>Məzmun</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bölmələr, kateqoriyalar, kartlar</td>
+<td><code>ErrantLauncher\sections\*.json</code></td>
+<td>Adlar, fayl və proqramlarınıza yollar, əmrlər, keçidlər, icra parametrləri, seçilmiş işarələri, qrupların tərkibi</td>
+</tr>
+<tr>
+<td>Parametrlər</td>
+<td><code>ErrantLauncher\settings.json</code></td>
+<td>Mövzu, aksent rəngi, dil, başlanğıc bölməsi, kart üslubları, trey davranışı</td>
+</tr>
+<tr>
+<td>Vəziyyət</td>
+<td><code>ErrantLauncher\state.json</code></td>
+<td>Pəncərənin mövqeyi və vəziyyəti, son açılmış bölmə, icra sayğacları</td>
+</tr>
+<tr>
+<td>İkonlar</td>
+<td><code>ErrantLauncher\custom-icons\</code></td>
+<td>Əlavə etdiyiniz ikon faylları və proqramlardan çıxarılmış ikonlar</td>
+</tr>
+<tr>
+<td>Jurnallar</td>
+<td><code>ErrantLauncher\logs\</code></td>
+<td>Lokal diaqnostika jurnalları <code>app.log</code> və <code>bootstrap.log</code> — proqramın işi və səhvləri haqqında texniki mesajlar</td>
+</tr>
+<tr>
+<td>Xidməti nüsxələr</td>
+<td><code>ErrantLauncher\.backup\</code>, <code>.mass-import-backups\</code></td>
+<td>Məlumat fayllarının avtomatik ehtiyat nüsxələri</td>
+</tr>
+</tbody>
+</table>
+<p>Sadalananların hamısı sizin kompüterinizdə və ya yaddaşınızda qalır.
+Proqram Windows reyestrinə və istifadəçi profilinə heç nə yazmır.</p>
+<h2 id="tərtibatçıya-nə-göndərilir">Tərtibatçıya nə göndərilir</h2>
+<p><strong>Heç nə.</strong> Proqramda telemetriya, analitika, avtomatik xəta
+hesabatları, şəbəkə üzərindən yeniləmə yoxlaması və statistika
+toplanması yoxdur.</p>
+<p>Tərtibatçıya yalnız sizin <strong>könüllü</strong> göndərdiyiniz şey çatır —
+məsələn, dəstəyə müraciət edərkən problemi təsvir edən mətn və ya
+əlavə olunmuş jurnal. Nə əlavə etmək faydalıdır və nə göndərməmək
+lazımdır: <a href="../../az/support/">Dəstək və xəta məlumatları</a>.</p>
+<h2 id="şəbəkə-sorğuları">Şəbəkə sorğuları</h2>
+<h3 id="tətbiqin-özü">Tətbiqin özü</h3>
+<p>Proqramın kodunda şəbəkə çağırışları yoxdur: Errant Launcher
+tərtibatçının serverlərinə müraciət etmir, yeniləmələri yoxlamır və
+internetdən məlumat yükləmir. Şəbəkə ilə bağlı yeganə əməliyyat —
+sizin əmərinizlə ünvanların brauzerinizdə açılmasıdır:</p>
+<ul>
+<li><strong>URL / URI</strong> tipli kartlar;</li>
+<li><strong>«Proqram haqqında»</strong> pəncərəsindəki keçidlər (sayt, sənədlər,
+  xəta məlumatları səhifəsi, GitHub relizləri, layihəyə dəstək).</li>
+</ul>
+<p>Keçidin açılması əməliyyat sistemi və brauzeriniz tərəfindən yerinə
+yetirilir — saytla sonrakı iş onların qaydalarına tabe olur,
+launcher-ə yox.</p>
+<h3 id="istifadəçi-kartları-vasitəsilə">İstifadəçi kartları vasitəsilə</h3>
+<p>Nəzərə alın ki, kartlar <strong>sizin</strong> proqramlarınızı və əmrlərinizi işə
+salır:</p>
+<ul>
+<li>işə salınmış proqram öz qaydaları ilə internetə çıxa bilər;</li>
+<li>əmr-kartlar ora yazdığınızı icra edir — o cümlədən şəbəkə əmrlərini;</li>
+<li>toplu idxal müvafiq filtri yandırsanız, şəbəkə yollarını (UNC)
+  skan edə bilər — oxuma sizin seçdiyiniz şəbəkə resurslarından
+  aparılır.</li>
+</ul>
+<p>Beləliklə, «telemetriyanın olmaması» «ümumiyyətlə heç bir şəbəkə
+əməliyyatı yoxdur» demək deyil: şəbəkə aktivliyini sizin işə
+saldığınız proqramlar və əmrlər yaradır, özü launcher yox.</p>
+<h2 id="jurnallar">Jurnallar</h2>
+<p><code>ErrantLauncher\logs\</code> qovluğunda lokal jurnallar aparılır. Orada
+texniki məlumatlar ola bilər: xəta mesajları, məlumat fayllarına
+yollar və konfiqurasiya fayl adları. Jurnallar heç yerə göndərilmir —
+amma onları xəta məlumatına əlavə etməzdən əvvəl faylı nəzərdən
+keçirib açmaq istəmədiyiniz məlumatları çıxarmaq məqsədəuyğundur
+(məsələn, qovluq adlı yollar).</p>
+<h2 id="idxal-edilən-fayllar">İdxal edilən fayllar</h2>
+<p>«Konfiqurasiya idxalı» funksiyası xəbərdar edir: idxal edilən fayl
+launcher tərəfindən təhlükəsizlik üçün yoxlanılmayıb və əmrlər və
+keçidlər ehtiva edə bilər. Konfiqurasiya fayllarını yalnız etibar
+etdiyiniz mənbələrdən idxal edin.</p>
+<h2 id="məlumatların-silinməsi">Məlumatların silinməsi</h2>
+<ul>
+<li><code>ErrantLauncher</code> qovluğunun silinməsi proqramın bütün lokal
+  məlumatlarını silir — üçüncü tərəf serverlərində heç bir nüsxə
+  yoxdur.</li>
+<li>Parametrlərdəki «Bütün məlumatları sil» funksiyası eyni işi
+  proqramın içindən edir (iki təsdiqdən sonra).</li>
+<li><code>%TEMP%\.net\ErrantLauncher</code>-də müvəqqəti açılmış fayllar yalnız
+  proqramın kitabxanalarını ehtiva edir və tətbiq bağlı ikən
+  əllə silinə bilər.</li>
+</ul></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../" data-lang="az"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>

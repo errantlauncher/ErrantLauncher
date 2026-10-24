@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soporte e informes de errores — Errant Launcher</title>
+<meta name="description" content="Soporte e informes de errores">
+<link rel="canonical" href="https://errantlauncher.com/es/support/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/support/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/support/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/support/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/support/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/support/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/support/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/support/">
+<link rel="icon" type="image/svg+xml" href="../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../" data-lang="es" data-page="support" data-active="support"></header>
+<main>
+<div class="container page-body"><h1 id="soporte-e-informes-de-errores">Soporte e informes de errores</h1>
+<p>Dónde hacer preguntas sobre Errant Launcher y cómo redactar un
+informe de error para que el problema se encuentre y se resuelva
+rápido.</p>
+<hr>
+<h2 id="canales-de-soporte">Canales de soporte</h2>
+<p>Canales oficiales del proyecto (los mismos enlaces están dentro de
+la app — ventana «Acerca de»; los canales funcionan desde la
+publicación del lanzamiento):</p>
+<table>
+<thead>
+<tr>
+<th>Canal</th>
+<th>Dirección</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Documentación</td>
+<td><a href="../../es/docs/">Documentación en el sitio</a></td>
+</tr>
+<tr>
+<td>Informar de un error</td>
+<td><a href="https://github.com/errantlauncher/ErrantLauncher/issues">GitHub Issues</a></td>
+</tr>
+<tr>
+<td>Lanzamientos</td>
+<td><a href="https://github.com/errantlauncher/ErrantLauncher/releases">GitHub Releases</a></td>
+</tr>
+</tbody>
+</table>
+<p>Antes de escribir, echa un vistazo a las
+<a href="../../es/docs/faq/">FAQ y solución de problemas</a> — muchas preguntas
+(SmartScreen, «Solo lectura», estados de tarjetas, tamaño de
+ventana) ya están respondidas ahí.</p>
+<h2 id="cómo-describir-un-error">Cómo describir un error</h2>
+<p>Un buen informe responde a tres preguntas:</p>
+<ol>
+<li><strong>Qué hacías</strong> — pasos de reproducción, en orden. Por ejemplo:
+   «abrí el Editor → Importación masiva → elegí la carpeta
+   D:\Tools → pulsé "Escanear"».</li>
+<li><strong>Qué esperabas</strong> — «debía aparecer una lista de candidatos».</li>
+<li><strong>Qué pasó</strong> — «la app se cerró» / «apareció un mensaje …» —
+   cita el texto del mensaje literalmente o adjunta una captura.</li>
+</ol>
+<h2 id="qué-adjuntar-al-informe">Qué adjuntar al informe</h2>
+<table>
+<thead>
+<tr>
+<th>Información</th>
+<th>Dónde encontrarla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Versión de la app</td>
+<td>Ventana «Acerca de» (p. ej. <code>1.0.0-beta.1</code>)</td>
+</tr>
+<tr>
+<td>Versión y arquitectura de Windows</td>
+<td>Win+R → <code>winver</code>; arquitectura — en «Configuración → Sistema → Acerca de»</td>
+</tr>
+<tr>
+<td>Escala de pantalla</td>
+<td>Configuración → Sistema → Pantalla → Escala (si el problema es de visualización)</td>
+</tr>
+<tr>
+<td>Desde dónde se ejecuta la app</td>
+<td>Ruta del exe; disco local o USB</td>
+</tr>
+<tr>
+<td>Registros</td>
+<td><code>ErrantLauncher\logs\app.log</code> y <code>bootstrap.log</code> — la carpeta <code>ErrantLauncher</code> está junto al exe</td>
+</tr>
+<tr>
+<td>Pasos de reproducción</td>
+<td>Ver arriba — cuanto más precisos, mejor</td>
+</tr>
+<tr>
+<td>Texto del mensaje de error</td>
+<td>Literalmente o una captura</td>
+</tr>
+</tbody>
+</table>
+<p>Antes de enviar un registro, ábrelo en el Bloc de notas y revisa el
+contenido: los registros pueden contener rutas a tus archivos y
+carpetas — quita lo que no quieras revelar.</p>
+<h2 id="qué-no-enviar">Qué NO enviar</h2>
+<ul>
+<li>Contraseñas, claves, tokens — la app ni los guarda ni los pide,
+  pero pueden colarse accidentalmente en un texto copiado o una
+  captura.</li>
+<li>El contenido completo de tus tarjetas si contiene datos
+  personales: rutas, comandos, enlaces — envía solo los fragmentos
+  relacionados con el problema.</li>
+<li>La carpeta <code>ErrantLauncher</code> entera si no te la han pedido:
+  exporta la configuración solo a petición del soporte y solo tras
+  revisar su contenido.</li>
+</ul>
+<h2 id="qué-esperar">Qué esperar</h2>
+<p>Este es un proyecto independiente y gratuito en fase beta: no hay
+promesas sobre tiempos de respuesta, pero cada informe bien
+descrito ayuda a lanzar la versión estable antes. Vigila la página
+de lanzamientos — las correcciones llegan en las nuevas versiones.</p>
+<hr></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../" data-lang="es"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Requisitos del sistema y compatibilidad — Errant Launcher</title>
+<meta name="description" content="Requisitos del sistema y compatibilidad">
+<link rel="canonical" href="https://errantlauncher.com/es/docs/requirements/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/requirements/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/requirements/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/requirements/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/requirements/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/requirements/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/requirements/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/requirements/">
+<link rel="icon" type="image/svg+xml" href="../../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../../" data-lang="es" data-page="docs/requirements" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="requirements"></aside><div class="docs-content page-body"><h1 id="requisitos-del-sistema-y-compatibilidad">Requisitos del sistema y compatibilidad</h1>
+<p>Errant Launcher es un programa portátil: solo necesita una edición de
+Windows adecuada y algo de espacio libre. A continuación se separan
+los <strong>requisitos confirmados</strong>, las <strong>recomendaciones</strong> y las
+<strong>limitaciones conocidas</strong> de la versión beta actual.</p>
+<hr>
+<h2 id="contenido">Contenido</h2>
+<ul>
+<li><a href="#requisitos-mínimos">Requisitos mínimos</a></li>
+<li><a href="#instalación-e-inicio">Instalación e inicio</a></li>
+<li><a href="#requisitos-de-pantalla">Requisitos de pantalla</a></li>
+<li><a href="#disco-y-permisos-de-acceso">Disco y permisos de acceso</a></li>
+<li><a href="#ejecución-desde-una-unidad-usb">Ejecución desde una unidad USB</a></li>
+<li><a href="#limitaciones-de-compatibilidad-conocidas">Limitaciones de compatibilidad conocidas</a></li>
+</ul>
+<hr>
+<h2 id="requisitos-mínimos">Requisitos mínimos</h2>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Requisito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sistema operativo</td>
+<td>Windows 10 versión 1607 o posterior</td>
+</tr>
+<tr>
+<td>Arquitectura</td>
+<td>64 bits (x64)</td>
+</tr>
+<tr>
+<td>.NET</td>
+<td><strong>No necesario</strong> — el entorno de ejecución está integrado en el archivo del programa</td>
+</tr>
+<tr>
+<td>Instalación</td>
+<td>No necesaria — un único ejecutable</td>
+</tr>
+<tr>
+<td>Permisos de administrador</td>
+<td>No necesarios para ejecutar ni trabajar</td>
+</tr>
+</tbody>
+</table>
+<p><strong>No compatibles:</strong></p>
+<ul>
+<li>Windows 7, 8 y 8.1 (limitación de la plataforma .NET 8 utilizada);</li>
+<li>ediciones de Windows de 32 bits — no se distribuye compilación x86;</li>
+<li>procesadores ARM64 — no hay compilación dedicada; en dispositivos
+  ARM64 ejecuta la versión x64 mediante la emulación estándar de
+  Windows.</li>
+</ul>
+<h2 id="instalación-e-inicio">Instalación e inicio</h2>
+<p>No hay instalador — el programa se distribuye como un único archivo
+<code>ErrantLauncher-x64.exe</code>.</p>
+<ol>
+<li>Copia el archivo a cualquier carpeta: <code>Documentos</code>, un directorio
+   propio en el disco o una unidad USB.</li>
+<li>Ejecútalo con doble clic.</li>
+<li>En el primer inicio se crea la carpeta <code>ErrantLauncher</code> junto al
+   archivo del programa — ahí se guardan todas las tarjetas, la
+   configuración y los datos de servicio.</li>
+</ol>
+<div class="callout callout-warn"><b>Atención</b><p><strong>Aviso de SmartScreen.</strong> El ejecutable no está firmado
+digitalmente, por lo que Windows puede mostrar una advertencia —
+es lo esperado para una versión beta. Cómo verificar la autenticidad
+del archivo: <a href="../../../es/docs/faq/">FAQ</a>.</p>
+</div>
+<h2 id="requisitos-de-pantalla">Requisitos de pantalla</h2>
+<p>Las ventanas del programa tienen <strong>tamaño fijo</strong> — no se puede
+cambiar:</p>
+<ul>
+<li>contenido de la ventana: <strong>1000 × 620 DIP</strong>;</li>
+<li>tamaño exterior de la ventana incluida la sombra decorativa:
+  <strong>1028 × 648 DIP</strong>.</li>
+</ul>
+<p><strong>DIP</strong> son unidades lógicas de tamaño de interfaz, no píxeles
+físicos de la pantalla. El tamaño real de la ventana en píxeles
+depende de la escala de Windows (por ejemplo, con escala del 150 %
+la ventana ocupará unos 1540 × 970 píxeles físicos).</p>
+<p>Para mostrar la interfaz completa, el <strong>área de trabajo de la
+pantalla</strong> (la pantalla sin la barra de tareas) debe contener la
+ventana entera. Los valores altos de escala reducen el área de
+trabajo en unidades lógicas y pueden requerir una resolución de
+pantalla mayor.</p>
+<p>Si el área de trabajo es menor que el tamaño de la ventana, al
+centrarse una parte puede quedar fuera de los bordes de la pantalla,
+incluida la barra superior con los botones de minimizar y cerrar.</p>
+<div class="callout callout-tip"><b>Consejo</b><p><strong>En la práctica:</strong> en escritorios típicos (1920 × 1080 o más) con
+escala del 100–150 % la ventana cabe por completo. En pantallas de
+baja resolución con escala alta (por ejemplo, 1366 × 768 al
+125–150 %) el área de trabajo puede quedarse corta — comprueba la
+visualización en tu pantalla en el primer inicio.</p>
+</div>
+<h2 id="disco-y-permisos-de-acceso">Disco y permisos de acceso</h2>
+<ul>
+<li><strong>Ubicación.</strong> El programa debe estar en una carpeta desde la que
+  se permita la lectura; para guardar datos también hace falta
+  escritura.</li>
+<li><strong>Escritura.</strong> Si la carpeta <code>ErrantLauncher</code> es de solo lectura,
+  el programa se abrirá en <strong>modo de solo lectura</strong>: las tarjetas se
+  pueden ver y ejecutar, pero los cambios no se guardan — se muestra
+  una notificación clara al respecto.</li>
+<li><strong>Registro y perfil.</strong> El programa no escribe nada en el registro
+  de Windows ni en las carpetas del perfil de usuario — todos los
+  datos viven únicamente en <code>ErrantLauncher\</code> junto al exe.</li>
+<li><strong>Carpeta temporal.</strong> En cada inicio la aplicación de un solo
+  archivo desempaqueta sus bibliotecas en
+  <code>%TEMP%\.net\ErrantLauncher</code>. Estos directorios se acumulan y no
+  se limpian automáticamente; se pueden borrar manualmente con el
+  programa cerrado.</li>
+</ul>
+<h2 id="ejecución-desde-una-unidad-usb">Ejecución desde una unidad USB</h2>
+<p>El programa está diseñado para funcionar desde medios extraíbles:</p>
+<ul>
+<li>todo el conjunto — el exe y la carpeta <code>ErrantLauncher</code> — se
+  traslada tal cual;</li>
+<li>la letra de la unidad puede cambiar entre equipos: los datos se
+  buscan junto al ejecutable, no por una ruta absoluta.</li>
+</ul>
+<p><strong>Limitaciones:</strong></p>
+<ul>
+<li>extraer la unidad USB durante el trabajo puede terminar el proceso —
+  cierra el programa antes de extraerla;</li>
+<li>si la unidad no está disponible temporalmente, el programa informa
+  «Sin medio» y conserva los cambios en memoria hasta su
+  reconexión;</li>
+<li>las tarjetas que referencian archivos por letra de unidad (por
+  ejemplo, <code>D:\Tools\app.exe</code>) pueden no abrirse en un equipo donde
+  esa letra no existe.</li>
+</ul>
+<h2 id="limitaciones-de-compatibilidad-conocidas">Limitaciones de compatibilidad conocidas</h2>
+<ul>
+<li>Solo Windows; no hay versiones para macOS ni Linux.</li>
+<li>Solo x64; no hay compilaciones x86 ni ARM64.</li>
+<li>El ejecutable no está firmado — espera el aviso de SmartScreen.</li>
+</ul>
+<hr></div></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../../" data-lang="es"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy and data handling — Errant Launcher</title>
+<meta name="description" content="Privacy and data handling">
+<link rel="canonical" href="https://errantlauncher.com/privacy/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/privacy/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/privacy/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/privacy/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/privacy/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/privacy/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/privacy/">
+<link rel="icon" type="image/svg+xml" href="../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../" data-lang="en" data-page="privacy" data-active=""></header>
+<main>
+<div class="container page-body"><h1 id="privacy-and-data-handling">Privacy and data handling</h1>
+<hr>
+<h2 id="in-short">In short</h2>
+<ul>
+<li>All app data is stored <strong>locally</strong> — in the <code>ErrantLauncher</code> folder
+  next to the executable.</li>
+<li><strong>No telemetry.</strong> The app does not send statistics, usage reports
+  or diagnostics to the developer.</li>
+<li>The app itself <strong>makes no outbound network requests</strong> — not for
+  update checks, analytics or activation.</li>
+<li>The network is only used when you open it yourself: launching a
+  link card, a custom command, or a program with its own internet
+  access.</li>
+<li>No account, registration or internet connection is required.</li>
+</ul>
+<h2 id="what-data-the-app-creates">What data the app creates</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Where it is stored</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sections, categories, cards</td>
+<td><code>ErrantLauncher\sections\*.json</code></td>
+<td>Names, paths to your files and programs, commands, links, launch settings, favorite marks, group composition</td>
+</tr>
+<tr>
+<td>Settings</td>
+<td><code>ErrantLauncher\settings.json</code></td>
+<td>Theme, accent color, language, startup section, card styles, tray behavior</td>
+</tr>
+<tr>
+<td>State</td>
+<td><code>ErrantLauncher\state.json</code></td>
+<td>Window position and state, last opened section, launch counters</td>
+</tr>
+<tr>
+<td>Icons</td>
+<td><code>ErrantLauncher\custom-icons\</code></td>
+<td>Icon files you added and icons extracted from programs</td>
+</tr>
+<tr>
+<td>Logs</td>
+<td><code>ErrantLauncher\logs\</code></td>
+<td>Local diagnostic logs <code>app.log</code> and <code>bootstrap.log</code> — technical messages about the app's operation and errors</td>
+</tr>
+<tr>
+<td>Service backups</td>
+<td><code>ErrantLauncher\.backup\</code>, <code>.mass-import-backups\</code></td>
+<td>Automatic backups of data files</td>
+</tr>
+</tbody>
+</table>
+<p>Everything listed stays on your computer or your drive.
+The app does not write to the Windows registry or the user profile.</p>
+<h2 id="what-is-sent-to-the-developer">What is sent to the developer</h2>
+<p><strong>Nothing.</strong> The app has no telemetry, analytics, automatic error
+reports, online update checks or statistics collection.</p>
+<p>The developer only receives what you <strong>voluntarily</strong> send yourself
+when contacting support — for example, the text of a message
+describing the problem or an attached log. What is useful to attach
+and what not to send: <a href="../support/">Support and bug reports</a>.</p>
+<h2 id="network-requests">Network requests</h2>
+<h3 id="the-app-itself">The app itself</h3>
+<p>The app code contains no network calls: Errant Launcher does not
+contact the developer's servers, does not check for updates and does
+not download data from the internet. The only network-related action
+is opening addresses in your browser at your command:</p>
+<ul>
+<li><strong>URL / URI</strong> card types;</li>
+<li>links in the <strong>"About"</strong> window (website, documentation, bug report
+  page, GitHub releases, project support).</li>
+</ul>
+<p>Opening a link is performed by the operating system and your
+browser — further interaction with the site follows their rules,
+not the launcher's.</p>
+<h3 id="through-user-cards">Through user cards</h3>
+<p>Keep in mind that cards launch <strong>your</strong> programs and commands:</p>
+<ul>
+<li>a launched program may access the internet under its own rules;</li>
+<li>command cards execute what you wrote in them — including network
+  commands;</li>
+<li>mass import can scan network paths (UNC) if you enable the
+  corresponding filter — the read is performed from your network
+  resources at your choice.</li>
+</ul>
+<p>So "no telemetry" does not mean "no network activity at all":
+network activity is created by the programs and commands you launch,
+not by the launcher itself.</p>
+<h2 id="logs">Logs</h2>
+<p>Local logs are kept in <code>ErrantLauncher\logs\</code>. They may contain
+technical details: error messages, paths to data files and
+configuration file names. Logs are never sent anywhere — but before
+attaching them to a bug report, it makes sense to review the file
+and remove details you do not want to disclose (for example, paths
+containing folder names).</p>
+<h2 id="imported-files">Imported files</h2>
+<p>The "Import configuration" feature warns: the imported file is not
+checked by the launcher for safety and may contain commands and
+links. Import configuration files only from sources you trust.</p>
+<h2 id="deleting-data">Deleting data</h2>
+<ul>
+<li>Deleting the <code>ErrantLauncher</code> folder erases all local app data —
+  no copies exist on third-party servers.</li>
+<li>The "Delete all data" function in settings does the same from
+  inside the app (after two confirmations).</li>
+<li>Temporary unpacked files in <code>%TEMP%\.net\ErrantLauncher</code>
+  contain only the app's libraries and can be deleted manually
+  while the app is closed.</li>
+</ul></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../" data-lang="en"></footer>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

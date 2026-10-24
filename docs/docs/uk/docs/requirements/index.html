@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Системні вимоги та сумісність — Errant Launcher</title>
+<meta name="description" content="Системні вимоги та сумісність">
+<link rel="canonical" href="https://errantlauncher.com/uk/docs/requirements/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/requirements/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/requirements/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/requirements/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/requirements/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/requirements/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/requirements/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/requirements/">
+<link rel="icon" type="image/svg+xml" href="../../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../../" data-lang="uk" data-page="docs/requirements" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="requirements"></aside><div class="docs-content page-body"><h1 id="системні-вимоги-та-сумісність">Системні вимоги та сумісність</h1>
+<p>Errant Launcher — переносна програма: їй потрібен лише відповідний
+випуск Windows і трохи вільного місця. Нижче розділено
+<strong>підтверджені вимоги</strong>, <strong>рекомендації</strong> та <strong>відомі обмеження</strong>
+поточної бета-версії.</p>
+<hr>
+<h2 id="зміст">Зміст</h2>
+<ul>
+<li><a href="#мінімальні-вимоги">Мінімальні вимоги</a></li>
+<li><a href="#встановлення-та-запуск">Встановлення та запуск</a></li>
+<li><a href="#вимоги-до-екрана">Вимоги до екрана</a></li>
+<li><a href="#диск-і-права-доступу">Диск і права доступу</a></li>
+<li><a href="#запуск-із-usb-накопичувача">Запуск із USB-накопичувача</a></li>
+<li><a href="#відомі-обмеження-сумісності">Відомі обмеження сумісності</a></li>
+</ul>
+<hr>
+<h2 id="мінімальні-вимоги">Мінімальні вимоги</h2>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Вимога</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Операційна система</td>
+<td>Windows 10 версії 1607 або новіша</td>
+</tr>
+<tr>
+<td>Архітектура</td>
+<td>64-розрядна (x64)</td>
+</tr>
+<tr>
+<td>.NET</td>
+<td><strong>Не потрібен</strong> — середовище виконання вбудовано у файл програми</td>
+</tr>
+<tr>
+<td>Встановлення</td>
+<td>Не потрібне — один виконуваний файл</td>
+</tr>
+<tr>
+<td>Права адміністратора</td>
+<td>Не потрібні для запуску та роботи</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Не підтримуються:</strong></p>
+<ul>
+<li>Windows 7, 8 та 8.1 (обмеження використовуваної платформи .NET 8);</li>
+<li>32-розрядні випуски Windows — збірки x86 не постачається;</li>
+<li>процесори ARM64 — окремої збірки немає; на ARM64-пристроях
+  запускайте x64-версію через штатну емуляцію Windows.</li>
+</ul>
+<h2 id="встановлення-та-запуск">Встановлення та запуск</h2>
+<p>Інсталятора немає — програма постачається одним файлом
+<code>ErrantLauncher-x64.exe</code>.</p>
+<ol>
+<li>Скопіюйте файл у будь-яку папку: <code>Документи</code>, окремий каталог на
+   диску або USB-накопичувач.</li>
+<li>Запустіть його подвійним клацанням.</li>
+<li>Під час першого запуску поруч із файлом програми створюється папка
+   <code>ErrantLauncher</code> — у ній зберігаються всі картки, налаштування та
+   службові дані.</li>
+</ol>
+<div class="callout callout-warn"><b>Увага</b><p><strong>Попередження SmartScreen.</strong> Виконуваний файл не підписаний
+цифровим підписом, тому Windows може показати попередження — це
+очікувано для бета-версії. Як перевірити справжність файлу:
+<a href="../../../uk/docs/faq/">FAQ</a>.</p>
+</div>
+<h2 id="вимоги-до-екрана">Вимоги до екрана</h2>
+<p>Вікна програми мають <strong>фіксований розмір</strong> — змінити його не можна:</p>
+<ul>
+<li>вміст вікна: <strong>1000 × 620 DIP</strong>;</li>
+<li>зовнішній габарит вікна з урахуванням декоративної тіні:
+  <strong>1028 × 648 DIP</strong>.</li>
+</ul>
+<p><strong>DIP</strong> — це логічні одиниці розміру інтерфейсу, а не фізичні пікселі
+екрана. Фактичний розмір вікна в пікселях залежить від масштабу
+Windows (наприклад, за масштабу 150 % вікно займе приблизно
+1540 × 970 фізичних пікселів).</p>
+<p>Для повного відображення інтерфейсу <strong>робоча область екрана</strong> (екран
+без панелі завдань) повинна вміщати вікно цілком. Високі значення
+масштабу зменшують робочу область у логічних одиницях і можуть
+вимагати вищої роздільної здатності екрана.</p>
+<p>Якщо робоча область менша за габарит вікна, частина вікна під час
+центрування може опинитися за краями екрана, включно з верхньою
+панеллю з кнопками згортання та закриття.</p>
+<div class="callout callout-tip"><b>Порада</b><p><strong>На практиці:</strong> на типових десктопах (1920 × 1080 і вище) за
+масштабу 100–150 % вікно вміщується повністю. На екранах із низькою
+роздільною здатністю та високим масштабом (наприклад, 1366 × 768 за
+125–150 %) робочої області може не вистачити — перевірте
+відображення на своєму екрані під час першого запуску.</p>
+</div>
+<h2 id="диск-і-права-доступу">Диск і права доступу</h2>
+<ul>
+<li><strong>Розташування.</strong> Програма має лежати в папці, з якої дозволене
+  читання; для збереження даних потрібна і можливість запису.</li>
+<li><strong>Запис.</strong> Якщо папка <code>ErrantLauncher</code> доступна лише для читання,
+  програма відкриється в <strong>режимі лише читання</strong>: картки можна
+  переглядати й запускати, але зміни не зберігаються — про це
+  виводиться зрозуміле сповіщення.</li>
+<li><strong>Реєстр і профіль.</strong> Програма нічого не пише в реєстр Windows і в
+  папки профілю користувача — усі дані живуть лише в
+  <code>ErrantLauncher\</code> поруч із exe-файлом.</li>
+<li><strong>Тимчасова папка.</strong> Під час кожного запуску однофайлова програма
+  розпаковує свої бібліотеки в <code>%TEMP%\.net\ErrantLauncher</code>. Ці
+  каталоги накопичуються й не очищаються автоматично; їх можна
+  безпечно видалити вручну, доки програма закрита.</li>
+</ul>
+<h2 id="запуск-із-usb-накопичувача">Запуск із USB-накопичувача</h2>
+<p>Програма розрахована на запуск зі знімних носіїв:</p>
+<ul>
+<li>увесь комплект — exe-файл і папка <code>ErrantLauncher</code> — переноситься
+  як є;</li>
+<li>літера диска може змінюватися між комп'ютерами: дані шукаються
+  поруч із виконуваним файлом, а не за абсолютним шляхом.</li>
+</ul>
+<p><strong>Обмеження:</strong></p>
+<ul>
+<li>вилучення USB-носія під час роботи може завершити процес —
+  закривайте програму перед вилученням;</li>
+<li>якщо накопичувач тимчасово недоступний, програма повідомляє
+  «Немає носія» і зберігає зміни в пам'яті до його повторного
+  підключення;</li>
+<li>картки, що посилаються на файли з літерою диска (наприклад,
+  <code>D:\Tools\app.exe</code>), можуть не відкритися на комп'ютері, де цієї
+  літери немає.</li>
+</ul>
+<h2 id="відомі-обмеження-сумісності">Відомі обмеження сумісності</h2>
+<ul>
+<li>Лише Windows; версій для macOS та Linux немає.</li>
+<li>Лише x64; збірок x86 та ARM64 немає.</li>
+<li>Виконуваний файл не підписаний — очікуйте попередження SmartScreen.</li>
+</ul>
+<hr></div></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../../" data-lang="uk"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>
