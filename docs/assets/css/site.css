@@ -328,6 +328,25 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
     .dl-actions .btn-ghost { align-self: flex-start; min-height: 0; }
     .wallet-line { flex-direction: column; }
     .wallet-item .copy-btn { align-self: stretch; }
+    .docs-grid { grid-template-columns: 1fr; }
+    .container { padding: 0 16px; }
+    .hero-title h1 { font-size: 28px; }
+    .tagline { font-size: 17px; }
+    .lead { font-size: 15px; }
+    .page-body h1 { font-size: 25px; }
+    .page-body table { display: block; overflow-x: auto; max-width: 100%; }
+    .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+    .footer-bottom { flex-direction: column; gap: 4px; }
+}
+@media (max-width: 720px) {
+    .main-nav { display: none; }
+    .site-header .container { gap: 10px; }
+}
+@media (max-width: 480px) {
+    .header-actions a span { display: none; }
+    .site-header { top: 8px; margin-top: 8px; }
+    .hero-title img { width: 44px; height: 46px; }
+    .wallet-item { gap: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
