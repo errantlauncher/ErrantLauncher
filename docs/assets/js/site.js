@@ -328,7 +328,8 @@
             });
             Object.keys(byArch).forEach(function (arch) {
                 var a = byArch[arch];
-                var card = wrap.querySelector('[data-arch="' + arch + '"]');
+                var card = wrap.matches('[data-arch="' + arch + '"]') ? wrap
+                           : wrap.querySelector('[data-arch="' + arch + '"]');
                 if (!card) return;
                 var btn = card.querySelector('[data-dl]');
                 btn.href = a.browser_download_url;
