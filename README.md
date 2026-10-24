@@ -15,7 +15,7 @@ to work on different computers.
 
 <br>
 
-[![Download for Windows x64](https://img.shields.io/badge/DOWNLOAD-ErrantLauncher--x64.exe-2ea44f?style=for-the-badge)](https://github.com/errantlauncher/ErrantLauncher/releases/latest/download/ErrantLauncher-x64.exe)
+[![Download for Windows x64](https://img.shields.io/badge/DOWNLOAD-ErrantLauncher--x64.exe-2ea44f?style=for-the-badge)](https://github.com/errantlauncher/ErrantLauncher/releases)
 [![Website](https://img.shields.io/badge/WEBSITE-errantlauncher.com-0078D6?style=for-the-badge)](https://errantlauncher.com/)
 [![Documentation](https://img.shields.io/badge/DOCS-errantlauncher.com%2Fdocs-555?style=for-the-badge)](https://errantlauncher.com/docs/)
 

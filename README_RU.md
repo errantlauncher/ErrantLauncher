@@ -15,7 +15,7 @@
 
 <br>
 
-[![Скачать для Windows x64](https://img.shields.io/badge/СКАЧАТЬ-ErrantLauncher--x64.exe-2ea44f?style=for-the-badge)](https://github.com/errantlauncher/ErrantLauncher/releases/latest/download/ErrantLauncher-x64.exe)
+[![Скачать для Windows x64](https://img.shields.io/badge/СКАЧАТЬ-ErrantLauncher--x64.exe-2ea44f?style=for-the-badge)](https://github.com/errantlauncher/ErrantLauncher/releases)
 [![Сайт](https://img.shields.io/badge/САЙТ-errantlauncher.com-0078D6?style=for-the-badge)](https://errantlauncher.com/ru/)
 [![Документация](https://img.shields.io/badge/ДОКУМЕНТАЦИЯ-errantlauncher.com%2Fdocs-555?style=for-the-badge)](https://errantlauncher.com/ru/docs/)
 
