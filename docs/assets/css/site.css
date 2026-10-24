@@ -78,6 +78,11 @@ main { padding-top: 64px; }
 section { margin-bottom: 64px; }
 a { color: var(--text-2); text-decoration: none; }
 a:hover { color: var(--text); }
+.page-body a:not(.docs-grid-card):not(.btn):not(.copy-btn) {
+    color: var(--text); text-decoration: underline;
+    text-underline-offset: 3px; text-decoration-color: var(--accent-soft); }
+.page-body a:not(.docs-grid-card):not(.btn):not(.copy-btn):hover {
+    color: var(--accent); text-decoration-color: var(--accent); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 [id] { scroll-margin-top: 90px; }
 .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
@@ -169,13 +174,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 /* feature cards */
 .feat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
 .feat-grid-3 { grid-template-columns: repeat(3, 1fr); }
-.feat-card { padding: 30px 34px; border-radius: var(--radius-card);
+.feat-card { padding: 20px 26px; border-radius: var(--radius-card);
     background: var(--base); box-shadow: var(--sh-raised);
     border: 1px solid var(--divider); min-width: 0; }
 .feat-ic { display: inline-flex; align-items: center; justify-content: center;
     width: 44px; height: 44px; border-radius: var(--radius-sm);
     background: var(--base); box-shadow: var(--sh-sunken); color: var(--accent);
-    flex: none; margin-bottom: 14px; }
+    flex: none; margin-bottom: 10px; }
 .feat-ic svg { width: 20px; height: 20px; }
 .feat-card h3 { margin: 0 0 8px; font-size: 1.02rem; }
 .feat-card p { font-size: 14.5px; color: var(--text-2); margin: 0; line-height: 1.55; }
