@@ -28,6 +28,7 @@
         'package-open': '<path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z"/><path d="M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13"/><path d="M21 12.43a1.93 1.93 0 0 0 0-3.36L8.83 2.2a1.64 1.64 0 0 0-1.63 0L3 4.57a1.93 1.93 0 0 0 0 3.36l12.18 6.86a1.636 1.636 0 0 0 1.63 0z"/>',
         'database': '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>',
         'lock': '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+        'arrow-up': '<path d="M12 19V5"/><path d="m5 12 7-7 7 7"/>',
         'circle-question-mark': '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
         'heart': '<path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>',
         'globe': '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
@@ -183,9 +184,9 @@
 
     function navLinks(root) {
         return [
-            { id: 'download',    href: loc(root, 'download/index.html'),    label: T.navDownload },
-            { id: 'docs',        href: loc(root, 'docs/index.html'),        label: T.navGuide },
-            { id: 'support',     href: loc(root, 'support/index.html'),     label: T.navSupport }
+            { id: 'download',    href: loc(root, 'download/index.html'),    label: T.navDownload, ic: 'download' },
+            { id: 'docs',        href: loc(root, 'docs/index.html'),        label: T.navGuide,    ic: 'notebook-text' },
+            { id: 'support',     href: loc(root, 'support/index.html'),     label: T.navSupport,  ic: 'circle-question-mark' }
         ];
     }
 
@@ -212,7 +213,7 @@
     function renderHeader(root, active, pageId) {
         var nav = navLinks(root).map(function (l) {
             var cur = l.id === active ? ' class="on" aria-current="page"' : '';
-            return '<a href="' + l.href + '"' + cur + '>' + l.label + '</a>';
+            return '<a href="' + l.href + '"' + cur + '>' + icon(l.ic, 16) + '<span>' + l.label + '</span></a>';
         }).join('');
         var actions =
             '<a href="' + EXT.github + '" rel="noopener" title="GitHub">' +
@@ -422,6 +423,34 @@
         document.querySelectorAll('i[data-icon]').forEach(function (el) {
             el.outerHTML = icon(el.dataset.icon, el.dataset.size || 18);
         });
+
+        var topBtn = document.createElement('button');
+        topBtn.className = 'to-top';
+        topBtn.type = 'button';
+        topBtn.setAttribute('aria-label', 'Back to top');
+        topBtn.innerHTML = icon('arrow-up', 18);
+        document.body.appendChild(topBtn);
+        window.addEventListener('scroll', function () {
+            topBtn.classList.toggle('show', window.scrollY > 600);
+        }, { passive: true });
+        topBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('in');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: .08 });
+            document.querySelectorAll('main section').forEach(function (s) {
+                s.classList.add('reveal');
+                io.observe(s);
+            });
+        }
 
     });
 })();
