@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preguntas frecuentes y solución de problemas — Errant Launcher</title>
+<meta name="description" content="Preguntas frecuentes y solución de problemas">
+<link rel="canonical" href="https://errantlauncher.com/es/docs/faq/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/faq/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/faq/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/faq/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/faq/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/faq/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/faq/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/faq/">
+<link rel="icon" type="image/svg+xml" href="../../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../../" data-lang="es" data-page="docs/faq" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="faq"></aside><div class="docs-content page-body"><h1 id="preguntas-frecuentes-y-solución-de-problemas">Preguntas frecuentes y solución de problemas</h1>
+<hr>
+<h2 id="contenido">Contenido</h2>
+<ul>
+<li><a href="#la-aplicación-no-se-inicia">La aplicación no se inicia</a></li>
+<li><a href="#aviso-de-smartscreen">Aviso de SmartScreen</a></li>
+<li><a href="#hace-falta-net-instalado">¿Hace falta .NET instalado?</a></li>
+<li><a href="#errant-launcher-ya-está-en-ejecución">«Errant Launcher ya está en ejecución»</a></li>
+<li><a href="#modo-solo-lectura-y-sin-medio">Modo «Solo lectura» y «Sin medio»</a></li>
+<li><a href="#archivo-dañado">«Archivo dañado»</a></li>
+<li><a href="#ejecución-desde-una-unidad-usb">Ejecución desde una unidad USB</a></li>
+<li><a href="#una-tarjeta-comando-deja-una-ventana-de-consola">Una tarjeta-comando deja una ventana de consola</a></li>
+<li><a href="#la-tarjeta-muestra-archivo-no-encontrado-o-medio-no-disponible">La tarjeta muestra «Archivo no encontrado» o «Medio no disponible»</a></li>
+<li><a href="#la-importación-masiva-terminó-parcialmente-o-con-errores">La importación masiva terminó parcialmente o con errores</a></li>
+<li><a href="#la-ventana-no-cabe-en-la-pantalla">La ventana no cabe en la pantalla</a></li>
+<li><a href="#actualizar-y-conservar-los-datos">Actualizar y conservar los datos</a></li>
+<li><a href="#dónde-buscar-registros-y-cómo-informar-de-un-error">Dónde buscar registros y cómo informar de un error</a></li>
+</ul>
+<hr>
+<h2 id="la-aplicación-no-se-inicia">La aplicación no se inicia</h2>
+<p><strong>Posibles causas:</strong> versión de Windows obsoleta; arquitectura no
+soportada; una instancia ya en ejecución; carpeta de datos no
+disponible.</p>
+<p><strong>Qué comprobar:</strong></p>
+<ol>
+<li>Windows debe ser de 64 bits, Windows 10 (1607) o posterior.
+   Windows 7/8 y los sistemas de 32 bits no están soportados.</li>
+<li>Mira el área de notificaciones (bandeja) — el programa puede estar
+   ya ejecutándose minimizado.</li>
+<li>Comprueba que existe la carpeta <code>ErrantLauncher</code> junto al exe y
+   que es legible.</li>
+</ol>
+<p><strong>Qué probar:</strong> mueve el exe a una carpeta normal de un disco local
+(por ejemplo, <code>C:\Tools\</code>) y ejecútalo de nuevo; revisa el registro
+<code>ErrantLauncher\logs\bootstrap.log</code> — se crea en los fallos de
+inicio.</p>
+<p><strong>Informar a soporte:</strong> la versión de Windows, la ubicación del exe
+y el contenido de <code>bootstrap.log</code>, si existe.</p>
+<h2 id="aviso-de-smartscreen">Aviso de SmartScreen</h2>
+<p><strong>Causa:</strong> el ejecutable no está firmado digitalmente — para una
+versión beta es lo esperado, no es señal de problema.</p>
+<p><strong>Qué comprobar (recomendado):</strong> la autenticidad del archivo por su
+suma de verificación. En PowerShell, en la carpeta del programa:</p>
+<pre><code class="language-powershell">Get-FileHash .\ErrantLauncher-x64.exe -Algorithm SHA256
+</code></pre>
+<p>Compara el resultado con la cadena del archivo <code>SHA256SUMS.txt</code> del
+paquete de lanzamiento.</p>
+<p><strong>Qué hacer:</strong> en la ventana de SmartScreen pulsa «Más información» →
+«Ejecutar de todas formas». No hace falta ni se recomienda desactivar
+SmartScreen u otras protecciones de Windows.</p>
+<h2 id="hace-falta-net-instalado">¿Hace falta .NET instalado?</h2>
+<p><strong>No.</strong> El entorno de ejecución de .NET está integrado en el
+ejecutable — el programa funciona en una Windows limpia sin .NET
+instalado.</p>
+<p>Ten en cuenta la contrapartida de la entrega en un solo archivo: en
+cada inicio el programa desempaqueta las bibliotecas en
+<code>%TEMP%\.net\ErrantLauncher</code>. Los directorios se acumulan — se pueden
+borrar a mano con la aplicación cerrada.</p>
+<h2 id="errant-launcher-ya-está-en-ejecución">«Errant Launcher ya está en ejecución»</h2>
+<p><strong>Causa:</strong> solo puede funcionar una instancia del programa; un
+segundo inicio muestra esta notificación.</p>
+<p><strong>Qué comprobar:</strong> el área de notificaciones (bandeja) — el programa
+puede haberse minimizado ahí; si no se puede contactar con la
+instancia en ejecución, el programa lo comunicará aparte.</p>
+<p><strong>Qué probar:</strong> cierra el proceso mediante el menú de la bandeja
+«Salir» o el Administrador de tareas y ejecútalo de nuevo.</p>
+<h2 id="modo-solo-lectura-y-sin-medio">Modo «Solo lectura» y «Sin medio»</h2>
+<p><strong>Causas:</strong></p>
+<ul>
+<li><em>Solo lectura</em> — el programa no tiene permisos de escritura en la
+  carpeta de datos (medio protegido, permisos de acceso, cuarentena).</li>
+<li><em>Sin medio</em> — la carpeta de datos no está disponible
+  temporalmente (unidad USB desconectada).</li>
+</ul>
+<p><strong>Qué ocurre:</strong> en modo de solo lectura las tarjetas se pueden ver y
+ejecutar, pero los cambios se rechazan con un mensaje claro. Con
+«Sin medio» los cambios quedan en memoria y se guardarán al volver a
+conectar la unidad — el programa informará «Unidad reconectada».</p>
+<p><strong>Qué comprobar:</strong> si existe la carpeta <code>ErrantLauncher</code> junto al
+exe; si tiene el atributo «solo lectura»; si está conectada la
+unidad con el mismo contenido.</p>
+<h2 id="archivo-dañado">«Archivo dañado»</h2>
+<p><strong>Qué pasó:</strong> uno de los archivos de datos (por ejemplo, de una
+sección o de configuración) no se puede leer. El programa
+<strong>ignora</strong> ese archivo y no lo modifica — el resto de tus datos está
+a salvo.</p>
+<p><strong>Qué se ofrece:</strong> en el diálogo — «Eliminar» el archivo dañado o
+«Conservarlo» (por ejemplo, para intentar restaurarlo a mano).</p>
+<p><strong>Qué probar:</strong> restaurar el archivo desde una copia de seguridad —
+desde un archivo exportado mediante «Importar configuración» o a mano
+desde <code>.backup\</code>/<code>.mass-import-backups\</code> dentro de la carpeta de
+datos.</p>
+<h2 id="ejecución-desde-una-unidad-usb">Ejecución desde una unidad USB</h2>
+<p><strong>Normal:</strong> es un escenario estándar — transporta el exe y la carpeta
+<code>ErrantLauncher</code> juntos.</p>
+<p><strong>Problemas típicos:</strong></p>
+<ul>
+<li>El programa se cerró al extraer — ciérralo <strong>antes</strong> de extraer la
+  unidad.</li>
+<li>Las tarjetas no se ejecutan en otro equipo — referencian archivos
+  por rutas locales; revisa los estados de las tarjetas y las rutas.</li>
+<li>Los cambios no se guardan — véase la sección del modo «Solo
+  lectura».</li>
+</ul>
+<h2 id="una-tarjeta-comando-deja-una-ventana-de-consola">Una tarjeta-comando deja una ventana de consola</h2>
+<p><strong>Es una característica, no un error.</strong> Los comandos se ejecutan con
+<code>cmd /k</code> o <code>powershell -NoExit</code> para que la salida quede en pantalla.
+Cierra la ventana de consola manualmente cuando ya no necesites el
+resultado.</p>
+<p>Ten en cuenta también: los comandos siempre se ejecutan desde la
+carpeta de datos del programa — las tarjetas-comando no tienen
+carpeta de trabajo propia. Si un comando necesita otra carpeta,
+empieza con <code>cd /d "ruta"</code> (o indica la ruta dentro del propio
+comando).</p>
+<h2 id="la-tarjeta-muestra-archivo-no-encontrado-o-medio-no-disponible">La tarjeta muestra «Archivo no encontrado» o «Medio no disponible»</h2>
+<p><strong>Causa:</strong> el programa comprueba la disponibilidad de los destinos
+de las tarjetas. Estados:</p>
+<table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Disponible</td>
+<td>El destino se encontró</td>
+</tr>
+<tr>
+<td>Archivo no encontrado</td>
+<td>No hay archivo en la ruta indicada</td>
+</tr>
+<tr>
+<td>Origen no disponible</td>
+<td>La carpeta/origen no se puede leer</td>
+</tr>
+<tr>
+<td>Medio no disponible</td>
+<td>El disco/unidad no está conectado</td>
+</tr>
+<tr>
+<td>Comprobando…</td>
+<td>Comprobación en curso</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Qué comprobar:</strong> si existe el archivo en la ruta indicada; si está
+conectado el disco necesario (sobre todo tras trasladar el lanzador
+a otro equipo). La ruta se puede corregir en «Editar tarjetas».</p>
+<h2 id="la-importación-masiva-terminó-parcialmente-o-con-errores">La importación masiva terminó parcialmente o con errores</h2>
+<p><strong>Posibles causas:</strong> rutas y nombres duplicados, archivos no
+disponibles, tipos desactivados por los filtros, límite de
+candidatos alcanzado, errores de escritura.</p>
+<p><strong>Qué comprobar:</strong> el informe final de la importación enumera las
+razones («duplicado: ya existe la tarjeta», «el nombre ya está en
+uso», «desaparecido — archivo no encontrado»). Las notas en la
+pantalla de resultados muestran qué recortaron los filtros: tipos,
+arquitecturas, extensiones, carpetas excluidas.</p>
+<p><strong>Qué probar:</strong> ajustar los filtros y la selección; usar «Nueva
+comprobación» en lugar de un nuevo escaneo.</p>
+<p><strong>Si la escritura se interrumpió:</strong> antes de la importación se crea
+automáticamente una copia de seguridad (en <code>.mass-import-backups\</code>).
+El mensaje de error indica su ruta y la acción: copia su contenido
+sobre la carpeta de datos o repite la importación. No borres la
+carpeta de datos a mano — destruiría también las copias de
+seguridad.</p>
+<h2 id="la-ventana-no-cabe-en-la-pantalla">La ventana no cabe en la pantalla</h2>
+<p><strong>Causa:</strong> las ventanas del programa tienen tamaño fijo (contenido
+1000 × 620 DIP, tamaño exterior 1028 × 648 DIP). Si el área de
+trabajo de la pantalla es menor — por ejemplo, baja resolución en
+combinación con una escala de Windows alta — parte de la ventana
+puede salirse de los bordes de la pantalla, incluida la barra
+superior con los botones de la ventana.</p>
+<p><strong>Qué comprobar:</strong> la escala de Windows (Configuración → Sistema →
+Pantalla → Escala) y la resolución de la pantalla.</p>
+<p><strong>Qué probar:</strong> reducir la escala de Windows o elegir una resolución
+mayor; si parte de la ventana queda fuera — cambiar la escala y
+reiniciar el programa para que la ventana se centre de nuevo.</p>
+<p>Detalles: <a href="../../../es/docs/requirements/#requisitos-de-pantalla">Requisitos del sistema</a>.</p>
+<h2 id="actualizar-y-conservar-los-datos">Actualizar y conservar los datos</h2>
+<p><strong>Actualizar:</strong> no hay actualización automática — sustituye el exe
+con el programa cerrado; no toques la carpeta <code>ErrantLauncher</code>.</p>
+<p><strong>Datos tras actualizar:</strong> se conservan. Si los archivos de datos
+fueron creados por una versión más nueva del programa, la versión
+antigua los leerá pero no los modificará — actualiza el programa.</p>
+<p><strong>Ordenación de tarjetas:</strong> el orden de ordenación elegido se guarda
+solo para la sesión — tras reiniciar se aplica el orden
+predeterminado. Es una limitación conocida de la beta, no una
+pérdida de datos.</p>
+<h2 id="dónde-buscar-registros-y-cómo-informar-de-un-error">Dónde buscar registros y cómo informar de un error</h2>
+<p><strong>Registros:</strong> <code>ErrantLauncher\logs\</code> junto al exe — <code>app.log</code>
+(mensajes de trabajo y errores) y <code>bootstrap.log</code> (fallos de
+inicio). Los registros no se envían a ninguna parte automáticamente.</p>
+<p><strong>Cómo informar de un error:</strong> instrucciones paso a paso, qué
+adjuntar y dónde escribir — en el documento
+<a href="../../../es/support/">Soporte e informes de errores</a>.</p>
+<div class="callout callout-warn"><b>Atención</b><p>Antes de enviar un registro revísalo: puede contener rutas a tus
+archivos y carpetas.</p>
+</div>
+<hr></div></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../../" data-lang="es"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

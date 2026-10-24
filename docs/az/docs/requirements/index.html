@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistem tələbləri və uyğunluq — Errant Launcher</title>
+<meta name="description" content="Sistem tələbləri və uyğunluq">
+<link rel="canonical" href="https://errantlauncher.com/az/docs/requirements/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/requirements/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/requirements/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/requirements/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/requirements/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/requirements/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/requirements/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/requirements/">
+<link rel="icon" type="image/svg+xml" href="../../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../../" data-lang="az" data-page="docs/requirements" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="requirements"></aside><div class="docs-content page-body"><h1 id="sistem-tələbləri-və-uyğunluq">Sistem tələbləri və uyğunluq</h1>
+<p>Errant Launcher portativ proqramdır: ona yalnız uyğun Windows nəşri
+və bir az boş yer lazımdır. Aşağıda <strong>təsdiqlənmiş tələblər</strong>,
+<strong>tövsiyələr</strong> və cari beta versiyasının <strong>məlum məhdudiyyətləri</strong>
+ayrılıb.</p>
+<hr>
+<h2 id="mündəricat">Mündəricat</h2>
+<ul>
+<li><a href="#minimal-tələblər">Minimal tələblər</a></li>
+<li><a href="#quraşdırma-və-başlanğıc">Quraşdırma və başlanğıc</a></li>
+<li><a href="#ekran-tələbləri">Ekran tələbləri</a></li>
+<li><a href="#disk-və-giriş-icazələri">Disk və giriş icazələri</a></li>
+<li><a href="#usb-yaddaşdan-icra">USB-yaddaşdan icra</a></li>
+<li><a href="#məlum-uyğunluq-məhdudiyyətləri">Məlum uyğunluq məhdudiyyətləri</a></li>
+</ul>
+<hr>
+<h2 id="minimal-tələblər">Minimal tələblər</h2>
+<table>
+<thead>
+<tr>
+<th>Parametr</th>
+<th>Tələb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Əməliyyat sistemi</td>
+<td>Windows 10 versiya 1607 və ya daha yeni</td>
+</tr>
+<tr>
+<td>Arxitektura</td>
+<td>64-bit (x64)</td>
+</tr>
+<tr>
+<td>.NET</td>
+<td><strong>Tələb olunmur</strong> — iş vaxtı mühiti proqram faylına daxildir</td>
+</tr>
+<tr>
+<td>Quraşdırma</td>
+<td>Tələb olunmur — tək icra faylı</td>
+</tr>
+<tr>
+<td>Administrator hüquqları</td>
+<td>Başlanğıc və iş üçün tələb olunmur</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dəstəklənmir:</strong></p>
+<ul>
+<li>Windows 7, 8 və 8.1 (istifadə olunan .NET 8 platformasının
+  məhdudiyyəti);</li>
+<li>Windows-un 32-bit nəşrləri — x86 yığması təqdim olunmur;</li>
+<li>ARM64 prosessorlar — ayrıca yığma yoxdur; ARM64 cihazlarında
+  x64 versiyasını Windows-un standart emulyasiyası ilə işə salın.</li>
+</ul>
+<h2 id="quraşdırma-və-başlanğıc">Quraşdırma və başlanğıc</h2>
+<p>Quraşdırıcı yoxdur — proqram tək fayl <code>ErrantLauncher-x64.exe</code> kimi
+təqdim olunur.</p>
+<ol>
+<li>Faylı istənilən qovluğa köçürün: <code>Sənədlər</code>, diskdə ayrıca kataloq
+   və ya USB-yaddaş.</li>
+<li>İkiqat vurunla işə salın.</li>
+<li>İlk başlanğıcda proqram faylının yanında <code>ErrantLauncher</code> qovluğu
+   yaradılır — orada bütün kartlar, parametrlər və xidməti
+   məlumatlar saxlanılır.</li>
+</ol>
+<div class="callout callout-warn"><b>Diqqət</b><p><strong>SmartScreen xəbərdarlığı.</strong> İcra faylı rəqəmsal imza ilə
+imzalanmayıb, ona görə Windows xəbərdarlıq göstərə bilər — bu,
+beta versiyası üçün gözləniləndir. Faylın orijinallığını necə
+yoxlamaq: <a href="../../../az/docs/faq/">SSS</a>.</p>
+</div>
+<h2 id="ekran-tələbləri">Ekran tələbləri</h2>
+<p>Proqram pəncərələri <strong>sabit ölçüyə</strong> malikdir — onu dəyişmək olmaz:</p>
+<ul>
+<li>pəncərənin məzmunu: <strong>1000 × 620 DIP</strong>;</li>
+<li>dekorativ kölgə nəzərə alınmaqla pəncərənin xarici ölçüsü:
+  <strong>1028 × 648 DIP</strong>.</li>
+</ul>
+<p><strong>DIP</strong> — interfeys ölçüsünün məntiqi vahididir, ekranın fiziki
+pikselləri deyil. Pəncərənin piksellərlə faktiki ölçüsü Windows
+miqyasından asılıdır (məsələn, 150% miqyasında pəncərə təxminən
+1540 × 970 fiziki piksel tutacaq).</p>
+<p>İnterfeysin tam göstərilməsi üçün ekranın <strong>iş sahəsi</strong> (tapşırıq
+panelsiz ekran) pəncərəni tam sığdırmalıdır. Yüksək miqyas dəyərləri
+iş sahəsini məntiqi vahidlərdə kiçildir və daha yüksək ekran
+görüntü imkanı tələb edə bilər.</p>
+<p>İş sahəsi pəncərənin ölçüsündən kiçikdirsə, mərkəzləşdiriləndə
+pəncərənin bir hissəsi ekranın kənarlarından, o cümlədən bükülmə və
+bağlama düymələri olan yuxarı paneldən kənara çıxa bilər.</p>
+<div class="callout callout-tip"><b>Məsləhət</b><p><strong>Praktikada:</strong> tipik masaüstü kompüterlərdə (1920 × 1080 və yuxarı)
+100–150% miqyasında pəncərə tam yerləşir. Aşağı imkanlı ekranlarda
+yüksək miqyasla (məsələn, 1366 × 768 125–150%-də) iş sahəsi kifayət
+etməyə bilər — ilk başlanğıcda öz ekranınızda göstərilməni
+yoxlayın.</p>
+</div>
+<h2 id="disk-və-giriş-icazələri">Disk və giriş icazələri</h2>
+<ul>
+<li><strong>Yerləşmə.</strong> Proqram oxuma icazəsi olan qovluqda olmalıdır;
+  məlumatların saxlanması üçün yazma da lazımdır.</li>
+<li><strong>Yazma.</strong> <code>ErrantLauncher</code> qovluğu yalnız oxunarsa, proqram
+  <strong>yalnız oxu rejimində</strong> açılır: kartları görmək və işə salmaq
+  olar, lakin dəyişikliklər saxlanılmır — bu barədə aydın bildiriş
+  göstərilir.</li>
+<li><strong>Reyestr və profil.</strong> Proqram Windows reyestrinə və istifadəçi
+  profilinin qovluqlarına heç nə yazmır — bütün məlumatlar yalnız
+  exe faylının yanındakı <code>ErrantLauncher\</code> qovluğunda yaşayır.</li>
+<li><strong>Müvəqqəti qovluq.</strong> Hər başlanğıcda tək-fayl tətbiq
+  kitabxanalarını <code>%TEMP%\.net\ErrantLauncher</code>-ə açır. Bu kataloqlar
+  yığılır və avtomatik təmizlənmir; proqram bağlı ikən onları əllə
+  silmək təhlükəsizdir.</li>
+</ul>
+<h2 id="usb-yaddaşdan-icra">USB-yaddaşdan icra</h2>
+<p>Proqram çıxarıla bilən daşıyıcılardan işə salınmaq üçün
+nəzərdə tutulub:</p>
+<ul>
+<li>bütün dəst — exe faylı və <code>ErrantLauncher</code> qovluğu — olduğu kimi
+  daşınır;</li>
+<li>disk hərfi kompüterlər arasında dəyişə bilər: məlumatlar icra
+  faylının yanında axtarılır, mütləq yolla yox.</li>
+</ul>
+<p><strong>Məhdudiyyətlər:</strong></p>
+<ul>
+<li>iş zamanı USB-daşıyıcını çıxarmaq prosesi dayandıra bilər —
+  çıxarmazdan əvvəl proqramı bağlayın;</li>
+<li>daşıyıcı müvəqqəti əlçatan deyilsə, proqram «Daşıyıcı yoxdur»
+  bildirir və dəyişiklikləri yenidən qoşulana qədər yaddaşda saxlayır;</li>
+<li>disk hərfi ilə fayllara istinad edən kartlar (məsələn,
+  <code>D:\Tools\app.exe</code>) bu hərfin olmadığı kompüterdə açılmaya bilər.</li>
+</ul>
+<h2 id="məlum-uyğunluq-məhdudiyyətləri">Məlum uyğunluq məhdudiyyətləri</h2>
+<ul>
+<li>Yalnız Windows; macOS və Linux versiyaları yoxdur.</li>
+<li>Yalnız x64; x86 və ARM64 yığmaları yoxdur.</li>
+<li>İcra faylı imzalanmayıb — SmartScreen xəbərdarlığını gözləyin.</li>
+</ul>
+<hr></div></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../../" data-lang="az"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

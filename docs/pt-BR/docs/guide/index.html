@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Errant Launcher — Guia do usuário — Errant Launcher</title>
+<meta name="description" content="Errant Launcher — Guia do usuário">
+<link rel="canonical" href="https://errantlauncher.com/pt-BR/docs/guide/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/guide/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/guide/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/guide/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/guide/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/guide/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/guide/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/guide/">
+<link rel="icon" type="image/svg+xml" href="../../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../../" data-lang="pt-BR" data-page="docs/guide" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="guide"></aside><div class="docs-content page-body"><h1 id="errant-launcher-guia-do-usuário">Errant Launcher — Guia do usuário</h1>
+<hr>
+<h2 id="1-sobre-este-guia">1. Sobre este guia</h2>
+<p><strong>O que é o Errant Launcher.</strong> É um aplicativo portátil para Windows
+que reúne em uma única janela cartões para executar e abrir objetos
+de uso frequente: programas, scripts, pastas, arquivos, comandos,
+links e instaladores MSI. Os cartões podem ser organizados em seções
+e categorias. O aplicativo não precisa ser instalado; sua pasta pode
+ser transportada, por exemplo, em um pen drive.</p>
+<p><strong>Como usar este guia.</strong> Você pode ler em sequência — a partir de
+«Primeiros passos» — ou abrir a seção necessária conforme a
+necessidade. Em todo lugar há links para seções relacionadas.</p>
+<h2 id="conteúdo">Conteúdo</h2>
+<ul>
+<li><a href="#1-sobre-este-guia">1. Sobre este guia</a></li>
+<li><a href="#2-primeiros-passos">2. Primeiros passos</a></li>
+<li><a href="#3-interface-e-navegação">3. Interface e navegação</a></li>
+<li><a href="#4-seções-e-categorias">4. Seções e categorias</a></li>
+<li><a href="#5-cartões-princípios-básicos">5. Cartões: princípios básicos</a></li>
+<li><a href="#6-criando-cartões-de-diferentes-tipos">6. Criando cartões de diferentes tipos</a></li>
+<li><a href="#7-executando-e-abrindo-objetos">7. Executando e abrindo objetos</a></li>
+<li><a href="#8-grupos-de-cartões">8. Grupos de cartões</a></li>
+<li><a href="#9-editando-e-organizando-cartões">9. Editando e organizando cartões</a></li>
+<li><a href="#10-favoritos">10. Favoritos</a></li>
+<li><a href="#11-ícones-e-aparência">11. Ícones e aparência</a></li>
+<li><a href="#12-importação-em-massa">12. Importação em massa</a></li>
+<li><a href="#13-importação-exportação-e-backups">13. Importação, exportação e backups</a></li>
+<li><a href="#14-configurações">14. Configurações</a></li>
+<li><a href="#15-armazenamento-de-dados-e-portabilidade">15. Armazenamento de dados e portabilidade</a></li>
+<li><a href="#16-teclado-e-atalhos">16. Teclado e atalhos</a></li>
+<li><a href="#17-solução-de-problemas">17. Solução de problemas</a></li>
+<li><a href="#18-redefinir-e-restaurar-dados">18. Redefinir e restaurar dados</a></li>
+<li><a href="#19-sobre-e-informações-legais">19. Sobre e informações legais</a></li>
+<li><a href="#20-materiais-de-referência">20. Materiais de referência</a></li>
+</ul>
+<p><strong>Convenções do texto:</strong></p>
+<ul>
+<li>nomes de botões, campos e itens de menu aparecem entre aspas, por
+  exemplo «Executar», «Editor», «Salvar»;</li>
+<li><strong>Importante</strong> — aviso sobre possível perda de dados ou ação
+  irreversível;</li>
+<li><strong>Dica</strong> — sugestão para usar o aplicativo de forma mais prática.</li>
+</ul>
+<hr>
+<h2 id="2-primeiros-passos">2. Primeiros passos</h2>
+<h3 id="21-primeira-execução">2.1. Primeira execução</h3>
+<p>Execute o arquivo <code>ErrantLauncher-x64.exe</code>. Não é preciso instalar: o
+aplicativo é portátil. Ao lado do arquivo ele criará sua pasta de
+dados — ali ficarão as configurações, os cartões e os ícones (veja
+detalhes na seção «Armazenamento de dados»).</p>
+<p>Se você executar o aplicativo novamente enquanto ele já está rodando,
+uma segunda janela não é criada. A janela existente é trazida para a
+frente (ou restaurada da bandeja do sistema).</p>
+<h3 id="22-o-que-você-vê-ao-abrir">2.2. O que você vê ao abrir</h3>
+<p>A janela principal consiste em várias áreas:</p>
+<ul>
+<li><strong>no topo</strong> — a barra de título com os botões «minimizar»,
+  «maximizar/restaurar», «fechar»;</li>
+<li><strong>à esquerda</strong> — um painel lateral com o item «Favoritos» e a lista
+  de seções;</li>
+<li><strong>abaixo do título</strong> — as «pílulas» redondas de categorias da seção
+  selecionada;</li>
+<li><strong>no canto superior direito</strong> — o campo «Buscar…», os botões
+  «Editor», de ordenação e de configurações;</li>
+<li><strong>no centro</strong> — a grade de cartões;</li>
+<li><strong>no canto inferior esquerdo</strong> — o botão de status que abre o painel
+  informativo.</li>
+</ul>
+<p>No canto inferior direito podem aparecer etiquetas indicadoras:
+«Modo administrador» (o aplicativo está rodando como administrador),
+«Somente leitura» e «Sem mídia» (problemas com a pasta de dados —
+veja a seção <a href="#17-solução-de-problemas">«Solução de problemas»</a>).</p>
+<h3 id="23-como-os-dados-são-organizados-em-palavras-simples">2.3. Como os dados são organizados — em palavras simples</h3>
+<ul>
+<li><strong>Cartão</strong> — um botão na grade que executa ou abre uma única coisa:
+  um programa, uma pasta, um link etc.</li>
+<li><strong>Categoria</strong> — um subgrupo dentro de uma seção (as pílulas acima
+  da grade).</li>
+<li><strong>Seção</strong> — o nível superior de agrupamento (a lista à esquerda).</li>
+<li><strong>Favoritos</strong> — uma visão separada que reúne os cartões marcados de
+  todas as seções.</li>
+</ul>
+<h3 id="24-primeiras-ações">2.4. Primeiras ações</h3>
+<ol>
+<li>Abra «Editor» → aba «Estrutura» → «Adicionar seção» e
+   «Adicionar categoria» — crie a estrutura para as suas tarefas.</li>
+<li>Volte à janela principal, escolha uma seção e uma categoria.</li>
+<li>Adicione seu primeiro cartão — por qualquer um dos métodos da
+   seção 6.</li>
+<li>Ajuste a aparência pelo botão de configurações (tema, cor de
+   destaque).</li>
+</ol>
+<h3 id="25-como-criar-seu-primeiro-cartão">2.5. Como criar seu primeiro cartão</h3>
+<p>A forma mais rápida — arrastar o arquivo de um programa (<code>.exe</code>)
+diretamente para a janela do Errant Launcher: o cartão aparecerá na
+seção e categoria atuais. Segunda forma: «Editor» → «Adicionar
+cartão» → escolher o tipo → preencher os campos → «Salvar».
+Detalhes na seção 6.</p>
+<hr>
+<h2 id="3-interface-e-navegação">3. Interface e navegação</h2>
+<h3 id="31-janela-principal">3.1. Janela principal</h3>
+<p>A janela pode ser arrastada por uma área livre da barra superior. Os
+botões no canto superior direito minimizam, maximizam e fecham a
+janela. Se a minimização para a bandeja estiver ativada (veja a seção
+<a href="#14-configurações">«Configurações»</a>), o botão «Fechar» esconde a
+janela na bandeja do sistema em vez de encerrar o aplicativo.</p>
+<h3 id="32-painel-lateral">3.2. Painel lateral</h3>
+<p>A lista à esquerda mostra «Favoritos» e todas as seções visíveis.
+Um clique numa seção a seleciona e mostra suas categorias e cartões.
+Um clique numa área vazia do painel o expande/recolhe; um clique no
+fundo da janela com o painel expandido o recolhe de volta. Seções
+ocultas não aparecem aqui (veja a seção 4).</p>
+<p>Um clique direito numa seção abre um menu: «Renomear»,
+«Ocultar seção», «Excluir seção». Numa pílula de categoria:
+«Renomear», «Ocultar».</p>
+<h3 id="33-cartões-e-seus-indicadores">3.3. Cartões e seus indicadores</h3>
+<p>Um cartão mostra um ícone, um nome e pode ter etiquetas:</p>
+<ul>
+<li>«Erro» — o alvo do cartão está indisponível (arquivo excluído,
+  caminho errado);</li>
+<li>«Admin» — o cartão está configurado para executar como
+  administrador;</li>
+<li>«Verificando» — uma verificação de disponibilidade está em
+  andamento;</li>
+<li>etiquetas de arquitetura nos programas: x86, x64, ARM64, Any;</li>
+<li>nos grupos — a marca de grupo (veja a seção 8).</li>
+</ul>
+<p>Um clique esquerdo executa/abre o cartão, um clique direito abre seu
+menu. Se o texto não couber, passe o cursor — aparecerá uma dica com
+o texto completo.</p>
+<h3 id="34-busca">3.4. Busca</h3>
+<p>Digite texto no campo «Buscar…» — a grade é filtrada com um pequeno
+atraso. A busca procura pelo nome do cartão, nome do arquivo de
+destino e descrição; todas as palavras da consulta devem corresponder.
+Esc no campo de busca o limpa, mantendo o foco nele. O botão de
+limpar faz o mesmo.</p>
+<div class="callout callout-tip"><b>Dica</b><p>Enquanto uma busca está ativa, o botão «Editor» fica indisponível —
+limpe a busca primeiro.</p>
+</div>
+<h3 id="35-ordenação">3.5. Ordenação</h3>
+<p>O botão de ordenação na barra de ferramentas abre uma lista de
+opções: «Sem ordenação», «Por nome», «Por tipo», «Por frequência de
+uso». A ordenação por frequência usa o contador de execuções de cada
+cartão — quanto mais você o executa, mais alto ele sobe.</p>
+<h3 id="36-painel-informativo-de-status">3.6. Painel informativo de status</h3>
+<p>O botão de status no canto inferior esquerdo abre um painel com
+contadores e indicadores (modo administrador, modo de armazenamento
+etc.). Pressioná-lo de novo ou Esc o fecha. O painel e a janela de
+configurações não podem estar abertos ao mesmo tempo — um fecha o
+outro.</p>
+<h3 id="37-bandeja-do-sistema">3.7. Bandeja do sistema</h3>
+<p>Se a minimização para a bandeja estiver ativada nas configurações:</p>
+<ul>
+<li>o botão «fechar» esconde a janela na bandeja junto com todas as
+  janelas filhas abertas (elas voltam aos seus lugares ao restaurar);</li>
+<li>um clique no ícone da bandeja mostra/esconde a janela;</li>
+<li>o menu do ícone: «Abrir» e «Sair»;</li>
+<li>«Sair» pedirá confirmação a todas as janelas com alterações não
+  salvas — por exemplo, um editor com formulário incompleto oferecerá
+  salvar ou descartar as edições.</li>
+</ul>
+<p>Se você desativar a minimização para a bandeja enquanto a janela
+estiver oculta, ela volta imediatamente para a tela.</p>
+<hr>
+<h2 id="4-seções-e-categorias">4. Seções e categorias</h2>
+<p><strong>Para quê.</strong> Seções são grandes grupos temáticos («Trabalho»,
+«Multimídia», «Ferramentas»), categorias são subgrupos dentro delas
+(«Navegadores», «Editores»). Cada cartão vive em uma categoria de
+uma seção.</p>
+<p><strong>Gerenciamento</strong> — no editor, aba «Estrutura»:</p>
+<table>
+<thead>
+<tr>
+<th>Ação</th>
+<th>Como fazer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Criar seção</td>
+<td>«Adicionar seção» → inserir um nome</td>
+</tr>
+<tr>
+<td>Criar categoria</td>
+<td>selecionar a seção → «Adicionar categoria» → inserir um nome</td>
+</tr>
+<tr>
+<td>Renomear</td>
+<td>o botão de renomear na linha, ou o menu da seção no painel lateral</td>
+</tr>
+<tr>
+<td>Reordenar</td>
+<td>os botões «para cima»/«para baixo» na linha da seção</td>
+</tr>
+<tr>
+<td>Ocultar/mostrar</td>
+<td>o botão de visibilidade na linha da seção ou categoria</td>
+</tr>
+<tr>
+<td>Trocar ícone da seção</td>
+<td>o botão de ícone na linha da seção → janela de seleção de ícone (seção 11)</td>
+</tr>
+<tr>
+<td>Excluir</td>
+<td>o botão de excluir na linha → confirmação</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regras:</strong> o nome não pode ficar vazio; os nomes das seções e das
+categorias dentro de uma seção devem ser únicos — em caso de
+coincidência o programa informa «já existe».</p>
+<p><strong>Ocultar.</strong> Uma seção oculta desaparece do painel lateral junto com
+todas as suas categorias; uma categoria oculta desaparece das
+pílulas. Nenhum dado é excluído: tudo permanece no editor de
+estrutura e volta pelo interruptor de visibilidade.</p>
+<div class="callout callout-warn"><b>Atenção</b><p><strong>Importante — exclusão:</strong></p>
+</div>
+<ul>
+<li>excluir uma seção <strong>remove irreversivelmente todas as suas
+  categorias e cartões</strong> — o programa avisará sobre isso no diálogo
+  de confirmação;</li>
+<li>excluir uma categoria <strong>remove todos os seus cartões</strong> — também
+  com aviso.</li>
+</ul>
+<p>A ordem e a visibilidade são salvas automaticamente. Se a gravação
+falhar (por exemplo, o armazenamento é somente leitura), o programa
+mostrará um erro e relerá a estrutura — verifique a seção «Solução
+de problemas».</p>
+<hr>
+<h2 id="5-cartões-princípios-básicos">5. Cartões: princípios básicos</h2>
+<p><strong>Um cartão</strong> é um objeto executável na grade. Nove tipos são
+suportados: programa, script, pasta, arquivo, atalho do Windows,
+comando, URL/URI, pacote MSI e grupo de cartões.</p>
+<p><strong>Campos comuns</strong> (em quase todos os tipos):</p>
+<ul>
+<li><strong>Nome</strong> — obrigatório; exibido no cartão e na busca;</li>
+<li><strong>Descrição</strong> — opcional; também participa da busca;</li>
+<li><strong>Seção e categoria</strong> — onde colocar o cartão;</li>
+<li><strong>Ícone</strong> — pode ser escolhido pela janela de seleção de ícone
+  (seção 11);</li>
+<li><strong>«Executar como administrador»</strong> — onde isso faz sentido
+  (programas, scripts, comandos, MSI).</li>
+</ul>
+<p><strong>Os nomes podem se repetir.</strong> Se na categoria escolhida já existir
+um cartão com esse nome, aparecerá uma dica — não é erro e não
+bloqueia a gravação.</p>
+<p><strong>Caminhos.</strong> Podem ser indicados caminhos relativos (a partir da
+pasta do programa — melhor para portabilidade) e absolutos
+(<code>C:\…</code>). Caminhos absolutos são aceitos, mas podem parar de
+funcionar após o transporte para outro computador — veja a seção
+<a href="#15-armazenamento-de-dados-e-portabilidade">«Armazenamento de dados e portabilidade»</a>.</p>
+<p><strong>Salvar e cancelar.</strong> O botão «Salvar» grava o cartão; fica
+inativo até que os campos obrigatórios sejam preenchidos. Ao fechar
+o editor com edições não salvas, aparece a pergunta «Descartar
+alterações não salvas?» — «Não salvar» descarta as edições.</p>
+<hr>
+<h2 id="6-criando-cartões-de-diferentes-tipos">6. Criando cartões de diferentes tipos</h2>
+<p>Dois métodos universais:</p>
+<ol>
+<li><strong>Arrastar e soltar</strong> — arraste um arquivo ou pasta para a janela
+   principal. O tipo é detectado automaticamente (<code>.exe</code> → programa,
+   <code>.lnk</code> → atalho, <code>.msi</code> → MSI, scripts → script, pasta → pasta,
+   o resto → arquivo). Para programas e atalhos o ícone é extraído
+   automaticamente. Os cartões vão para a seção/categoria atuais; se
+   ainda não houver seções, uma seção de serviço para itens recebidos
+   é criada. Você também pode arrastar o texto de um link <code>http://</code>
+   ou <code>https://</code> — será criado um cartão URL.</li>
+<li><strong>Pelo editor</strong> — «Editor» → «Adicionar cartão» → escolher o tipo
+   → preencher o formulário → «Salvar». Se ainda não houver
+   seções/categorias, aparecerá um painel de dica com botões para
+   criá-las.</li>
+</ol>
+<p>Após salvar, a janela principal rola até o novo cartão e o destaca.</p>
+<h3 id="61-programa">6.1. Programa</h3>
+<ul>
+<li><strong>Finalidade:</strong> executar <code>.exe</code>.</li>
+<li><strong>Campos:</strong> nome, seção/categoria, variantes de execução,
+  argumentos, pasta de trabalho, ícone, «como administrador».</li>
+<li><strong>Variantes de execução:</strong> um cartão pode guardar vários <code>.exe</code>
+  para diferentes arquiteturas do Windows — x86, x64, ARM64. O botão
+  «Procurar…» adiciona um arquivo: o programa detecta a arquitetura
+  e rotula a linha. Escolher de novo a mesma arquitetura substitui o
+  caminho; cada linha pode ser excluída ou corrigida manualmente.</li>
+<li><strong>Verificações:</strong> pelo menos uma variante é obrigatória; o arquivo
+  deve ser <code>.exe</code> e existir; a pasta de trabalho deve ser um
+  diretório existente.</li>
+<li><strong>Na execução</strong> é escolhida a variante adequada ao seu sistema
+  (por exemplo, no Windows 64 bits primeiro x64, depois x86). Os
+  itens «Executar x64» etc. no menu do cartão executam uma variante
+  específica.</li>
+</ul>
+<div class="callout callout-tip"><b>Dica</b><p>Não é preciso definir o ícone do cartão manualmente — extraia-o
+do <code>.exe</code> escolhido pela janela de seleção de ícone.</p>
+</div>
+<h3 id="62-script">6.2. Script</h3>
+<ul>
+<li><strong>Finalidade:</strong> executar arquivos de script (bat, ps1, reg, vbs e
+  outros formatos suportados).</li>
+<li><strong>Campos:</strong> nome, arquivo de script, seção/categoria, pasta de
+  trabalho, ícone, «como administrador»; o tipo de script é
+  detectado pela extensão automaticamente.</li>
+<li><strong>Verificações:</strong> o arquivo é obrigatório, deve existir e ter um
+  tipo suportado.</li>
+<li><strong>Na execução</strong> uma confirmação é sempre solicitada — antes de
+  executar são mostrados o nome e a descrição do script. Para <code>.reg</code>
+  — um aviso à parte de que o arquivo de registro altera
+  configurações do sistema.</li>
+</ul>
+<h3 id="63-pasta">6.3. Pasta</h3>
+<ul>
+<li><strong>Finalidade:</strong> abrir um diretório no Explorador.</li>
+<li><strong>Campos:</strong> nome, caminho da pasta, seção/categoria, ícone.</li>
+<li><strong>Verificações:</strong> o caminho deve existir e apontar para uma pasta
+  (se no caminho houver um arquivo — erro).</li>
+</ul>
+<h3 id="64-arquivo">6.4. Arquivo</h3>
+<ul>
+<li><strong>Finalidade:</strong> abrir um documento/mídia com o aplicativo
+  associado.</li>
+<li><strong>Campos:</strong> nome, caminho do arquivo, seção/categoria, ícone.</li>
+<li><strong>Verificações:</strong> o arquivo deve existir; extensões que têm seus
+  próprios tipos de cartão (<code>.exe</code>, <code>.lnk</code>, <code>.msi</code>, scripts) são
+  reservadas — para elas escolha o tipo correspondente.</li>
+</ul>
+<h3 id="65-atalho-do-windows">6.5. Atalho do Windows</h3>
+<ul>
+<li><strong>Finalidade:</strong> executar um <code>.lnk</code> existente.</li>
+<li><strong>Campos:</strong> nome, caminho do <code>.lnk</code>, seção/categoria, ícone,
+  «como administrador».</li>
+<li><strong>Verificações:</strong> o caminho deve terminar em <code>.lnk</code> e existir.</li>
+</ul>
+<h3 id="66-comando">6.6. Comando</h3>
+<ul>
+<li><strong>Finalidade:</strong> executar um comando de texto (como na linha de
+  comando).</li>
+<li><strong>Campos:</strong> nome, texto do comando, seção/categoria, «como
+  administrador».</li>
+<li><strong>Verificações:</strong> o comando não pode estar vazio.</li>
+<li><strong>Na execução</strong> um diálogo de confirmação é exibido. O item de menu
+  «Copiar comando» copia o texto para a área de transferência sem
+  executar.</li>
+</ul>
+<h3 id="67-url-uri">6.7. URL / URI</h3>
+<ul>
+<li><strong>Finalidade:</strong> abrir um link no navegador ou no aplicativo
+  manipulador.</li>
+<li><strong>Campos:</strong> nome, endereço, seção/categoria, ícone.</li>
+<li><strong>Verificações:</strong> apenas esquemas seguros são aceitos — os
+  sabidamente perigosos serão rejeitados ao salvar. O item de menu
+  «Copiar link» copia o endereço para a área de transferência.</li>
+</ul>
+<h3 id="68-pacote-msi">6.8. Pacote MSI</h3>
+<ul>
+<li><strong>Finalidade:</strong> executar um instalador <code>.msi</code>.</li>
+<li><strong>Campos:</strong> nome, caminho do <code>.msi</code> (botão de procurar com filtro
+  «Pacote MSI»), argumentos do instalador, ícone, «como
+  administrador».</li>
+<li><strong>Verificações:</strong> o arquivo deve ser <code>.msi</code> e existir. Na
+  execução os argumentos são analisados: uma cadeia quebrada (aspas
+  não fechadas), uma chave sem valor ou um argumento apontando para
+  outro pacote produzirão uma mensagem de erro — nesse caso verifique
+  o campo «Argumentos».</li>
+</ul>
+<h3 id="69-grupo-de-cartões">6.9. Grupo de cartões</h3>
+<p>Um grupo executa vários cartões em sequência. Instruções detalhadas
+estão na seção <a href="#8-grupos-de-cartões">«Grupos de cartões»</a>.</p>
+<hr>
+<h2 id="7-executando-e-abrindo-objetos">7. Executando e abrindo objetos</h2>
+<p><strong>A forma principal de executar</strong> é clicar com o botão esquerdo num
+cartão. Ações adicionais estão no menu de contexto (clique direito).
+Dependendo do tipo do cartão pode haver itens «Executar», executar
+uma variante de arquitetura específica, executar com direitos
+elevados ou normais, e ações para abrir pasta, arquivo, atalho ou
+link. O conteúdo do menu depende do tipo do cartão.</p>
+<p><strong>Ações de serviço no menu do cartão:</strong></p>
+<ul>
+<li>«Abrir localização» — Explorador com o arquivo de destino
+  selecionado;</li>
+<li>«Copiar caminho», «Copiar comando», «Copiar link» — para a área de
+  transferência;</li>
+<li>favoritos e edição — seções <a href="#9-editando-e-organizando-cartões">«Editando e organizando
+  cartões»</a> e
+  <a href="#10-favoritos">«Favoritos»</a>.</li>
+</ul>
+<p><strong>Argumentos e pasta de trabalho</strong> (programas, scripts, MSI) são
+definidos no formulário do cartão. Se a pasta de trabalho estiver
+vazia — usa-se a pasta do próprio alvo.</p>
+<p><strong>Confirmações.</strong> Antes de scripts, comandos e grupos que os
+contenham, o programa pede confirmação — é uma proteção contra
+execução acidental. Para <code>.reg</code> — um aviso especial. Se a execução
+exigir direitos de administrador, o Windows mostrará a solicitação
+padrão do UAC: recusá-la simplesmente cancela a execução com uma
+mensagem de erro.</p>
+<div class="callout callout-tip"><b>Dica</b><p>Se o próprio Errant Launcher estiver rodando como administrador
+(etiqueta «Modo administrador»), os processos executados a partir
+dele também receberão direitos elevados.</p>
+</div>
+<p><strong>Erros típicos de execução</strong> estão descritos na seção
+<a href="#17-solução-de-problemas">«Solução de problemas»</a>.</p>
+<hr>
+<h2 id="8-grupos-de-cartões">8. Grupos de cartões</h2>
+<p><strong>Finalidade:</strong> um cartão-grupo executa vários cartões de uma vez em
+sequência — por exemplo, «ambiente de trabalho»: e-mail, navegador,
+editor.</p>
+<p><strong>Criação:</strong> «Editor» → «Adicionar cartão» → «Grupo» → o botão de
+seleção de membros abre um diálogo com a lista de todos os cartões.
+Nele há busca e filtros por seção e tipo; as marcas são mantidas
+enquanto você filtra a lista. «OK»/Enter confirma a seleção,
+Esc/«Cancelar» desiste. O grupo deve conter pelo menos um membro;
+grupos aninhados não são permitidos. Os membros podem ter atrasos
+individuais antes de executar o próximo.</p>
+<p><strong>Ordem:</strong> os membros são executados na ordem original da lista de
+cartões.</p>
+<p><strong>Execução e progresso.</strong> Se o grupo contém scripts ou comandos,
+primeiro aparece um aviso. Depois abre o diálogo «Executar grupo»:</p>
+<ul>
+<li>um contador «N de M» e o nome do membro atual;</li>
+<li>antes do próximo — uma contagem regressiva «Próximo: … — em X s»;</li>
+<li>conforme avança, são adicionadas linhas «Cartão "…" — executado /
+  cancelado / não executado»;</li>
+<li>o botão «Cancelar os restantes», Esc ou fechar a janela param a
+  fila — o que já foi executado não é revertido.</li>
+</ul>
+<p><strong>Resultado:</strong> a mensagem final «Executados: X · Erros: Y ·
+Ignorados: Z» com uma linha por cartão; ao cancelar — «Execução
+cancelada»; com erros — um diálogo do tipo «erro».</p>
+<p><strong>Erros:</strong> um membro cujo alvo sumiu é marcado «não executado» com
+a razão — isso não derruba o restante da fila. Cartões excluídos
+desaparecem automaticamente dos grupos.</p>
+<hr>
+<h2 id="9-editando-e-organizando-cartões">9. Editando e organizando cartões</h2>
+<p><strong>Editar um cartão:</strong> menu do cartão → «Editar» → o mesmo formulário
+da criação, com os campos preenchidos → «Salvar».</p>
+<p><strong>A tabela de cartões</strong> — «Editor» → «Editar cartões»:</p>
+<ul>
+<li>busca na tabela e filtros «por tipo» e «por seção»;</li>
+<li>ordenação — clique no cabeçalho da coluna;</li>
+<li>caixas de seleção nas linhas para multisseleção; os botões
+  «selecionar tudo» / «limpar seleção» atuam sobre a lista filtrada
+  atual;</li>
+<li>«Editar» — apenas com uma linha selecionada;</li>
+<li>«Excluir», «Mover», «Duplicar» — com uma ou várias linhas
+  selecionadas.</li>
+</ul>
+<p><strong>Excluir:</strong> um cartão pergunta «Excluir cartão?», vários — «Excluir
+cartões?» com um contador. A exclusão é irreversível: o cartão some
+da seção, dos favoritos e de todos os grupos.</p>
+<p><strong>Mover:</strong> um diálogo de seleção de seção e categoria — os cartões
+selecionados se mudam para lá.</p>
+<p><strong>Duplicar:</strong> uma cópia na mesma categoria.</p>
+<hr>
+<h2 id="10-favoritos">10. Favoritos</h2>
+<p><strong>Adicionar/remover:</strong> clique direito num cartão → «Adicionar aos
+favoritos» / «Remover dos favoritos».</p>
+<p><strong>Visualização:</strong> o item «Favoritos» no painel lateral. Em vez das
+pílulas de categorias, aqui aparecem abas de tipos: «Todos»,
+«Programas», «Scripts», «Pastas», «Arquivos», «Atalhos»,
+«Comandos», «URL / URI», «Pacotes MSI», «Grupos» — os favoritos
+podem ser vistos por tipo. A busca também funciona aqui (entre
+favoritos).</p>
+<p><strong>Na importação/exportação</strong> as marcas de favorito viajam junto com
+os cartões (na importação — se o item correspondente estiver marcado,
+veja a seção <a href="#13-importação-exportação-e-backups">«Importação, exportação e
+backups»</a>).</p>
+<hr>
+<h2 id="11-ícones-e-aparência">11. Ícones e aparência</h2>
+<h3 id="111-ícones-de-cartões-e-seções">11.1. Ícones de cartões e seções</h3>
+<p>No formulário do cartão e no editor de estrutura há um botão de
+seleção de ícone. A janela de seleção oferece:</p>
+<ul>
+<li>o ícone embutido do tipo;</li>
+<li>um ícone do conjunto embutido — uma grade para escolher (dentro da
+  grade funcionam as setas, Enter/Space);</li>
+<li>seu próprio arquivo PNG;</li>
+<li>extração do ícone de um <code>.exe</code> ou <code>.lnk</code> — o botão «Extrair»;</li>
+<li>«Restaurar» — voltar ao padrão.</li>
+</ul>
+<p>«Salvar» aplica a escolha, «Cancelar»/Esc não. Se a extração falhar
+ou o arquivo não for PNG — aparecerá uma mensagem de erro, o ícone
+anterior não será afetado.</p>
+<h3 id="112-aparência-do-aplicativo">11.2. Aparência do aplicativo</h3>
+<p>Nas configurações (seção 14): idioma, tema, cor de destaque (que
+também recolore o ícone da bandeja), estilo dos ícones dos cartões
+(«Cores do tema» / «Cor de destaque» / «Coloridos») e estilo das
+etiquetas. As alterações se aplicam imediatamente.</p>
+<hr>
+<h2 id="12-importação-em-massa">12. Importação em massa</h2>
+<p><strong>Para quê.</strong> Quando é preciso adicionar não um cartão, mas uma pasta
+inteira de programas — o assistente encontra sozinho <code>.exe</code>, scripts,
+<code>.msi</code>, <code>.lnk</code>, arquivos e subpastas, mostra a lista e deixa você
+escolher o que adicionar.</p>
+<p><strong>Onde:</strong> «Editor» → aba «Importação em massa». O assistente guia por
+etapas: «Escolher pasta» → «Escaneamento» → «Resultados» → «Onde
+adicionar» → resumo.</p>
+<h3 id="121-etapa-escolher-pasta-e-filtros">12.1. Etapa «Escolher pasta» e filtros</h3>
+<ul>
+<li><strong>Pasta para verificar</strong> — escolha por «Procurar pastas…» ou digite
+  manualmente. Uma pasta inexistente será destacada com a mensagem
+  «A pasta não existe.»</li>
+<li><strong>Profundidade de varredura</strong> — «Sem limites» ou 1–3 níveis;
+  «Varredura recursiva de subpastas»; «Máximo de candidatos» — ao
+  atingir o limite a verificação para (restrinja os filtros ou
+  aumente o valor).</li>
+<li><strong>Pílulas de tipos</strong> — quais tipos procurar. Alguns tipos têm suas
+  próprias configurações:</li>
+<li><em>Programas</em> — quais arquiteturas incluir (incluindo «Any» para as
+    não reconhecidas);</li>
+<li><em>Scripts</em> — quais tipos de scripts;</li>
+<li><em>Arquivos</em> — lista de extensões separadas por «;» no modo
+    «Excluir as listadas» ou «Procurar apenas as listadas»;</li>
+<li><em>MSI</em> e <em>Atalhos</em> — sem filtros extras.</li>
+<li><strong>Configurações de varredura:</strong> pular ocultos, do sistema, pontos
+  de junção e links simbólicos; «Verificar caminhos de rede (UNC)»;
+  lista de nomes de pastas excluídas.</li>
+<li><strong>Pasta de configuração</strong> — indique-a se quiser que o programa
+  verifique a portabilidade dos caminhos dos candidatos.</li>
+</ul>
+<h3 id="122-etapa-escaneamento">12.2. Etapa «Escaneamento»</h3>
+<p>Mostra «Objetos verificados», «Candidatos», «Avisos» e a pasta atual.
+O botão «Parar» interrompe o escaneamento — a parte encontrada fica
+guardada com a marca «escaneamento interrompido». Em caso de erro —
+mensagem e botões «Repetir»/«Voltar». Se o escaneamento parou no
+limite, aparecerá uma marca — restrinja os filtros.</p>
+<h3 id="123-etapa-resultados">12.3. Etapa «Resultados»</h3>
+<p>Uma tabela de candidatos encontrados com status: «pronto»,
+«verificar», «sumiu», «erro», mais as etiquetas «já existe», «não
+pode adicionar». Nas linhas problemáticas é indicada a razão — por
+exemplo, «arquivo indisponível para leitura», «duplicado: o cartão já
+existe», «nome já usado na seção de destino», «caminho de rede
+desativado pelo filtro».</p>
+<p>Recursos:</p>
+<ul>
+<li>busca por nome/caminho, filtros por tipo e status, ordenação de
+  colunas;</li>
+<li>«Limpar seleção» / «Excluir selecionados» — para a lista filtrada
+  atual;</li>
+<li>«Nova verificação» — reverifica os arquivos selecionados no disco
+  sem nova varredura: um arquivo que voltou pode ser restaurado;</li>
+<li>uma linha expandida permite editar nome, argumentos, descrição,
+  pasta de trabalho, tipo de script, ícone e «como administrador»;</li>
+<li>o menu da linha — «Copiar caminho» e «Mostrar localização na
+  pasta».</li>
+</ul>
+<p>Candidatos com erros e duplicados são excluídos da seleção
+automaticamente, mas podem ser incluídos manualmente.</p>
+<div class="callout callout-warn"><b>Atenção</b><p>Se depois do escaneamento você mudar a pasta ou os filtros, os
+resultados ficam «desatualizados» — o assistente proporá escanear
+de novo e avisará que as edições serão aplicadas aos mesmos
+arquivos se forem encontrados novamente.</p>
+</div>
+<h3 id="124-etapa-onde-adicionar">12.4. Etapa «Onde adicionar»</h3>
+<ul>
+<li><strong>Seção de destino</strong> — uma existente ou «Nova seção…»;</li>
+<li><strong>Categoria</strong> — uma existente, «Nova categoria…», «Sem categoria»
+  ou «Pelo nome da pasta pai» (os candidatos são distribuídos por
+  categorias automaticamente);</li>
+<li>o botão «Verificar» — análise: «Serão adicionados / Serão
+  ignorados / Precisam de atenção», listas de duplicados por caminho,
+  conflitos de nomes e candidatos quebrados; nota sobre caminhos com
+  letra de unidade (podem não abrir em outro computador).</li>
+</ul>
+<p>A importação fica bloqueada se o armazenamento não aceitar gravação
+(mensagem «Configuração indisponível para gravação»), nenhum destino
+for escolhido, nenhum candidato estiver marcado ou todos os
+selecionados tiverem erros.</p>
+<h3 id="125-importação-e-resumo">12.5. Importação e resumo</h3>
+<p>«Importar N cartões» inicia a gravação em segundo plano. Antes de
+gravar, um backup dos dados é criado. A página final mostra
+«Adicionados», «Ignorados na importação», «Não selecionados» e
+detalhes — por exemplo, quantos cartões foram adicionados sem ícone
+próprio.</p>
+<div class="callout callout-warn"><b>Atenção</b><p>Em caso de gravação parcial ou falha, o programa informará com
+mensagens separadas e indicará o caminho do backup para reversão
+manual; enquanto o estado não for confirmado, a repetição da
+importação fica pausada — reabra a etapa «Onde adicionar» para
+reverificar ou reinicie o programa.</p>
+</div>
+<p><strong>Cancelamento:</strong> na etapa de escaneamento «Cancelar» para o
+escaneamento; nas outras etapas, sair do assistente com trabalho
+inacabado perguntará «Edições e seleção serão perdidas — sair?».
+Fechar o editor com uma importação inacabada também pedirá
+confirmação — as tarefas em segundo plano serão encerradas
+corretamente.</p>
+<hr>
+<h2 id="13-importação-exportação-e-backups">13. Importação, exportação e backups</h2>
+<p><strong>Onde:</strong> botão de configurações → «Importar» / «Exportar» /
+«Redefinir todos os dados».</p>
+<h3 id="131-tipos-de-exportação">13.1. Tipos de exportação</h3>
+<ol>
+<li><strong>Backup completo</strong> — tudo de uma vez: seções, cartões,
+   favoritos, configurações, temas, ícones e estado do aplicativo.
+   Não há janelas de seleção de conteúdo — vai direto para «Salvar
+   como» com o nome <code>ErrantLauncher-Backup.zip</code>. Use para backups e
+   transporte entre computadores.</li>
+<li><strong>Compartilhar coleção</strong> — seleção de conteúdo: caixas «Ícones»,
+   «Temas» e a lista de seções (com «Selecionar tudo»). Configurações
+   e estado não entram aqui; os favoritos viajam com os cartões. O
+   nome do arquivo é <code>ErrantLauncher-Collection.zip</code>.</li>
+</ol>
+<div class="callout callout-warn"><b>Atenção</b><p>Se as seções marcadas contêm grupos que referenciam cartões de
+seções não marcadas, aparecerá um aviso — você pode continuar ou
+cancelar e ajustar as marcas.</p>
+</div>
+<p>Ao finalizar é mostrado exatamente o que foi exportado, com um botão
+para abrir a pasta do arquivo.</p>
+<h3 id="132-importação">13.2. Importação</h3>
+<ol>
+<li>«Importar» → escolha um <code>.zip</code>.</li>
+<li>Um aviso de que a importação vai alterar os dados —
+   «Continuar»/«Cancelar».</li>
+<li>Uma janela de seleção: caixas «Configurações», «Favoritos»,
+   «Ícones», «Temas» (apenas o que existe no arquivo) e a lista de
+   seções do arquivo.</li>
+<li>Se os nomes das seções coincidirem com os existentes — uma janela
+   de conflitos: para cada seção «Substituir / Renomear / Ignorar»,
+   a decisão pode ser aplicada a todas.</li>
+<li>Um diálogo de resultado.</li>
+</ol>
+<p>Antes de gravar é feito um retrato de segurança — em caso de erro os
+dados são revertidos. Um backup completo com «Configurações» marcada
+também restaura o estado do aplicativo.</p>
+<p><strong>Erros:</strong> arquivo que não é zip ou está corrompido — «arquivo de
+importação inválido»; arquivo mais novo que a versão do programa —
+«formato mais novo»; cancelar em qualquer etapa não importa nada;
+arquivos de temas inválidos são ignorados e listados no resumo.</p>
+<div class="callout callout-tip"><b>Dica</b><p>Antes do transporte: faça um backup completo no local antigo e
+verifique se o arquivo abre como um arquivo zip.</p>
+</div>
+<hr>
+<h2 id="14-configurações">14. Configurações</h2>
+<p>Abertas pelo botão de configurações no canto superior direito da
+janela principal — um painel aparece por cima. Esc o fecha (se estiver
+aberto um dropdown de um campo — primeiro fecha a lista, depois o
+painel).</p>
+<table>
+<thead>
+<tr>
+<th>Configuração</th>
+<th>O que faz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Idioma</td>
+<td>Idioma da interface — 6 opções</td>
+</tr>
+<tr>
+<td>Seção inicial</td>
+<td>Qual seção abre na inicialização</td>
+</tr>
+<tr>
+<td>Tema</td>
+<td>Tema de cores da janela</td>
+</tr>
+<tr>
+<td>Cor de destaque</td>
+<td>Destaque da interface e do ícone da bandeja</td>
+</tr>
+<tr>
+<td>Estilo dos ícones</td>
+<td>«Cores do tema» / «Cor de destaque» / «Coloridos»</td>
+</tr>
+<tr>
+<td>Estilo das etiquetas</td>
+<td>Aparência dos indicadores nos cartões</td>
+</tr>
+<tr>
+<td>Minimizar para a bandeja</td>
+<td>Caixa — fechar esconde a janela na bandeja (seção 3.7)</td>
+</tr>
+</tbody>
+</table>
+<p>Os campos seletores abrem uma lista dropdown: Enter/Space aplicam e
+fecham, Esc só fecha. As alterações se aplicam na hora e são salvas
+automaticamente.</p>
+<div class="callout callout-tip"><b>Dica</b><p>No modo «Somente leitura» as configurações mostram uma
+notificação: as alterações valerão até o fechamento do programa,
+mas não serão salvas.</p>
+</div>
+<p>Aqui também estão os botões «Importar», «Exportar», «Redefinir todos
+os dados» e «Sobre» (seções 13, 18, 19).</p>
+<hr>
+<h2 id="15-armazenamento-de-dados-e-portabilidade">15. Armazenamento de dados e portabilidade</h2>
+<p><strong>Onde ficam os dados.</strong> O programa é portátil: sua pasta de dados
+fica ao lado do executável. Dentro — arquivos de configurações,
+arquivos de seções com cartões (<code>sections/*.json</code>), pasta de ícones
+personalizados (<code>custom-icons/</code>), backups (<code>.backup/</code>, <code>.rollback/</code>)
+e o registro <code>logs/app.log</code>.</p>
+<p><strong>Caminhos dos cartões.</strong> O programa procura guardar caminhos
+relativos — assim o conjunto sobrevive ao transporte para outro
+disco/computador junto com a pasta de dados e os arquivos de destino.
+Caminhos absolutos (<code>C:\…</code>) são aceitos, mas funcionam apenas onde
+são válidos.</p>
+<p><strong>Transporte.</strong> Copie a pasta inteira do programa — exe, dados e de
+preferência os arquivos de destino. Antes do transporte faça um
+backup completo (seção <a href="#13-importação-exportação-e-backups">«Importação, exportação e
+backups»</a>).</p>
+<p><strong>Unidade removível</strong> — cenário normal. Se o pen drive for removido
+durante o funcionamento, o programa passa ao modo «Sem mídia»: os
+dados na tela permanecem, mas a gravação fica impossível. Quando a
+mídia volta, a gravação é restaurada automaticamente na próxima
+tentativa de salvamento — o programa verifica se voltou exatamente a
+sua raiz de dados.</p>
+<p><strong>Modos de armazenamento:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Indicador</th>
+<th>O que significa</th>
+<th>Consequências</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(nenhum)</td>
+<td>tudo normal</td>
+<td>leitura e gravação</td>
+</tr>
+<tr>
+<td>«Somente leitura»</td>
+<td>dados são lidos, gravação impossível</td>
+<td>editor e alterações fechados; configurações valem até reiniciar</td>
+</tr>
+<tr>
+<td>«Sem mídia»</td>
+<td>raiz de dados indisponível</td>
+<td>gravações são rejeitadas com mensagem de erro</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Edição manual de arquivos.</strong> Os arquivos <code>sections/*.json</code> podem
+ser editados num editor de texto com o programa fechado; com o
+programa rodando, edições externas só são captadas após reiniciar.
+Um arquivo corrompido não derruba o programa — na inicialização
+aparece um diálogo «Manter/Excluir» para cada arquivo danificado (a
+exclusão faz um backup). Se dois arquivos declaram a mesma seção, seu
+conteúdo é mesclado — uma notificação informa sobre isso.</p>
+<hr>
+<h2 id="16-teclado-e-atalhos">16. Teclado e atalhos</h2>
+<table>
+<thead>
+<tr>
+<th>Combinação</th>
+<th>Onde</th>
+<th>Ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Esc</td>
+<td>campo de busca</td>
+<td>limpar a busca</td>
+</tr>
+<tr>
+<td>Esc</td>
+<td>janela principal</td>
+<td>fechar dropdown do campo → painel de configurações → painel informativo</td>
+</tr>
+<tr>
+<td>Esc</td>
+<td>editor</td>
+<td>fechar a janela (com edições não salvas pede confirmação)</td>
+</tr>
+<tr>
+<td>Esc</td>
+<td>diálogos e janelas de seleção</td>
+<td>cancelar sem salvar</td>
+</tr>
+<tr>
+<td>Esc</td>
+<td>diálogo «Executar grupo»</td>
+<td>parar as execuções restantes</td>
+</tr>
+<tr>
+<td>Enter</td>
+<td>diálogos de nome, janelas de seleção</td>
+<td>confirmar («Salvar»/«OK»)</td>
+</tr>
+<tr>
+<td>Enter / Space</td>
+<td>cartão na grade</td>
+<td>executar</td>
+</tr>
+<tr>
+<td>Enter / Space</td>
+<td>ícone na grade de seleção</td>
+<td>escolher o ícone</td>
+</tr>
+<tr>
+<td>Enter / Space</td>
+<td>dropdown do campo</td>
+<td>aplicar a seleção e fechar</td>
+</tr>
+<tr>
+<td>← → ↑ ↓</td>
+<td>grade de cartões</td>
+<td>mover o foco entre cartões</td>
+</tr>
+<tr>
+<td>← →</td>
+<td>listas de categorias/abas</td>
+<td>mover entre itens</td>
+</tr>
+<tr>
+<td>↑ na primeira seção</td>
+<td>painel lateral</td>
+<td>ir para «Favoritos»</td>
+</tr>
+<tr>
+<td>↑ ↓</td>
+<td>lista de membros do grupo</td>
+<td>entre as caixas das linhas</td>
+</tr>
+<tr>
+<td>Apps / Shift+F10 / RightCtrl</td>
+<td>janela principal</td>
+<td>menu de contexto do item em foco</td>
+</tr>
+</tbody>
+</table>
+<p>Nenhuma outra combinação de teclas especial é indicada no guia; as
+demais ações estão disponíveis pela interface com o mouse.</p>
+<hr>
+<h2 id="17-solução-de-problemas">17. Solução de problemas</h2>
+<p><strong>Um cartão não executa, etiqueta «Erro».</strong>
+O alvo está indisponível: arquivo/pasta excluído ou caminho errado.
+Menu →
+Se o alvo existe, o item «Abrir localização» ajuda a chegar até ele.
+Se o caminho está errado ou o objeto foi excluído, abra o menu do
+cartão → «Editar», corrija o caminho e salve as alterações ou crie o
+cartão novamente.</p>
+<p><strong>Erro ao executar pedindo direitos.</strong>
+Recusar a janela do UAC cancela a execução — repita e confirme, ou
+remova «como administrador» no cartão.</p>
+<p><strong>Os dados não são salvos, indicador «Somente leitura».</strong>
+O armazenamento está aberto somente para leitura: verifique se a
+pasta do programa e os arquivos de dados não têm o atributo «somente
+leitura», se há permissões de gravação e espaço livre. O editor e as
+alterações ficarão indisponíveis até que a gravação seja restaurada.</p>
+<p><strong>Indicador «Sem mídia».</strong>
+A pasta de dados sumiu (pen drive removido, pasta renomeada, caminho
+de rede indisponível). Traga a mídia/pasta de volta — a gravação será
+restaurada na próxima tentativa de salvamento. Uma pasta vazia
+renomeada não se «recoloca»: o programa aceita apenas sua raiz de
+dados verdadeira.</p>
+<p><strong>Diálogo «Manter/Excluir» na inicialização.</strong>
+Um arquivo de configuração está corrompido. «Manter» — o arquivo não
+é tocado (pode ser reparado manualmente, o diálogo se repete na
+próxima inicialização); «Excluir» — o arquivo é excluído com um
+backup. No modo «Somente leitura» não há o botão «Excluir».</p>
+<p><strong>Aviso «dados criados por versão mais nova».</strong>
+Os arquivos foram gravados por uma versão mais nova do Errant
+Launcher; a versão antiga não os sobrescreverá. Atualize o programa
+para essa versão ou uma mais nova.</p>
+<p><strong>Não é possível obter o ícone.</strong>
+A extração de <code>.exe</code>/<code>.lnk</code> falhou ou o arquivo não é PNG — escolha
+outra fonte ou um ícone embutido.</p>
+<p><strong>A importação terminou com erro ou parcialmente.</strong>
+Leia o texto do resultado: ele indicará o que foi gravado, quais
+arquivos foram alterados e onde está o backup para reversão. Com a
+mensagem sobre reimportação pausada, reabra a etapa «Onde adicionar»
+ou reinicie o programa.</p>
+<p><strong>Um comando ou link não abre.</strong>
+Para um comando verifique seu texto («Copiar comando» → cole na
+linha de comando e teste manualmente). Para um link — que o esquema
+seja permitido e haja um manipulador no sistema; verifique a
+internet.</p>
+<p><strong>O programa não me deixa entrar no editor / configurações não são
+salvas.</strong>
+Veja os itens sobre «Somente leitura» e «Sem mídia».</p>
+<hr>
+<h2 id="18-redefinir-e-restaurar-dados">18. Redefinir e restaurar dados</h2>
+<div class="callout callout-warn"><b>Atenção</b><p><strong>A redefinição é irreversível.</strong> «Redefinir todos os dados»
+exclui todas as seções, categorias, cartões, favoritos,
+configurações e estado — o programa reiniciará limpo.</p>
+</div>
+<p><strong>Como fazer:</strong> configurações → «Redefinir todos os dados» → passe
+por <strong>dois diálogos consecutivos</strong> de confirmação. Cancelar em
+qualquer etapa aborta a redefinição; um erro produz uma mensagem sem
+reinício.</p>
+<p><strong>Preparação:</strong> antes de redefinir, faça um «Backup completo»
+(seção <a href="#13-importação-exportação-e-backups">«Importação, exportação e
+backups»</a>) — é a única forma
+padrão de recuperar tudo depois.</p>
+<p><strong>Restauração:</strong> «Importar» → escolha o arquivo de backup → marque
+«Configurações» e os tipos necessários → resolva os conflitos de
+nomes → resultado. Após restaurar, verifique: apareceram as seções e
+os cartões, os caminhos funcionam (etiquetas «Erro»), voltaram os
+favoritos e as configurações?</p>
+<hr>
+<h2 id="19-sobre-e-informações-legais">19. Sobre e informações legais</h2>
+<p>O botão «Sobre» nas configurações abre uma janela com o nome, a
+versão, o copyright e estatísticas de cartões por tipo. Nela:</p>
+<ul>
+<li>«Contrato de licença» e «Licenças de terceiros» — janelas separadas
+  com o texto e um botão «Copiar»;</li>
+<li>«Apoiar o projeto»;</li>
+<li>links «Site oficial», «Lançamentos no GitHub», «Documentação»,
+  «Reportar um erro» — abrem no navegador.</li>
+</ul>
+<hr>
+<h2 id="20-materiais-de-referência">20. Materiais de referência</h2>
+<h3 id="201-tipos-de-cartões">20.1. Tipos de cartões</h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>O que faz</th>
+<th>Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Programa</td>
+<td>executa <code>.exe</code> (com variantes de arquitetura)</td>
+<td>≥1 variante <code>.exe</code></td>
+</tr>
+<tr>
+<td>Script</td>
+<td>executa bat/ps1/reg/vbs etc. com confirmação</td>
+<td>arquivo de script</td>
+</tr>
+<tr>
+<td>Pasta</td>
+<td>abre um diretório</td>
+<td>pasta existente</td>
+</tr>
+<tr>
+<td>Arquivo</td>
+<td>abre um arquivo com o aplicativo associado</td>
+<td>arquivo existente</td>
+</tr>
+<tr>
+<td>Atalho</td>
+<td>executa um <code>.lnk</code></td>
+<td>arquivo <code>.lnk</code></td>
+</tr>
+<tr>
+<td>Comando</td>
+<td>executa um comando de texto com confirmação</td>
+<td>texto do comando</td>
+</tr>
+<tr>
+<td>URL / URI</td>
+<td>abre um link</td>
+<td>endereço com esquema permitido</td>
+</tr>
+<tr>
+<td>Pacote MSI</td>
+<td>executa um instalador <code>.msi</code></td>
+<td>arquivo <code>.msi</code></td>
+</tr>
+<tr>
+<td>Grupo</td>
+<td>executa seus membros em sequência com progresso</td>
+<td>≥1 membro</td>
+</tr>
+</tbody>
+</table>
+<h3 id="202-indicadores-e-estados">20.2. Indicadores e estados</h3>
+<table>
+<thead>
+<tr>
+<th>Etiqueta/indicador</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>«Erro» num cartão</td>
+<td>o alvo está indisponível</td>
+</tr>
+<tr>
+<td>«Admin» num cartão</td>
+<td>executa como administrador</td>
+</tr>
+<tr>
+<td>«Verificando» num cartão</td>
+<td>verificação em andamento</td>
+</tr>
+<tr>
+<td>x86 / x64 / ARM64 / Any</td>
+<td>arquitetura da variante do programa</td>
+</tr>
+<tr>
+<td>«Modo administrador»</td>
+<td>o próprio launcher roda elevado</td>
+</tr>
+<tr>
+<td>«Somente leitura»</td>
+<td>o armazenamento não aceita gravação</td>
+</tr>
+<tr>
+<td>«Sem mídia»</td>
+<td>a pasta de dados está indisponível</td>
+</tr>
+</tbody>
+</table>
+<h3 id="203-campos-e-parâmetros">20.3. Campos e parâmetros</h3>
+<ul>
+<li><strong>Nome</strong> — obrigatório, duplicados permitidos (dica de aviso).</li>
+<li><strong>Descrição</strong> — texto livre, participa da busca e da confirmação
+  de execução de scripts.</li>
+<li><strong>Pasta de trabalho</strong> — o diretório de onde o processo inicia;
+  vazio = pasta do alvo.</li>
+<li><strong>Argumentos</strong> — parâmetros de execução (programas, MSI); no MSI
+  são analisados pelas regras do msiexec.</li>
+<li><strong>Como administrador</strong> — execução elevada via UAC.</li>
+<li><strong>Atraso de membro de grupo</strong> — pausa antes de executar o próximo.</li>
+</ul>
+<h3 id="204-atalhos-de-teclado">20.4. Atalhos de teclado</h3>
+<p>A tabela completa está na seção 16.</p>
+<h3 id="205-glossário">20.5. Glossário</h3>
+<ul>
+<li><strong>Cartão</strong> — elemento executável da grade.</li>
+<li><strong>Seção / categoria</strong> — níveis de agrupamento de cartões.</li>
+<li><strong>Favoritos</strong> — visão com os cartões marcados de todas as seções.</li>
+<li><strong>Variante de execução</strong> — um <code>.exe</code> de arquitetura específica num
+  programa.</li>
+<li><strong>Candidato</strong> — um objeto encontrado pelo assistente de importação
+  em massa.</li>
+<li><strong>Backup / coleção</strong> — os dois tipos de exportação (tudo /
+  selecionado sem configurações).</li>
+<li><strong>Somente leitura / Sem mídia</strong> — modos de armazenamento
+  degradados.</li>
+</ul>
+<h3 id="206-perguntas-frequentes">20.6. Perguntas frequentes</h3>
+<ul>
+<li><strong>Por que não consigo abrir o editor?</strong> O armazenamento está em
+  modo «Somente leitura»/«Sem mídia» ou uma busca está ativa —
+  limpe o campo de busca ou restaure a gravação.</li>
+<li><strong>Por que a janela não fecha, mas se esconde na bandeja?</strong>
+  «Minimizar para a bandeja» está ativado — saia pelo menu do ícone
+  «Sair» ou desative a configuração.</li>
+<li><strong>Uma seção desapareceu.</strong> Ela está oculta — reative-a no editor de
+  estrutura.</li>
+<li><strong>Quantos cartões posso importar de uma vez?</strong> Quantos o
+  escaneamento encontrar dentro do limite «Máximo de candidatos».</li>
+<li><strong>Posso manter o programa num pen drive?</strong> Sim — é para isso que
+  ele é portátil; ao remover em andamento, «Sem mídia» será ativado.</li>
+</ul>
+<hr></div></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../../" data-lang="pt-BR"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

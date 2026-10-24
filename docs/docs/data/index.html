@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data, backups and portability — Errant Launcher</title>
+<meta name="description" content="Data, backups and portability">
+<link rel="canonical" href="https://errantlauncher.com/docs/data/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/data/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/data/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/data/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/data/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/data/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/data/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/data/">
+<link rel="icon" type="image/svg+xml" href="../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../" data-lang="en" data-page="docs/data" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="data"></aside><div class="docs-content page-body"><h1 id="data-backups-and-portability">Data, backups and portability</h1>
+<p>Errant Launcher is a portable app: all its data lives in a single
+folder next to the executable. This document explains where
+everything is stored, how to make backups, and how to move your
+collection between computers.</p>
+<hr>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#where-data-is-stored">Where data is stored</a></li>
+<li><a href="#data-folder-contents">Data folder contents</a></li>
+<li><a href="#backup">Backup</a></li>
+<li><a href="#moving-to-another-computer">Moving to another computer</a></li>
+<li><a href="#updating-without-data-loss">Updating without data loss</a></li>
+<li><a href="#before-reinstalling-or-uninstalling">Before reinstalling or uninstalling</a></li>
+<li><a href="#if-files-are-unavailable">If files are unavailable</a></li>
+<li><a href="#restoring-from-a-backup">Restoring from a backup</a></li>
+<li><a href="#usb-drive-specifics">USB drive specifics</a></li>
+</ul>
+<hr>
+<h2 id="where-data-is-stored">Where data is stored</h2>
+<p>On first launch the app creates an <strong><code>ErrantLauncher</code></strong> folder next
+to the exe file — for example, if the app is in <code>D:\Tools\</code>, the data
+will be in <code>D:\Tools\ErrantLauncher\</code>.</p>
+<p>The app <strong>writes nothing</strong> to the Windows registry or user profile
+folders (<code>Documents</code>, <code>AppData</code>, etc.). The entire collection,
+settings and service files are only inside this folder.</p>
+<h2 id="data-folder-contents">Data folder contents</h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ErrantLauncher\sections\*.json</code></td>
+<td>Sections, categories and cards — one file per section</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\settings.json</code></td>
+<td>Appearance and behavior settings: theme, language, tray, etc.</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\state.json</code></td>
+<td>Window state, last opened section, launch counters</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\custom-icons\</code></td>
+<td>Icons you added or icons extracted from programs</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\logs\</code></td>
+<td>Local diagnostic logs (<code>app.log</code>, <code>bootstrap.log</code>)</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\.backup\</code></td>
+<td>Automatic backups of data files</td>
+</tr>
+<tr>
+<td><code>ErrantLauncher\.mass-import-backups\</code></td>
+<td>Copies created before mass import</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>.backup</code>, <code>.mass-import-backups</code> folders and the <code>.import-staging</code>
+service folder are hidden service directories; there is no need to
+delete them manually, but their contents should not be touched
+unnecessarily.</p>
+<h2 id="backup">Backup</h2>
+<p>The app helps in two ways:</p>
+<ol>
+<li><strong>Export configuration</strong> — the built-in feature
+   ("Settings" → <strong>"Export configuration"</strong>):
+   - <em>Full backup</em> — everything: sections, icons, settings and state;
+     suggested file name — <code>ErrantLauncher-Backup.zip</code>;
+   - <em>Share collection</em> — selected sections and icons, with favorite
+     marks, but without settings; suggested file name —
+     <code>ErrantLauncher-Collection.zip</code>.</li>
+<li><strong>Copying the folder manually</strong> — with the app closed, copy the
+   whole <code>ErrantLauncher</code> folder to a safe place. This is a complete
+   snapshot of your data.</li>
+</ol>
+<p>Additionally, the app itself creates copies in <code>.backup\</code> during data
+operations and in <code>.mass-import-backups\</code> before mass import — but
+that is insurance against a failure, not a replacement for regular
+backups.</p>
+<div class="callout callout-tip"><b>Tip</b><p>Before major changes (mass import, relocation, update) make a
+"Full backup" via export — it is the easiest one to restore.</p>
+</div>
+<h2 id="moving-to-another-computer">Moving to another computer</h2>
+<p><strong>Method 1 — move everything:</strong></p>
+<ol>
+<li>Close the app.</li>
+<li>Copy the exe file and the <code>ErrantLauncher</code> folder to the new
+   computer or drive — together, keeping their relative positions.</li>
+<li>Run the exe in the new location.</li>
+</ol>
+<p><strong>Method 2 — move only the collection:</strong> use "Export configuration"
+in "Share collection" mode → "Import configuration" on another copy
+of the app (accepts <code>.zip</code>, <code>.json</code> and a configuration folder).</p>
+<div class="callout callout-note"><b>Note</b><p><strong>About paths:</strong> cards referencing files by drive letter
+(<code>D:\Tools\app.exe</code>) work on the new computer only if the files
+exist there at the same paths. The mass import wizard warns about
+such cards. The launcher's own data does not remember drive
+letters — the data folder is found next to the exe.</p>
+</div>
+<h2 id="updating-without-data-loss">Updating without data loss</h2>
+<p>There is no auto-update, but updating does not touch data:</p>
+<ol>
+<li>Close the app.</li>
+<li>Replace <code>ErrantLauncher-x64.exe</code> with the new version.</li>
+<li>Launch. The <code>ErrantLauncher</code> folder stays in place — all cards
+   and settings are preserved.</li>
+</ol>
+<h2 id="before-reinstalling-or-uninstalling">Before reinstalling or uninstalling</h2>
+<ul>
+<li><strong>Keep:</strong> the whole <code>ErrantLauncher</code> folder (or at least
+  <code>sections\</code>, <code>settings.json</code> and <code>custom-icons\</code> if you don't need
+  the logs).</li>
+<li><strong>Uninstalling:</strong> delete the exe file and the <code>ErrantLauncher</code>
+  folder. The app leaves no other traces in the system. You can
+  additionally delete the temporary <code>%TEMP%\.net\ErrantLauncher</code>
+  directories — they are created on every launch and are not cleaned
+  automatically.</li>
+<li>The <strong>"Delete all data"</strong> function in settings erases the contents
+  of the data folder after two confirmations — use it only if you
+  don't need a backup.</li>
+</ul>
+<h2 id="if-files-are-unavailable">If files are unavailable</h2>
+<p>The app distinguishes between situations and behaves predictably:</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data folder is read-only</td>
+<td>"Read-only" mode: cards are visible and launch, changes are rejected with a notification and are not lost silently</td>
+</tr>
+<tr>
+<td>Drive temporarily unavailable</td>
+<td>"No media" indicator; changes stay in memory and are saved after reconnection</td>
+</tr>
+<tr>
+<td>Data folder cannot be read at all</td>
+<td>Unavailable storage message; the app closes</td>
+</tr>
+<tr>
+<td>An individual data file is corrupt</td>
+<td>"File is corrupt" dialog: the file is ignored and not modified; you can delete it or keep it</td>
+</tr>
+<tr>
+<td>File created by a newer version</td>
+<td>The file is read but not overwritten — updating the app is recommended</td>
+</tr>
+<tr>
+<td>Several files for one section</td>
+<td>Contents are merged automatically, a notification is shown</td>
+</tr>
+</tbody>
+</table>
+<h2 id="restoring-from-a-backup">Restoring from a backup</h2>
+<p><strong>From an exported file:</strong> "Settings" → <strong>"Import configuration"</strong> →
+select the file → check the sections, settings, icons and favorites
+you need → "Import".</p>
+<p><strong>From a folder copy:</strong> with the app closed, replace the contents of
+the <code>ErrantLauncher</code> folder with the backup copy's contents.</p>
+<p><strong>After a mass import failure:</strong> the app reports the path of the
+copy created before the import (in <code>.mass-import-backups\</code>) — follow
+the hint in the error message: copy its contents over the data
+folder or repeat the import.</p>
+<h2 id="usb-drive-specifics">USB drive specifics</h2>
+<ul>
+<li>Running from USB is fully supported — it is a standard scenario.</li>
+<li>Removing the drive while the app is running may terminate the
+  process: always close the app before removal.</li>
+<li>If the drive drops out and reconnects, the app detects the return
+  and continues saving data.</li>
+<li>On write-protected media, "Read-only" mode applies.</li>
+<li>There is no absolute guarantee of card portability: if they
+  reference local files of another computer, check card statuses
+  after moving ("File missing", "Drive unavailable").</li>
+</ul>
+<hr>
+<p><em>See also: <a href="../../docs/guide/">User guide</a>,
+<a href="../../docs/requirements/">System requirements</a>.</em></p></div></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../" data-lang="en"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>

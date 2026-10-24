@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tez-tez verilən suallar və problemlərin həlli — Errant Launcher</title>
+<meta name="description" content="Tez-tez verilən suallar və problemlərin həlli">
+<link rel="canonical" href="https://errantlauncher.com/az/docs/faq/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/faq/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/faq/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/faq/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/faq/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/faq/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/faq/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/faq/">
+<link rel="icon" type="image/svg+xml" href="../../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../../" data-lang="az" data-page="docs/faq" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="faq"></aside><div class="docs-content page-body"><h1 id="tez-tez-verilən-suallar-və-problemlərin-həlli">Tez-tez verilən suallar və problemlərin həlli</h1>
+<hr>
+<h2 id="mündəricat">Mündəricat</h2>
+<ul>
+<li><a href="#tətbiq-başlanmır">Tətbiq başlanmır</a></li>
+<li><a href="#smartscreen-xəbərdarlığı">SmartScreen xəbərdarlığı</a></li>
+<li><a href="#quraşdırılmış-net-lazımdırmı">Quraşdırılmış .NET lazımdırmı</a></li>
+<li><a href="#errant-launcher-artıq-işləyir">«Errant Launcher artıq işləyir»</a></li>
+<li><a href="#yalnız-oxu-rejimi-və-daşıyıcı-yoxdur">«Yalnız oxu» rejimi və «Daşıyıcı yoxdur»</a></li>
+<li><a href="#fayl-zədəlidir">«Fayl zədəlidir»</a></li>
+<li><a href="#usb-yaddaşdan-icra">USB-yaddaşdan icra</a></li>
+<li><a href="#əmr-kartı-konsol-pəncərəsi-qoyur">Əmr-kartı konsol pəncərəsi qoyur</a></li>
+<li><a href="#kart-fayl-yoxdur-və-ya-daşıyıcı-yoxdur-göstərir">Kart «Fayl yoxdur» və ya «Daşıyıcı yoxdur» göstərir</a></li>
+<li><a href="#toplu-idxal-qismən-və-ya-səhvlərlə-bşa-çatdı">Toplu idxal qismən və ya səhvlərlə başa çatdı</a></li>
+<li><a href="#pəncərə-ekrana-sığmır">Pəncərə ekrana sığmır</a></li>
+<li><a href="#yeniləmə-və-məlumatların-saxlanması">Yeniləmə və məlumatların saxlanması</a></li>
+<li><a href="#jurnalları-harada-axtarmaq-və-xəta-barədə-necə-məlumat-vermək">Jurnalları harada axtarmaq və xəta barədə necə məlumat vermək</a></li>
+</ul>
+<hr>
+<h2 id="tətbiq-başlanmır">Tətbiq başlanmır</h2>
+<p><strong>Mümkün səbəblər:</strong> köhnə Windows versiyası; dəstəklənməyən
+arxitektura; artıq işləyən nüsxə; əlçatmaz məlumat qovluğu.</p>
+<p><strong>Nəyi yoxlamalı:</strong></p>
+<ol>
+<li>Windows 64-bit olmalı, Windows 10 (1607) və ya daha yeni versiya.
+   Windows 7/8 və 32-bit sistemlər dəstəklənmir.</li>
+<li>Bildiriş sahəsinə (trey) baxın — proqram artıq işləyib bükülmüş
+   ola bilər.</li>
+<li><code>ErrantLauncher</code> qovluğunun exe-nin yanında mövcud olduğunu və
+   oxuna bilməsini yoxlayın.</li>
+</ol>
+<p><strong>Nəyi sınamalı:</strong> exe faylını lokal diskdə adi qovluğa köçürün
+(məsələn, <code>C:\Tools\</code>) və yenidən işə salın;
+<code>ErrantLauncher\logs\bootstrap.log</code> jurnalını yoxlayın — o, başlanğıc
+qəzalarında yaradılır.</p>
+<p><strong>Dəstəyə bildirmək:</strong> Windows versiyasını, exe faylının yerini və
+<code>bootstrap.log</code> məzmununu (varsa).</p>
+<h2 id="smartscreen-xəbərdarlığı">SmartScreen xəbərdarlığı</h2>
+<p><strong>Səbəb:</strong> icra faylı rəqəmsal imza ilə imzalanmayıb — beta versiyası
+üçün bu gözləniləndir, problemin əlaməti deyil.</p>
+<p><strong>Nəyi yoxlamalı (tövsiyə olunur):</strong> faylın orijinallığını
+nəzarət cəmi ilə. Proqram qovluğunda PowerShell-də:</p>
+<pre><code class="language-powershell">Get-FileHash .\ErrantLauncher-x64.exe -Algorithm SHA256
+</code></pre>
+<p>Nəticəni reliz dəstindəki <code>SHA256SUMS.txt</code> faylındakı sətirlə
+müqayisə edin.</p>
+<p><strong>Nə etməli:</strong> SmartScreen pəncərəsində «Ətraflı» → «Bərabər işə sal»
+vurun. SmartScreen-i və ya Windows-un digər müdafiəsini söndürmək
+tələb olunmur və tövsiyə edilmir.</p>
+<h2 id="quraşdırılmış-net-lazımdırmı">Quraşdırılmış .NET lazımdırmı</h2>
+<p><strong>Yox.</strong> .NET iş mühiti icra faylına daxildir — proqram
+quraşdırılmış .NET olmadan təmiz Windows-da işləyir.</p>
+<p>Tək-fayl təqdimatının əks tərəfini nəzərə alın: hər başlanğıcda
+proqram kitabxanaları <code>%TEMP%\.net\ErrantLauncher</code>-ə açır. Kataloqlar
+yığılır — tətbiq bağlı ikən onları əllə silmək olar.</p>
+<h2 id="errant-launcher-artıq-işləyir">«Errant Launcher artıq işləyir»</h2>
+<p><strong>Səbəb:</strong> proqramın yalnız bir nüsxəsi işləyir; ikinci başlanğıc bu
+bildirişi göstərir.</p>
+<p><strong>Nəyi yoxlamalı:</strong> bildiriş sahəsi (trey) — proqram ora bükülmüş
+ola bilər; işləyən nüsxə ilə əlaqə qurmaq alınmazsa, proqram bunu
+ayrıca bildirəcək.</p>
+<p><strong>Nəyi sınamalı:</strong> prosesi trey menyusundan «Çıxış» və ya Task
+Manager ilə bağlayın və yenidən işə salın.</p>
+<h2 id="yalnız-oxu-rejimi-və-daşıyıcı-yoxdur">«Yalnız oxu» rejimi və «Daşıyıcı yoxdur»</h2>
+<p><strong>Səbəblər:</strong></p>
+<ul>
+<li><em>Yalnız oxu</em> — proqramın məlumat qovluğuna yazma icazəsi yoxdur
+  (qorunan daşıyıcı, giriş icazələri, karantin).</li>
+<li><em>Daşıyıcı yoxdur</em> — məlumat qovluğu müvəqqəti əlçatan deyil
+  (USB-yaddaş ayrılıb).</li>
+</ul>
+<p><strong>Nə baş verir:</strong> yalnız oxu rejimində kartlara baxmaq və onları işə
+salmaq olar, lakin dəyişikliklər aydın mesajla rədd edilir. «Daşıyıcı
+yoxdur» halında dəyişikliklər yaddaşda qalır və daşıyıcı yenidən
+qoşulduqdan sonra saxlanılacaq — proqram «Daşıyıcı yenidən qoşulub»
+deyə bildirəcək.</p>
+<p><strong>Nəyi yoxlamalı:</strong> <code>ErrantLauncher</code> qovluğunun exe-nin yanında olub-olmadığını; onda «yalnız oxu» atributu olub-olmadığını; eyni
+məzmunlu daşıyıcının qoşulub-qoşulmadığını.</p>
+<h2 id="fayl-zədəlidir">«Fayl zədəlidir»</h2>
+<p><strong>Nə baş verdi:</strong> məlumat fayllarından biri (məsələn, bölmə və ya
+parametr faylı) oxunmur. Proqram belə faylı <strong>nəzərə almır</strong> və
+dəyişmir — qalan məlumatlarınız təhlükəsizdir.</p>
+<p><strong>Nə təklif olunur:</strong> dialoqda — zədələnmiş faylı «Sil» və ya onu
+«Saxla» (məsələn, əllə bərpa etməyə cəhd üçün).</p>
+<p><strong>Nəyi sınamalı:</strong> faylı ehtiyat nüsxədən bərpa edin — ixrac
+edilmiş arxivdən «Konfiqurasiya idxalı» ilə və ya əllə məlumat
+qovluğundakı <code>.backup\</code>/<code>.mass-import-backups\</code>-dən.</p>
+<h2 id="usb-yaddaşdan-icra">USB-yaddaşdan icra</h2>
+<p><strong>Normal:</strong> bu standart ssenaridir — exe və <code>ErrantLauncher</code>
+qovluğunu birlikdə daşıyın.</p>
+<p><strong>Tipik problemlər:</strong></p>
+<ul>
+<li>Proqram çıxarılma zamanı bağlandı — daşıyıcını çıxarmazdan <strong>əvvəl</strong>
+  onu bağlayın.</li>
+<li>Kartlar başqa kompüterdə işə salınmır — onlar fayllara lokal
+  yollarla istinad edir; kart statuslarını və yolları yoxlayın.</li>
+<li>Dəyişikliklər saxlanılmır — «Yalnız oxu» rejimi bölməsinə baxın.</li>
+</ul>
+<h2 id="əmr-kartı-konsol-pəncərəsi-qoyur">Əmr-kartı konsol pəncərəsi qoyur</h2>
+<p><strong>Bu xüsusiyyətdir, xəta deyil.</strong> Əmrlər <code>cmd /k</code> və ya
+<code>powershell -NoExit</code> ilə icra olunur ki, nəticə ekranda qalsın.
+Nəticə artıq lazım olmadıqda konsol pəncərəsini əllə bağlayın.</p>
+<p>Həmçinin nəzərə alın: əmrlər həmişə proqramın məlumat qovluğundan
+icra olunur — əmr-kartlarının ayrıca işçi qovluğu yoxdur. Əmrə başqa
+qovluq lazımdırsa, onu <code>cd /d "yol"</code> ilə başladın (və ya yolu əmrin
+içində göstərin).</p>
+<h2 id="kart-fayl-yoxdur-və-ya-daşıyıcı-yoxdur-göstərir">Kart «Fayl yoxdur» və ya «Daşıyıcı yoxdur» göstərir</h2>
+<p><strong>Səbəb:</strong> proqram kart hədəflərinin əlçatanlığını yoxlayır.
+Statuslar:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Mənası</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Əlçatandır</td>
+<td>Hədəf tapıldı</td>
+</tr>
+<tr>
+<td>Fayl yoxdur</td>
+<td>Göstərilən yolda fayl yoxdur</td>
+</tr>
+<tr>
+<td>Mənbə əlçatan deyil</td>
+<td>Qovluq/mənbə oxunmur</td>
+</tr>
+<tr>
+<td>Daşıyıcı yoxdur</td>
+<td>Disk/yaddaş qoşulmayıb</td>
+</tr>
+<tr>
+<td>Yoxlanılır…</td>
+<td>Yoxlama gedir</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nəyi yoxlamalı:</strong> faylın göstərilən yolda mövcud olub-olmadığını;
+lazımi diskin qoşulub-qoşulmadığını (xüsusən launcher-in başqa
+kompüterə köçürülməsindən sonra). Yolu «Kartları redaktə et»-də
+düzəltmək olar.</p>
+<h2 id="toplu-idxal-qismən-və-ya-səhvlərlə-başa-çatdı">Toplu idxal qismən və ya səhvlərlə başa çatdı</h2>
+<p><strong>Mümkün səbəblər:</strong> yol və ad dublikatları, əlçatmaz fayllar,
+filtrlərlə söndürülmüş tiplər, namizəd limitinə çatma, yazma
+səhvləri.</p>
+<p><strong>Nəyi yoxlamalı:</strong> idxalın yekun hesabatı səbəbləri sadalayır
+(«dublikat: artıq kart var», «ad artıq istifadə olunur», «itdi —
+fayl tapılmadı»). Nəticələr ekranındakı qeydlər filtrlərin nəyi
+kəsdiyini göstərir: tiplər, arxitekturalar, genişlənmələr, istisna
+edilmiş qovluqlar.</p>
+<p><strong>Nəyi sınamalı:</strong> filtrləri və seçimi düzəldin; yeni skan əvəzinə
+«Təkrar yoxlama»dan istifadə edin.</p>
+<p><strong>Yazı kəsilibsə:</strong> idxaldan əvvəl avtomatik ehtiyat nüsxə yaradılır
+(<code>.mass-import-backups\</code>-də). Xəta mesajı onun yolunu və tədbiri
+göstərir: məzmununu məlumat qovluğunun üstünə köçürün və ya idxalı
+təkrarlayın. Məlumat qovluğunu əllə silməyin — bu, ehtiyat nüsxələri
+də məhv edər.</p>
+<h2 id="pəncərə-ekrana-sığmır">Pəncərə ekrana sığmır</h2>
+<p><strong>Səbəb:</strong> proqram pəncərələri sabit ölçüdədir (məzmun
+1000 × 620 DIP, xarici ölçü 1028 × 648 DIP). Ekranın iş sahəsi daha
+kiçikdirsə — məsələn, aşağı imkan yüksək Windows miqyası ilə
+birlikdə — pəncərənin bir hissəsi ekran kənarlarından, o cümlədən
+pəncərə düyməli yuxarı paneldən kənara çıxa bilər.</p>
+<p><strong>Nəyi yoxlamalı:</strong> Windows miqyası (Parametrlər → Sistem → Ekran →
+Miqyas) və ekran imkanı.</p>
+<p><strong>Nəyi sınamalı:</strong> Windows miqyasını azaltmaq və ya daha yüksək
+imkan seçmək; pəncərənin bir hissəsi ekrandan kənardadırsa — miqyası
+dəyişin və proqramı yenidən başladın ki, pəncərə yenidən mərkəzləşsin.</p>
+<p>Ətraflı: <a href="../../../az/docs/requirements/#ekran-tələbləri">Sistem tələbləri</a>.</p>
+<h2 id="yeniləmə-və-məlumatların-saxlanması">Yeniləmə və məlumatların saxlanması</h2>
+<p><strong>Yeniləmə:</strong> avtomatik yeniləmə yoxdur — proqram bağlı ikən exe
+faylını əvəz edin; <code>ErrantLauncher</code> qovluğuna toxunmayın.</p>
+<p><strong>Yeniləmədən sonra məlumatlar:</strong> saxlanılır. Məlumat faylları
+proqramın daha yeni versiyası ilə yaradılıbsa, köhnə versiya onları
+oxuyacaq, lakin dəyişməyəcək — proqramı yeniləyin.</p>
+<p><strong>Kartların sıralanması:</strong> seçilmiş sıralama qaydası yalnız sessiya
+üçün saxlanılır — yenidən başladıqdan sonra standart qayda tətbiq
+olunur. Bu, betanın məlum məhdudiyyətidir, məlumat itkisi deyil.</p>
+<h2 id="jurnalları-harada-axtarmaq-və-xəta-barədə-necə-məlumat-vermək">Jurnalları harada axtarmaq və xəta barədə necə məlumat vermək</h2>
+<p><strong>Jurnallar:</strong> exe-nin yanında <code>ErrantLauncher\logs\</code> — <code>app.log</code>
+(iş mesajları və səhvlər) və <code>bootstrap.log</code> (başlanğıc qəzaları).
+Jurnallar heç yerə avtomatik göndərilmir.</p>
+<p><strong>Xəta barədə necə məlumat vermək:</strong> addım-addım təlimat, nə əlavə
+etməli və hara yazmalı — sənəddə
+<a href="../../../az/support/">Dəstək və xəta məlumatları</a>.</p>
+<div class="callout callout-warn"><b>Diqqət</b><p>Jurnalı göndərməzdən əvvəl ona baxın: orada fayl və qovluqlarınıza
+yollar ola bilər.</p>
+</div>
+<hr></div></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../../" data-lang="az"></footer>
+<script src="../../../assets/js/site.js"></script>
+</body>
+</html>

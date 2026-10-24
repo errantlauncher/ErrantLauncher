@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacidad y tratamiento de datos — Errant Launcher</title>
+<meta name="description" content="Privacidad y tratamiento de datos">
+<link rel="canonical" href="https://errantlauncher.com/es/privacy/">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/privacy/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/privacy/">
+<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/privacy/">
+<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/privacy/">
+<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/privacy/">
+<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/privacy/">
+<link rel="icon" type="image/svg+xml" href="../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../" data-lang="es" data-page="privacy" data-active=""></header>
+<main>
+<div class="container page-body"><h1 id="privacidad-y-tratamiento-de-datos">Privacidad y tratamiento de datos</h1>
+<hr>
+<h2 id="en-resumen">En resumen</h2>
+<ul>
+<li>Todos los datos del programa se guardan <strong>localmente</strong> — en la
+  carpeta <code>ErrantLauncher</code> junto al ejecutable.</li>
+<li><strong>No hay telemetría.</strong> El programa no envía al desarrollador
+  estadísticas, informes de uso ni diagnósticos.</li>
+<li>La propia aplicación <strong>no realiza peticiones de red salientes</strong> —
+  ni para comprobar actualizaciones, ni para analítica, ni para
+  activación.</li>
+<li>La red solo se usa cuando la abres tú mismo: al iniciar una
+  tarjeta-enlace, un comando personalizado o un programa con su
+  propio acceso a internet.</li>
+<li>No se requiere cuenta, registro ni conexión a internet.</li>
+</ul>
+<h2 id="qué-datos-crea-la-aplicación">Qué datos crea la aplicación</h2>
+<table>
+<thead>
+<tr>
+<th>Datos</th>
+<th>Dónde se guardan</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Secciones, categorías, tarjetas</td>
+<td><code>ErrantLauncher\sections\*.json</code></td>
+<td>Nombres, rutas a tus archivos y programas, comandos, enlaces, ajustes de ejecución, marcas de favoritos, composición de grupos</td>
+</tr>
+<tr>
+<td>Configuración</td>
+<td><code>ErrantLauncher\settings.json</code></td>
+<td>Tema, color de acento, idioma, sección inicial, estilos de tarjetas, comportamiento de la bandeja</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td><code>ErrantLauncher\state.json</code></td>
+<td>Posición y estado de la ventana, última sección abierta, contadores de ejecuciones</td>
+</tr>
+<tr>
+<td>Iconos</td>
+<td><code>ErrantLauncher\custom-icons\</code></td>
+<td>Archivos de iconos que añadiste e iconos extraídos de programas</td>
+</tr>
+<tr>
+<td>Registros</td>
+<td><code>ErrantLauncher\logs\</code></td>
+<td>Registros locales de diagnóstico <code>app.log</code> y <code>bootstrap.log</code> — mensajes técnicos sobre el funcionamiento y errores del programa</td>
+</tr>
+<tr>
+<td>Copias de servicio</td>
+<td><code>ErrantLauncher\.backup\</code>, <code>.mass-import-backups\</code></td>
+<td>Copias de seguridad automáticas de los archivos de datos</td>
+</tr>
+</tbody>
+</table>
+<p>Todo lo enumerado permanece en tu equipo o en tu unidad.
+El programa no escribe en el registro de Windows ni en el perfil de
+usuario.</p>
+<h2 id="qué-se-envía-al-desarrollador">Qué se envía al desarrollador</h2>
+<p><strong>Nada.</strong> El programa no tiene telemetría, analítica, informes de
+errores automáticos, comprobación de actualizaciones por red ni
+recopilación de estadísticas.</p>
+<p>Al desarrollador solo llega lo que tú <strong>envíes voluntariamente</strong> al
+contactar con soporte — por ejemplo, el texto del mensaje con la
+descripción del problema o un registro adjunto. Qué es útil adjuntar
+y qué no conviene enviar: <a href="../../es/support/">Soporte e informes de errores</a>.</p>
+<h2 id="peticiones-de-red">Peticiones de red</h2>
+<h3 id="la-propia-aplicación">La propia aplicación</h3>
+<p>El código del programa no contiene llamadas de red: Errant Launcher
+no contacta con los servidores del desarrollador, no comprueba
+actualizaciones ni descarga datos de internet. La única acción
+relacionada con la red es abrir direcciones en tu navegador por tu
+propia acción:</p>
+<ul>
+<li>tarjetas de tipo <strong>URL / URI</strong>;</li>
+<li>enlaces en la ventana <strong>«Acerca de»</strong> (sitio web, documentación,
+  página de informes de errores, lanzamientos en GitHub, apoyo al
+  proyecto).</li>
+</ul>
+<p>Abrir un enlace lo realiza el sistema operativo y tu navegador —
+el trabajo posterior con el sitio se rige por sus reglas, no por el
+lanzador.</p>
+<h3 id="a-través-de-tarjetas-de-usuario">A través de tarjetas de usuario</h3>
+<p>Conviene tener en cuenta que las tarjetas ejecutan <strong>tus</strong> programas
+y comandos:</p>
+<ul>
+<li>un programa iniciado puede salir a internet según sus propias
+  reglas;</li>
+<li>las tarjetas-comando ejecutan lo que escribiste en ellas —
+  incluidos comandos de red;</li>
+<li>la importación masiva puede escanear rutas de red (UNC) si activas
+  el filtro correspondiente — la lectura se realiza desde tus
+  recursos de red a tu elección.</li>
+</ul>
+<p>Así, «sin telemetría» no significa «ninguna operación de red en
+absoluto»: la actividad de red la crean los programas y comandos que
+tú ejecutas, no el lanzador en sí.</p>
+<h2 id="registros">Registros</h2>
+<p>En <code>ErrantLauncher\logs\</code> se mantienen registros locales. Pueden
+contener datos técnicos: mensajes de error, rutas a archivos de
+datos y nombres de archivos de configuración. Los registros no se
+envían a ninguna parte — pero antes de adjuntarlos a un informe de
+error, conviene revisar el archivo y quitar la información que no
+quieras revelar (por ejemplo, rutas con nombres de carpetas).</p>
+<h2 id="archivos-importados">Archivos importados</h2>
+<p>La función «Importar configuración» advierte: el archivo importado
+no ha sido verificado por el lanzador y puede contener comandos y
+enlaces. Importa archivos de configuración solo de fuentes en las
+que confíes.</p>
+<h2 id="eliminación-de-datos">Eliminación de datos</h2>
+<ul>
+<li>Eliminar la carpeta <code>ErrantLauncher</code> borra todos los datos locales
+  del programa — no existen copias en servidores de terceros.</li>
+<li>La función «Eliminar todos los datos» en la configuración hace lo
+  mismo desde dentro del programa (tras dos confirmaciones).</li>
+<li>Los archivos temporales desempaquetados en
+  <code>%TEMP%\.net\ErrantLauncher</code> contienen solo las bibliotecas del
+  programa y pueden eliminarse manualmente mientras la aplicación
+  está cerrada.</li>
+</ul></div>
+</main>
+<footer class="site-footer" data-site-footer data-root="../../" data-lang="es"></footer>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>
