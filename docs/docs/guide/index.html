@@ -3,9 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Errant Launcher — User Guide — Errant Launcher</title>
+<title>Errant Launcher — User Guide</title>
 <meta name="description" content="Errant Launcher — User Guide">
 <link rel="canonical" href="https://errantlauncher.com/docs/guide/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Errant Launcher — User Guide">
+<meta property="og:description" content="Errant Launcher — User Guide">
+<meta property="og:url" content="https://errantlauncher.com/docs/guide/">
+<meta property="og:image" content="https://errantlauncher.com/assets/img/app/app-main.gif">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1d24">
 <link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/guide/">
 <link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/guide/">
 <link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/guide/">
@@ -151,6 +158,7 @@ delay. Search matches the card name, the target file name and the
 description; all words of the query must match. Esc in the search
 field clears it, keeping focus in the field. The clear button does
 the same.</p>
+
 <div class="callout callout-tip"><b>Tip</b><p>While a search is active, the "Editor" button is unavailable —
 clear the search first.</p>
 </div>
@@ -229,6 +237,7 @@ within a section must be unique — on a clash the app reports
 with all its categories; a hidden category disappears from the pills.
 No data is deleted: everything stays in the structure editor and
 comes back via the visibility toggle.</p>
+
 <div class="callout callout-warn"><b>Warning</b><p><strong>Important — deleting:</strong></p>
 </div>
 <ul>
@@ -299,6 +308,7 @@ it.</p>
   example, on 64-bit Windows x64 first, then x86). The "Run x64" etc.
   menu items launch a specific variant.</li>
 </ul>
+
 <div class="callout callout-tip"><b>Tip</b><p>You don't have to set the card icon manually — extract it from
 the chosen <code>.exe</code> via the icon picker.</p>
 </div>
@@ -392,6 +402,7 @@ them, the app asks for confirmation — protection against accidental
 launches. For <code>.reg</code> — a special warning. If a launch requires
 administrator rights, Windows shows the standard UAC prompt:
 declining it simply cancels the launch with an error message.</p>
+
 <div class="callout callout-tip"><b>Tip</b><p>If Errant Launcher itself runs as administrator (the
 "Administrator mode" label), the processes it launches also get
 elevated rights.</p>
@@ -535,6 +546,7 @@ the target section", "network path disabled by filter".</p>
 </ul>
 <p>Candidates with errors and duplicates are excluded from selection
 automatically, but can be included manually.</p>
+
 <div class="callout callout-warn"><b>Warning</b><p>If you change the folder or filters after scanning, the results
 become "stale" — the wizard suggests rescanning and warns that
 your edits will apply to the same files if they are found again.</p>
@@ -558,6 +570,7 @@ no candidate is checked or all selected ones have errors.</p>
 created before writing. The summary page shows "Added", "Skipped on
 import", "Not selected" and details — for example, how many cards
 were added without their own icon.</p>
+
 <div class="callout callout-warn"><b>Warning</b><p>On a partial write or a failure the app reports it with separate
 messages and shows the backup path for manual rollback; until the
 state is acknowledged, repeating the import is paused — reopen the
@@ -584,6 +597,7 @@ data".</p>
    and state are not included; favorites travel with the cards. The
    file name is <code>ErrantLauncher-Collection.zip</code>.</li>
 </ol>
+
 <div class="callout callout-warn"><b>Warning</b><p>If the checked sections contain groups referencing cards of
 unchecked sections, a warning appears — you can continue or cancel
 and adjust the marks.</p>
@@ -609,6 +623,7 @@ the application state.</p>
 archive newer than the app version — "newer format"; cancelling at
 any step imports nothing; invalid theme files are skipped and listed
 in the summary.</p>
+
 <div class="callout callout-tip"><b>Tip</b><p>Before moving: make a full backup at the old location and check
 that the file opens as an archive.</p>
 </div>
@@ -658,6 +673,7 @@ is open — the list closes first, then the panel).</p>
 <p>Selector fields open a dropdown: Enter/Space apply and close it,
 Esc only closes it. Changes apply immediately and are saved
 automatically.</p>
+
 <div class="callout callout-tip"><b>Tip</b><p>In "Read-only" mode, settings show a notification: changes take
 effect until the app is closed but are not saved.</p>
 </div>
@@ -845,6 +861,7 @@ allowed and a handler exists in the system; check the internet.</p>
 See the "Read-only" and "No media" items.</p>
 <hr>
 <h2 id="18-resetting-and-restoring-data">18. Resetting and restoring data</h2>
+
 <div class="callout callout-warn"><b>Warning</b><p><strong>Reset is irreversible.</strong> "Reset all data" deletes all sections,
 categories, cards, favorites, settings and state — the app
 restarts clean.</p>
