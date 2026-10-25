@@ -65,6 +65,14 @@ Your workspace stays under your control — with nothing to install.
 Full instructions:
 [User guide](https://errantlauncher.com/docs/guide/).
 
+> **Note:** The executable is not code-signed, so Windows SmartScreen
+> may show a warning on first launch — click **More info** →
+> **Run anyway**. You can verify the file on
+> [VirusTotal](https://www.virustotal.com/gui/file/3fb2a84547eb69a25f8cd271645fce9bf780af9f9a58101f4735309c02e0a168)
+> or against `SHA256SUMS.txt` from the release. One engine (SecureAge)
+> may report a false positive — a known reaction to unsigned,
+> single-file .NET apps; all major engines report the file as clean.
+
 ## Documentation
 
 All documentation is on [errantlauncher.com](https://errantlauncher.com/):
