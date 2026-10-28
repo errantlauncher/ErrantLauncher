@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Frequently asked questions and troubleshooting — Errant Launcher</title>
 <meta name="description" content="Frequently asked questions and troubleshooting">
 <link rel="canonical" href="https://errantlauncher.com/docs/faq/">
@@ -16,10 +16,6 @@
 <meta name="theme-color" content="#1a1d24">
 <link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/faq/">
 <link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/faq/">
-<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/faq/">
-<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/faq/">
-<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/faq/">
-<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/faq/">
 <link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/faq/">
 <link rel="icon" type="image/svg+xml" href="../../assets/img/app-icon.svg">
 <link rel="stylesheet" href="../../assets/css/site.css">
@@ -28,200 +24,71 @@
 <body>
 <header class="site-header" data-site-header data-root="../../" data-lang="en" data-page="docs/faq" data-active="docs"></header>
 <main>
-<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="faq"></aside><div class="docs-content page-body"><h1 id="frequently-asked-questions-and-troubleshooting">Frequently asked questions and troubleshooting</h1>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="faq"></aside><div class="docs-content page-body" style="grid-column:1/-1"><h1>Frequently Asked Questions</h1>
 <hr>
-<h2 id="contents">Contents</h2>
+<p>Answers to common questions and solutions to typical problems with Errant Launcher. Detailed instructions: <a href="../data/">Data and Portability</a>, <a href="../requirements/">System Requirements</a>, and <a href="../../support/">Support</a>.</p>
+<h2>The app won't start</h2>
 <ul>
-<li><a href="#the-app-does-not-start">The app does not start</a></li>
-<li><a href="#smartscreen-warning">SmartScreen warning</a></li>
-<li><a href="#is-net-required">Is .NET required?</a></li>
-<li><a href="#errant-launcher-is-already-running">"Errant Launcher is already running"</a></li>
-<li><a href="#read-only-mode-and-no-media">"Read-only" mode and "No media"</a></li>
-<li><a href="#file-is-corrupt">"File is corrupt"</a></li>
-<li><a href="#running-from-a-usb-drive">Running from a USB drive</a></li>
-<li><a href="#a-command-card-leaves-a-console-window">A command card leaves a console window</a></li>
-<li><a href="#card-shows-file-missing-or-drive-unavailable">Card shows "File missing" or "Drive unavailable"</a></li>
-<li><a href="#mass-import-finished-partially-or-with-errors">Mass import finished partially or with errors</a></li>
-<li><a href="#the-window-does-not-fit-the-screen">The window does not fit the screen</a></li>
-<li><a href="#updating-and-keeping-data">Updating and keeping data</a></li>
-<li><a href="#where-to-find-logs-and-how-to-report-a-bug">Where to find logs and how to report a bug</a></li>
+<li>Check system compatibility: Windows 10 (1607) or later, 64-bit. See <a href="../requirements/">system requirements</a>.</li>
+<li>Make sure both DLLs are next to <code>ErrantLauncher-x64.exe</code>: <code>libSkiaSharp.dll</code> and <code>av_libglesv2.dll</code>. The app won't start without them.</li>
+<li>Verify the app has write access to its folder — it cannot create the data folder otherwise.</li>
+<li>If nothing happens, check <code>ErrantLauncher\logs\bootstrap.log</code> and <code>app.log</code> — startup errors are recorded there.</li>
 </ul>
-<hr>
-<h2 id="the-app-does-not-start">The app does not start</h2>
-<p><strong>Possible causes:</strong> outdated Windows version; unsupported
-architecture; an already running instance; an unavailable data
-folder.</p>
-<p><strong>What to check:</strong></p>
-<ol>
-<li>Windows must be 64-bit, Windows 10 (1607) or newer.
-   Windows 7/8 and 32-bit systems are not supported.</li>
-<li>Look at the notification area (tray) — the app may already be
-   running minimized.</li>
-<li>Check that the <code>ErrantLauncher</code> folder exists next to the exe
-   and is readable.</li>
-</ol>
-<p><strong>What to try:</strong> move the exe file to a regular folder on a local
-drive (e.g. <code>C:\Tools\</code>) and run it again; check the
-<code>ErrantLauncher\logs\bootstrap.log</code> — it is created on launch
-failures.</p>
-<p><strong>Report to support:</strong> your Windows version, the exe file location,
-and the <code>bootstrap.log</code> contents if it exists.</p>
-<h2 id="smartscreen-warning">SmartScreen warning</h2>
-<p><strong>Cause:</strong> the executable is not digitally signed — expected for a
-beta version, not a sign of a problem.</p>
-<p><strong>What to check (recommended):</strong> the file's authenticity via its
-checksum. In PowerShell, in the app folder:</p>
-<pre><code class="language-powershell">Get-FileHash .\ErrantLauncher-x64.exe -Algorithm SHA256
-</code></pre>
-<p>Compare the result with the string in the <code>SHA256SUMS.txt</code> file
-from the release package.</p>
-<p><strong>What to do:</strong> in the SmartScreen window click "More info" →
-"Run anyway". Disabling SmartScreen or other Windows protection is
-not required and not recommended.</p>
-<h2 id="is-net-required">Is .NET required?</h2>
-<p><strong>No.</strong> The .NET runtime is built into the executable — the app runs
-on a clean Windows without .NET installed.</p>
-<p>Note the downside of single-file delivery: on every launch the app
-unpacks its libraries into <code>%TEMP%\.net\ErrantLauncher</code>. The
-directories accumulate — you can delete them manually while the app
-is closed.</p>
-<h2 id="errant-launcher-is-already-running">"Errant Launcher is already running"</h2>
-<p><strong>Cause:</strong> only one instance of the app can run; a second launch
-shows this notification.</p>
-<p><strong>What to check:</strong> the notification area (tray) — the app may have
-been minimized there; if the running instance cannot be contacted,
-the app reports that separately.</p>
-<p><strong>What to try:</strong> close the process via the "Exit" tray menu or Task
-Manager and run it again.</p>
-<h2 id="read-only-mode-and-no-media">"Read-only" mode and "No media"</h2>
-<p><strong>Causes:</strong></p>
+<h2>Windows SmartScreen warns about an unknown publisher</h2>
+<p>Expected behavior: the executable is not signed with a code-signing certificate. Choose <strong>More info → Run anyway</strong>. Before launching, you can verify the file's checksum against the one published on the download page or in the archive's <code>SHA256SUMS.txt</code>.</p>
+<h2>Do I need .NET installed?</h2>
+<p>No. The app is built with Native AOT — the runtime is embedded in the executable. No separate .NET installation is required.</p>
+<h2>"Errant Launcher is already running"</h2>
+<p>Only one instance can run at a time. If no window is visible, check the system tray — the app may be minimized there. If a stale process remains in memory, end it via Task Manager and relaunch.</p>
+<h2>How do I add cards?</h2>
+<p>Three ways:</p>
 <ul>
-<li><em>Read-only</em> — the app has no write access to the data folder
-  (protected media, permissions, quarantine).</li>
-<li><em>No media</em> — the data folder is temporarily unavailable (USB drive
-  disconnected).</li>
+<li><strong>Drag and drop</strong> a file, folder, or shortcut onto the launcher window.</li>
+<li><strong>Editor</strong> — add sections, categories, and cards manually.</li>
+<li><strong>Bulk import</strong> — scans folders; found programs, files, scripts, and shortcuts become cards.</li>
 </ul>
-<p><strong>What happens:</strong> in read-only mode cards can be viewed and
-launched, but changes are rejected with a clear message. With
-"No media" changes stay in memory and are saved after the drive
-reconnects — the app reports "Drive reconnected".</p>
-<p><strong>What to check:</strong> whether the <code>ErrantLauncher</code> folder exists next
-to the exe; whether it has the "read-only" attribute; whether the
-drive with the same contents is connected.</p>
-<h2 id="file-is-corrupt">"File is corrupt"</h2>
-<p><strong>What happened:</strong> one of the data files (e.g. a section or settings
-file) cannot be read. The app <strong>ignores</strong> such a file and does not
-modify it — the rest of your data is safe.</p>
-<p><strong>What is offered:</strong> in the dialog — "Delete" the corrupt file or
-"Keep" it (for example, to try restoring it manually).</p>
-<p><strong>What to try:</strong> restore the file from a backup — from an exported
-archive via "Import configuration" or manually from
-<code>.backup\</code>/<code>.mass-import-backups\</code> inside the data folder.</p>
-<h2 id="running-from-a-usb-drive">Running from a USB drive</h2>
-<p><strong>Normal:</strong> this is a standard scenario — carry the exe and the
-<code>ErrantLauncher</code> folder together.</p>
-<p><strong>Typical problems:</strong></p>
+<h2>"Read-Only" and "No storage" modes</h2>
+<p><strong>Read-Only</strong> — the data folder isn't writable. Cards remain visible and launchable, but changes aren't saved to disk and last only until you close the app. That's why settings and Editor changes don't persist in this mode.</p>
+<p><strong>No storage</strong> — the drive holding the data folder is disconnected (e.g., an ejected USB drive). Changes stay in memory and may be written if the drive returns <em>before you close</em> the app. Closing it earlier loses them.</p>
+<h2>The "File Corrupted" dialog</h2>
+<p>The app couldn't read one of its data files. The file is not modified automatically — you choose whether to delete it or keep it. Before deleting a section file, the app automatically copies it to <code>.backup\</code>. If the problem is broader, first save a copy of the whole <code>ErrantLauncher</code> folder.</p>
+<h2>Running from a USB drive</h2>
+<p>Supported — data lives next to the executable. Keep in mind:</p>
 <ul>
-<li>The app terminated on removal — close it <strong>before</strong> removing the
-  drive.</li>
-<li>Cards do not launch on another computer — they reference files by
-  local paths; check card statuses and paths.</li>
-<li>Changes are not saved — see the "Read-only" mode section.</li>
+<li>Cards with absolute paths (<code>D:\Tools\app.exe</code>) won't open on a computer lacking that drive letter;</li>
+<li>Ejecting the drive while running shows the "No storage" status — see above.</li>
 </ul>
-<h2 id="a-command-card-leaves-a-console-window">A command card leaves a console window</h2>
-<p><strong>This is a feature, not a bug.</strong> Commands run with
-<code>cmd /k</code> or <code>powershell -NoExit</code> so the output stays on screen.
-Close the console window manually when you no longer need the
-result.</p>
-<p>Also note: commands always run from the app's data folder —
-command cards have no separate working directory. If a command needs
-a different folder, start it with <code>cd /d "path"</code> (or specify the
-path inside the command itself).</p>
-<h2 id="card-shows-file-missing-or-drive-unavailable">Card shows "File missing" or "Drive unavailable"</h2>
-<p><strong>Cause:</strong> the app checks the availability of card targets.
-Statuses:</p>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Available</td>
-<td>The target was found</td>
-</tr>
-<tr>
-<td>File missing</td>
-<td>No file at the specified path</td>
-</tr>
-<tr>
-<td>Source unavailable</td>
-<td>The folder/source cannot be read</td>
-</tr>
-<tr>
-<td>Drive unavailable</td>
-<td>The disk/drive is not connected</td>
-</tr>
-<tr>
-<td>Checking...</td>
-<td>Check in progress</td>
-</tr>
-</tbody>
-</table>
-<p><strong>What to check:</strong> whether the file exists at the specified path;
-whether the required drive is connected (especially after moving the
-launcher to another computer). You can fix the path in "Edit cards".</p>
-<h2 id="mass-import-finished-partially-or-with-errors">Mass import finished partially or with errors</h2>
-<p><strong>Possible causes:</strong> duplicate paths and names, unavailable files,
-types disabled by filters, the candidate limit reached, write
-errors.</p>
-<p><strong>What to check:</strong> the import summary lists the reasons
-("duplicate: card already exists", "name already used", "gone — file
-not found"). Notes on the results screen show what the filters cut:
-types, architectures, extensions, excluded folders.</p>
-<p><strong>What to try:</strong> adjust the filters and selection; use "Re-check"
-instead of a new scan.</p>
-<p><strong>If writing was interrupted:</strong> before the import a backup is
-created automatically (in <code>.mass-import-backups\</code>). The error
-message shows its path and the action to take: copy its contents
-over the data folder or repeat the import. Do not delete the data
-folder manually — it would destroy the backups too.</p>
-<h2 id="the-window-does-not-fit-the-screen">The window does not fit the screen</h2>
-<p><strong>Cause:</strong> the app windows have a fixed size (content 1000 × 620
-DIP, outer size 1028 × 648 DIP). If the screen work area is smaller —
-for example, low resolution combined with high Windows scaling —
-part of the window may go off the screen edges, including the top
-bar with the window buttons.</p>
-<p><strong>What to check:</strong> Windows scaling (Settings → System → Display →
-Scale) and screen resolution.</p>
-<p><strong>What to try:</strong> reduce Windows scaling or choose a higher
-resolution; if part of the window is off-screen — change the scaling
-and restart the app so the window re-centers.</p>
-<p>Details: <a href="../../docs/requirements/#display-requirements">System requirements</a>.</p>
-<h2 id="updating-and-keeping-data">Updating and keeping data</h2>
-<p><strong>Updating:</strong> there is no auto-update — replace the exe file while
-the app is closed; do not touch the <code>ErrantLauncher</code> folder.</p>
-<p><strong>Data after updating:</strong> preserved. If data files were created by a
-newer version of the app, the old version will read them but will
-not modify them — update the app.</p>
-<p><strong>Card sorting:</strong> the chosen sort order is kept only for the session
-— after a restart the default order applies. This is a known beta
-limitation, not data loss.</p>
-<h2 id="where-to-find-logs-and-how-to-report-a-bug">Where to find logs and how to report a bug</h2>
-<p><strong>Logs:</strong> <code>ErrantLauncher\logs\</code> next to the exe — <code>app.log</code>
-(working messages and errors) and <code>bootstrap.log</code> (launch failures).
-Logs are never sent anywhere automatically.</p>
-<p><strong>How to report a bug:</strong> step-by-step instructions, what to attach
-and where to write — in the document
-<a href="../../support/">Support and bug reports</a>.</p>
-
-<div class="callout callout-warn"><b>Warning</b><p>Before sending a log, review it: it may contain paths to your
-files and folders.</p>
-</div>
-<hr></div><aside class="docs-toc"><b>Contents</b><a href="#contents">Contents</a><a href="#the-app-does-not-start">The app does not start</a><a href="#smartscreen-warning">SmartScreen warning</a><a href="#is-net-required">Is .NET required?</a><a href="#errant-launcher-is-already-running">"Errant Launcher is already running"</a><a href="#read-only-mode-and-no-media">"Read-only" mode and "No media"</a><a href="#file-is-corrupt">"File is corrupt"</a><a href="#running-from-a-usb-drive">Running from a USB drive</a><a href="#a-command-card-leaves-a-console-window">A command card leaves a console window</a><a href="#card-shows-file-missing-or-drive-unavailable">Card shows "File missing" or "Drive unavailable"</a><a href="#mass-import-finished-partially-or-with-errors">Mass import finished partially or with errors</a><a href="#the-window-does-not-fit-the-screen">The window does not fit the screen</a><a href="#updating-and-keeping-data">Updating and keeping data</a><a href="#where-to-find-logs-and-how-to-report-a-bug">Where to find logs and how to report a bug</a></aside></div>
+<p>Details in <a href="../data/">Data and Portability</a>.</p>
+<h2>A card won't launch</h2>
+<p>Check in order:</p>
+<ul>
+<li><strong>"File missing"</strong> — the target file isn't at its saved path. Verify the file exists; if the drive letter changed, fix the path in the card.</li>
+<li><strong>"Media missing"</strong> — the drive with the target isn't connected. Reconnect and retry.</li>
+<li><strong>"Error" badge</strong> — launch failed. Causes: deleted file, insufficient rights, antivirus block, invalid command. Check the log for details.</li>
+<li><strong>Error requesting elevation</strong> — running as administrator requires a UAC confirmation. Declining it simply cancels the launch — not an error;</li>
+<li><strong>Command or link won't open</strong> — check the command/URL text; Windows opens the browser or app registered for that address type.</li>
+</ul>
+<h2>A command card leaves a console window</h2>
+<p>Command cards run through the Windows command processor, and the console window stays open on purpose — so you can review the command's output. Close it manually when you no longer need the results.</p>
+<h2>Bulk import finished partially or with errors</h2>
+<p>Before importing, the app creates a backup in <code>.mass-import-backups\</code> and verifies it with SHA-256. Only the latest verified backup is kept — you can restore it manually with the app closed. Partial results are expected: files filtered out by type, extension, or architecture are not added. See <a href="../data/">the data documentation</a> for details.</p>
+<h2>Full Backup vs. Share Collection — what's the difference?</h2>
+<ul>
+<li><strong>Full Backup</strong> — everything: sections, icons, settings, state. Named <code>ErrantLauncher-Backup.zip</code>.</li>
+<li><strong>Share Collection</strong> — sections, icons, and favorites, <em>without</em> settings. Named <code>ErrantLauncher-Collection.zip</code>.</li>
+</ul>
+<h2>Cards or settings disappeared — where is my data?</h2>
+<p>All data lives in the <code>ErrantLauncher</code> folder next to the executable: <code>sections\*.json</code> (cards), <code>settings.json</code>, <code>custom-icons\</code>. If the app opens "empty," check whether a different executable (or a copy in another folder) is running, or whether Read-Only mode is active.</p>
+<h2>The window doesn't fit my screen</h2>
+<p>The window has a fixed size — it cannot be resized. At high Windows scaling on low-resolution displays (e.g., 1366×768 at 150%) it may not fit. Reduce display scaling or use a higher-resolution screen.</p>
+<h2>"Data was created by a newer version"</h2>
+<p>The data folder was written by a newer app version. Files are read but not overwritten — to protect their format. Update the application to the current version.</p>
+<h2>Updating without losing data</h2>
+<p>There's no auto-update. Close the app, unpack the new ZIP, and replace <strong>all</strong> application files — the EXE and both DLLs together, not just the EXE. Leave the <code>ErrantLauncher</code> folder untouched — your collection and settings will be preserved. See <a href="../data/">the update section</a> for details.</p>
+<h2>Where are the logs, and how do I report a bug?</h2>
+<p>Logs: <code>ErrantLauncher\logs\app.log</code> and <code>bootstrap.log</code>. Before sending, open them in Notepad and remove anything you don't want to share — paths may contain your folder names. Open an issue on <a href="https://github.com/errantlauncher/ErrantLauncher/issues" rel="noopener">GitHub</a> with: app version (About window), Windows version (<code>winver</code>), reproduction steps, and the error text. Details on the <a href="../../support/">Support</a> page.</p></div></div>
 </main>
+
 <footer class="site-footer" data-site-footer data-root="../../" data-lang="en"></footer>
 <script src="../../assets/js/site.js"></script>
 <!-- Cloudflare Web Analytics -->

@@ -8,6 +8,11 @@
         'sun': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
         'download': '<path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/>',
         'zap': '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
+        'copy': '<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+        'image': '<rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>',
+        'minimize-2': '<path d="m14 10 7-7"/><path d="M20 10h-6V4"/><path d="m3 21 7-7"/><path d="M4 14h6v6"/>',
+        'pencil': '<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/>',
+        'file-code': '<path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 12.5 8 15l2 2.5"/><path d="m14 12.5 2 2.5-2 2.5"/>',
         'layout-grid': '<rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>',
         'layers': '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>',
         'terminal': '<path d="M12 19h8"/><path d="m4 17 6-6-6-6"/>',
@@ -32,6 +37,8 @@
         'circle-question-mark': '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
         'heart': '<path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>',
         'globe': '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+        'menu': '<path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>',
+        'x': '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
         'info': '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
         'flask-conical': '<path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/>',
         'triangle-alert': '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
@@ -69,112 +76,49 @@
 
     var L10N = {
         en: {
-            navDownload: 'Download', navGuide: 'Documentation', navSupport: 'Support',
+            navDownload: 'Download', navGuide: 'Documentation', navSupport: 'Help',
             support: 'Donate',
             copied: 'Copied',
             footerTag: 'Portable launcher for Windows. Free, no installation.',
             fProduct: 'Product', fLegal: 'Legal', fSupport: 'Support',
-            fDownload: 'Download', fGuide: 'Documentation', fAllVersions: 'All versions',
+            fDownload: 'Download', fGuide: 'Documentation',
             fLicense: 'License', fThirdParty: 'Third-party licenses',
             fPrivacy: 'Privacy', fEula: 'EULA', relBeta: 'Beta',
             fGithub: 'GitHub', fIssue: 'Report a problem', fHelp: 'Help',
             fDonate: 'Support the project',
             copy: '© 2026 Errant Launcher.',
             copyNote: 'Icons: Lucide (ISC).',
-            docsNav: ['Overview', 'User guide', 'FAQ & troubleshooting',
+            shareTitle: 'Errant Launcher',
+            shareText: 'Errant Launcher\nEverything you need. In one place.\nApps, files, scripts, commands, and links — organized into quick-launch cards. Arrange everything your way and keep the tools you need close at hand.',
+            shareDone: 'Link copied',
+            docsNav: ['User guide', 'FAQ & troubleshooting',
                       'System requirements', 'Data & portability'],
             themeDark: 'Dark', themeLight: 'Light'
         },
         ru: {
-            navDownload: 'Скачать', navGuide: 'Документация', navSupport: 'Поддержка',
+            navDownload: 'Скачать', navGuide: 'Документация', navSupport: 'Помощь',
             support: 'Поддержать',
             copied: 'Скопировано',
             footerTag: 'Портативный лаунчер для Windows. Бесплатно, без установки.',
             fProduct: 'Продукт', fLegal: 'Правовая информация', fSupport: 'Поддержка',
-            fDownload: 'Скачать', fGuide: 'Документация', fAllVersions: 'Все версии',
+            fDownload: 'Скачать', fGuide: 'Документация',
             fLicense: 'Лицензия', fThirdParty: 'Сторонние лицензии',
             fPrivacy: 'Конфиденциальность', fEula: 'EULA', relBeta: 'Бета',
             fGithub: 'GitHub', fIssue: 'Сообщить о проблеме', fHelp: 'Помощь',
             fDonate: 'Поддержать проект',
             copy: '© 2026 Errant Launcher.',
             copyNote: 'Иконки: Lucide (ISC).',
-            docsNav: ['Обзор', 'Руководство пользователя', 'FAQ и решение проблем',
+            shareTitle: 'Errant Launcher',
+            shareText: 'Errant Launcher\nВсё нужное. В одном месте.\nПрограммы, файлы, скрипты, команды и ссылки — в карточках быстрого запуска. Организуй всё по-своему и держи нужные инструменты под рукой.',
+            shareDone: 'Ссылка скопирована',
+            docsNav: ['Руководство пользователя', 'FAQ и решение проблем',
                       'Системные требования', 'Данные и переносимость'],
             themeDark: 'Тёмная', themeLight: 'Светлая'
         },
-        uk: {
-            navDownload: 'Завантажити', navGuide: 'Документація', navSupport: 'Підтримка',
-            support: 'Підтримати',
-            copied: 'Скопійовано',
-            footerTag: 'Портативний лаунчер для Windows. Безкоштовно, без інсталяції.',
-            fProduct: 'Продукт', fLegal: 'Правова інформація', fSupport: 'Підтримка',
-            fDownload: 'Завантажити', fGuide: 'Документація', fAllVersions: 'Усі версії',
-            fLicense: 'Ліцензія', fThirdParty: 'Сторонні ліцензії',
-            fPrivacy: 'Конфіденційність', fEula: 'EULA', relBeta: 'Бета',
-            fGithub: 'GitHub', fIssue: 'Повідомити про проблему', fHelp: 'Допомога',
-            fDonate: 'Підтримати проєкт',
-            copy: '© 2026 Errant Launcher.',
-            copyNote: 'Іконки: Lucide (ISC).',
-            docsNav: ['Огляд', 'Посібник користувача', 'FAQ та розв\'язання проблем',
-                      'Системні вимоги', 'Дані та переносимість'],
-            themeDark: 'Темна', themeLight: 'Світла'
-        },
-        az: {
-            navDownload: 'Yüklə', navGuide: 'Sənədlər', navSupport: 'Dəstək',
-            support: 'Dəstək ol',
-            copied: 'Kopyalandı',
-            footerTag: 'Windows üçün portativ launcher. Pulsuz, quraşdırmasız.',
-            fProduct: 'Məhsul', fLegal: 'Hüquqi məlumat', fSupport: 'Dəstək',
-            fDownload: 'Yüklə', fGuide: 'Sənədlər', fAllVersions: 'Bütün versiyalar',
-            fLicense: 'Lisenziya', fThirdParty: 'Üçüncü tərəf lisenziyaları',
-            fPrivacy: 'Məxfilik', fEula: 'EULA', relBeta: 'Beta',
-            fGithub: 'GitHub', fIssue: 'Problem bildirin', fHelp: 'Kömək',
-            fDonate: 'Layihəyə dəstək',
-            copy: '© 2026 Errant Launcher.',
-            copyNote: 'İkonlar: Lucide (ISC).',
-            docsNav: ['Baxış', 'İstifadəçi təlimatı', 'SSS və problemlərin həlli',
-                      'Sistem tələbləri', 'Məlumatlar və portativlik'],
-            themeDark: 'Tünd', themeLight: 'İşıqlı'
-        },
-        es: {
-            navDownload: 'Descargar', navGuide: 'Documentación', navSupport: 'Soporte',
-            support: 'Apoyar',
-            copied: 'Copiado',
-            footerTag: 'Lanzador portátil para Windows. Gratis, sin instalación.',
-            fProduct: 'Producto', fLegal: 'Información legal', fSupport: 'Soporte',
-            fDownload: 'Descargar', fGuide: 'Documentación', fAllVersions: 'Todas las versiones',
-            fLicense: 'Licencia', fThirdParty: 'Licencias de terceros',
-            fPrivacy: 'Privacidad', fEula: 'EULA', relBeta: 'Beta',
-            fGithub: 'GitHub', fIssue: 'Informar de un problema', fHelp: 'Ayuda',
-            fDonate: 'Apoyar el proyecto',
-            copy: '© 2026 Errant Launcher.',
-            copyNote: 'Iconos: Lucide (ISC).',
-            docsNav: ['Resumen', 'Guía de usuario', 'FAQ y solución de problemas',
-                      'Requisitos del sistema', 'Datos y portabilidad'],
-            themeDark: 'Oscura', themeLight: 'Clara'
-        },
-        'pt-BR': {
-            navDownload: 'Baixar', navGuide: 'Documentação', navSupport: 'Suporte',
-            support: 'Apoiar',
-            copied: 'Copiado',
-            footerTag: 'Launcher portátil para Windows. Grátis, sem instalação.',
-            fProduct: 'Produto', fLegal: 'Informações legais', fSupport: 'Suporte',
-            fDownload: 'Baixar', fGuide: 'Documentação', fAllVersions: 'Todas as versões',
-            fLicense: 'Licença', fThirdParty: 'Licenças de terceiros',
-            fPrivacy: 'Privacidade', fEula: 'EULA', relBeta: 'Beta',
-            fGithub: 'GitHub', fIssue: 'Reportar um problema', fHelp: 'Ajuda',
-            fDonate: 'Apoiar o projeto',
-            copy: '© 2026 Errant Launcher.',
-            copyNote: 'Ícones: Lucide (ISC).',
-            docsNav: ['Visão geral', 'Guia do usuário', 'FAQ e solução de problemas',
-                      'Requisitos de sistema', 'Dados e portabilidade'],
-            themeDark: 'Escura', themeLight: 'Clara'
-        }
     };
 
     var LANGS = [
-        ['en', 'English'], ['ru', 'Русский'], ['uk', 'Українська'],
-        ['az', 'Azərbaycan dili'], ['es', 'Español'], ['pt-BR', 'Português (Brasil)']
+        ['en', 'English'], ['ru', 'Р�?�?�?кий']
     ];
     var T = L10N.en;
 
@@ -185,8 +129,8 @@
     function navLinks(root) {
         return [
             { id: 'download',    href: loc(root, 'download/index.html'),    label: T.navDownload, ic: 'download' },
-            { id: 'docs',        href: loc(root, 'docs/index.html'),        label: T.navGuide,    ic: 'notebook-text' },
-            { id: 'support',     href: loc(root, 'support/index.html'),     label: T.navSupport,  ic: 'circle-question-mark' }
+            { id: 'docs',        href: loc(root, 'docs/guide/index.html'),        label: T.navGuide,    ic: 'notebook-text' },
+            { id: 'support',     href: loc(root, 'help/index.html'),     label: T.navSupport,  ic: 'circle-question-mark' }
         ];
     }
 
@@ -201,12 +145,10 @@
         var items = LANGS.map(function (l) {
             var href = root + langPrefix(l[0]) + (pageId ? pageId + '/index.html' : 'index.html');
             var on = l[0] === lang ? ' class="on"' : '';
-            return '<a href="' + href + '"' + on + '>' + l[1] + '</a>';
+            return '<a href="' + href + '"' + on + '>' + l[0].toUpperCase() + '</a>';
         }).join('');
-        return '<span class="lang-select">' +
-            '<button type="button" class="lang-btn" data-lang-btn>' +
-                icon('globe', 16) + '<span>' + lang.toUpperCase() + '</span></button>' +
-            '<span class="lang-menu">' + items + '</span>' +
+        return '<span class="lang-switch">' +
+            '<span class="lang-switch-icon">' + icon('globe', 19) + '</span>' + items +
         '</span>';
     }
 
@@ -216,13 +158,12 @@
             return '<a href="' + l.href + '"' + cur + '>' + icon(l.ic, 16) + '<span>' + l.label + '</span></a>';
         }).join('');
         var actions =
-            '<a href="' + EXT.github + '" rel="noopener" title="GitHub">' +
-                icon('github', 16) + '<span>GitHub</span></a>' +
             '<a href="' + loc(root, 'donate/index.html') + '"' +
                 (active === 'donate' ? ' class="on" aria-current="page"' : '') + '>' +
-                icon('heart', 16) + '<span>' + T.support + '</span></a>';
-            actions += renderLangMenu(root, pageId) +
-            '<span class="theme-toggle">' +
+                icon('heart', 16) + '<span>' + T.support + '</span></a>' +
+            '<a href="' + EXT.github + '" rel="noopener" title="GitHub">' +
+                icon('github', 16) + '<span>GitHub</span></a>';
+            actions += renderLangMenu(root, pageId) + '<span class="theme-toggle">' +
                 '<button type="button" data-theme-set="dark" title="' + T.themeDark + '">' + icon('moon', 16) + '</button>' +
                 '<button type="button" data-theme-set="light" title="' + T.themeLight + '">' + icon('sun', 16) + '</button>' +
             '</span>';
@@ -231,6 +172,13 @@
                 '<img src="' + root + 'assets/img/logo.svg" alt="" width="24" height="25">' +
                 '<span>Errant <span class="accent">Launcher</span></span>' +
             '</a>' +
+            '<nav class="main-nav">' + nav + '</nav>' +
+            '<div class="header-actions">' + actions + '</div>' +
+            '<button class="nav-burger" type="button" data-nav-open aria-label="Menu">' + icon('menu', 22) + '</button>' +
+        '</div>' +
+        '<div class="nav-backdrop" data-nav-backdrop></div>' +
+        '<div class="nav-drawer" data-nav-drawer>' +
+            '<button class="nav-close" type="button" data-nav-close aria-label="Close">' + icon('x', 20) + '</button>' +
             '<nav class="main-nav">' + nav + '</nav>' +
             '<div class="header-actions">' + actions + '</div>' +
         '</div>';
@@ -246,8 +194,9 @@
                 '</div>' +
                 '<div class="footer-col"><b>' + t.fProduct + '</b>' +
                     '<a href="' + loc(root, 'download/index.html') + '">' + t.fDownload + '</a>' +
-                    '<a href="' + loc(root, 'docs/index.html') + '">' + t.fGuide + '</a>' +
-                    '<a href="' + EXT.releases + '" rel="noopener">' + t.fAllVersions + '</a>' +
+                    '<a href="' + loc(root, 'docs/guide/index.html') + '">' + t.fGuide + '</a>' +
+                    '<a href="' + loc(root, 'donate/index.html') + '">' + t.fDonate + '</a>' +
+                    '<a href="' + EXT.github + '" rel="noopener">' + t.fGithub + '</a>' +
                 '</div>' +
                 '<div class="footer-col"><b>' + t.fLegal + '</b>' +
                     '<a href="' + loc(root, 'license/index.html') + '">' + t.fLicense + '</a>' +
@@ -256,10 +205,8 @@
                     '<a href="' + loc(root, 'eula/index.html') + '">' + t.fEula + '</a>' +
                 '</div>' +
                 '<div class="footer-col"><b>' + t.fSupport + '</b>' +
-                    '<a href="' + loc(root, 'support/index.html') + '">' + t.fHelp + '</a>' +
+                    '<a href="' + loc(root, 'help/index.html') + '">' + t.fHelp + '</a>' +
                     '<a href="' + loc(root, 'support/index.html') + '">' + t.fIssue + '</a>' +
-                    '<a href="' + EXT.github + '" rel="noopener">' + t.fGithub + '</a>' +
-                    '<a href="' + loc(root, 'donate/index.html') + '">' + t.fDonate + '</a>' +
                 '</div>' +
             '</div>' +
             '<div class="footer-bottom">' +
@@ -269,7 +216,9 @@
         '</div>';
     }
 
-    var DOCS_SLUGS = ['', 'guide', 'faq', 'requirements', 'data'];
+    var DOCS_SLUGS = ['guide', 'faq', 'requirements', 'data'];
+    var DOCS_ICONS = { guide: 'notebook-text', faq: 'circle-question-mark',
+                       requirements: 'monitor', data: 'database-backup' };
 
     function renderDocsNav(el, root) {
         var active = el.dataset.active || '';
@@ -278,7 +227,7 @@
             var href = base + (s ? s + '/index.html' : 'index.html');
             return '<a href="' + href + '"' +
                 (s === active ? ' class="active" aria-current="page"' : '') +
-                '>' + T.docsNav[i] + '</a>';
+                '>' + icon(DOCS_ICONS[s], 20) + '<span>' + T.docsNav[i] + '</span></a>';
         }).join('');
     }
 
@@ -412,10 +361,36 @@
             var b = e.target.closest('[data-theme-set]');
             if (b) setTheme(b.dataset.themeSet);
 
-            var btn = e.target.closest('[data-lang-btn]');
-            var wrap = document.querySelector('.lang-select');
-            if (btn && wrap) { wrap.classList.toggle('open'); return; }
-            if (wrap && !e.target.closest('.lang-select')) wrap.classList.remove('open');
+            if (e.target.closest('[data-nav-open]')) {
+                document.querySelector('[data-nav-drawer]').classList.add('open');
+                document.querySelector('[data-nav-backdrop]').classList.add('open');
+                return;
+            }
+            if (e.target.closest('[data-nav-close]') || e.target.closest('[data-nav-backdrop]')) {
+                document.querySelector('[data-nav-drawer]').classList.remove('open');
+                document.querySelector('[data-nav-backdrop]').classList.remove('open');
+            }
+            if (e.target.closest('.nav-drawer a')) {
+                document.querySelector('[data-nav-drawer]').classList.remove('open');
+                document.querySelector('[data-nav-backdrop]').classList.remove('open');
+            }
+
+            var sh = e.target.closest('[data-share]');
+            if (sh) {
+                e.preventDefault();
+                if (navigator.share) {
+                    navigator.share({ title: T.shareTitle, text: T.shareText,
+                        url: 'https://errantlauncher.com/' }).catch(function () {});
+                } else if (navigator.clipboard) {
+                    navigator.clipboard.writeText('https://errantlauncher.com/');
+                    var sp = sh.querySelector('span');
+                    if (sp) {
+                        var old = sp.textContent;
+                        sp.textContent = T.shareDone;
+                        setTimeout(function () { sp.textContent = old; }, 1600);
+                    }
+                }
+            }
         });
         setTheme(theme);
 

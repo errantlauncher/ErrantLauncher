@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Support and error reports — Errant Launcher</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Report a Problem — Errant Launcher</title>
 <meta name="description" content="Support and error reports">
 <link rel="canonical" href="https://errantlauncher.com/support/">
 <meta property="og:type" content="website">
@@ -16,10 +16,6 @@
 <meta name="theme-color" content="#1a1d24">
 <link rel="alternate" hreflang="en" href="https://errantlauncher.com/support/">
 <link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/support/">
-<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/support/">
-<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/support/">
-<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/support/">
-<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/support/">
 <link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/support/">
 <link rel="icon" type="image/svg+xml" href="../assets/img/app-icon.svg">
 <link rel="stylesheet" href="../assets/css/site.css">
@@ -28,110 +24,47 @@
 <body>
 <header class="site-header" data-site-header data-root="../" data-lang="en" data-page="support" data-active="support"></header>
 <main>
-<div class="container page-body"><h1 id="support-and-error-reports">Support and error reports</h1>
-<p>Where to turn with questions about Errant Launcher and how to write
-an error report so the problem can be found and fixed quickly.</p>
+<div class="container page-body"><h1 id="support">Report a Problem</h1>
 <hr>
-<h2 id="support-channels">Support channels</h2>
-<p>Official project channels (the same links are inside the app —
-the "About" window; the channels work from the release publication):</p>
-<table>
-<thead>
-<tr>
-<th>Channel</th>
-<th>Address</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Documentation</td>
-<td><a href="../docs/">Documentation on the site</a></td>
-</tr>
-<tr>
-<td>Report an error</td>
-<td><a href="https://github.com/errantlauncher/ErrantLauncher/issues">GitHub Issues</a></td>
-</tr>
-<tr>
-<td>Releases</td>
-<td><a href="https://github.com/errantlauncher/ErrantLauncher/releases">GitHub Releases</a></td>
-</tr>
-</tbody>
-</table>
-<p>Before writing, check the
-<a href="../docs/faq/">FAQ and troubleshooting</a> — many questions
-(SmartScreen, "Read-only", card statuses, window size) are already
-covered there.</p>
-<h2 id="how-to-describe-an-error">How to describe an error</h2>
-<p>A good report answers three questions:</p>
+<p>This page explains how to report a bug in Errant Launcher and how to describe a problem so it is easier to reproduce, investigate, and fix.</p>
+<h2>Report a Bug</h2>
+<p>Found a bug or have a suggestion for improvement? Open an issue on GitHub:</p>
+<p><a class="btn btn-primary" href="https://github.com/errantlauncher/ErrantLauncher/issues" rel="noopener">Open GitHub Issues</a></p>
+<p>Before submitting an issue, check the <a href="../docs/faq/">FAQ and Troubleshooting</a> sections. They already cover many common questions, including SmartScreen warnings, read-only mode, card statuses, and window sizing.</p>
+<h2>How to Describe a Bug</h2>
+<p>A good bug report answers three questions:</p>
 <ol>
-<li><strong>What you were doing</strong> — reproduction steps, in order. For
-   example: "opened Editor → Mass import → picked the D:\Tools
-   folder → clicked 'Scan'".</li>
-<li><strong>What you expected</strong> — "a list of candidates was supposed to
-   appear".</li>
-<li><strong>What happened</strong> — "the app closed" / "a message appeared
-   …" — quote the message text verbatim or attach a screenshot.</li>
+<li><strong>What were you doing?</strong> List the steps in order. For example: "Opened the Editor → Bulk Import → selected the <code>D:\Tools</code> folder → clicked 'Scan'."</li>
+<li><strong>What did you expect to happen?</strong> For example: "A list of candidates should have appeared."</li>
+<li><strong>What actually happened?</strong> For example: "The app closed" or "An error message appeared." Include the exact wording of the message or attach a screenshot.</li>
 </ol>
-<h2 id="what-to-attach-to-the-report">What to attach to the report</h2>
+<h2>What to Include in Your Report</h2>
 <table>
-<thead>
-<tr>
-<th>Information</th>
-<th>Where to get it</th>
-</tr>
-</thead>
+<thead><tr><th>Information</th><th>Where to find it</th></tr></thead>
 <tbody>
-<tr>
-<td>App version</td>
-<td>"About" window (e.g. <code>1.0.0-beta.1</code>)</td>
-</tr>
-<tr>
-<td>Windows version and bitness</td>
-<td>Win+R → <code>winver</code>; architecture — in "Settings → System → About"</td>
-</tr>
-<tr>
-<td>Display scale</td>
-<td>Settings → System → Display → Scale (if the problem is with display)</td>
-</tr>
-<tr>
-<td>Where the app is launched from</td>
-<td>Path to the exe file; local disk or USB</td>
-</tr>
-<tr>
-<td>Logs</td>
-<td><code>ErrantLauncher\logs\app.log</code> and <code>bootstrap.log</code> — the <code>ErrantLauncher</code> folder is next to the exe file</td>
-</tr>
-<tr>
-<td>Reproduction steps</td>
-<td>See above — the more precise, the better</td>
-</tr>
-<tr>
-<td>Error message text</td>
-<td>Verbatim or a screenshot</td>
-</tr>
+<tr><td>App version</td><td>The About window, for example, <code>1.0.0-beta.2</code></td></tr>
+<tr><td>Windows version and architecture</td><td>Press <code>Win + R</code> and enter <code>winver</code>. Find the system architecture under Settings → System → About</td></tr>
+<tr><td>Display scaling</td><td>Settings → System → Display → Scale, if the problem involves how the app is displayed</td></tr>
+<tr><td>Where the app is running from</td><td>The path to the executable and the storage location: a local drive or USB drive</td></tr>
+<tr><td>Logs</td><td><code>ErrantLauncher\logs\app.log</code> and <code>ErrantLauncher\logs\bootstrap.log</code>. The <code>ErrantLauncher</code> folder is located next to the executable</td></tr>
+<tr><td>Steps to reproduce</td><td>The sequence of actions that leads to the problem</td></tr>
+<tr><td>Error message</td><td>The full message text or a screenshot</td></tr>
 </tbody>
 </table>
-<p>Before sending a log, open it in Notepad and check the contents:
-logs may contain paths to your files and folders — remove anything
-you don't want to disclose.</p>
-<h2 id="what-not-to-send">What NOT to send</h2>
+<p>Before attaching a log, open it in Notepad and review its contents. Logs may contain paths to your files and folders. Remove or redact any information you do not want to share.</p>
+<h2>What Not to Send</h2>
 <ul>
-<li>Passwords, keys, tokens — the app neither stores nor asks for
-  them, but they can accidentally end up in copied text or a
-  screenshot.</li>
-<li>Your entire card contents if it contains personal data: paths,
-  commands, links — send only fragments related to the problem.</li>
-<li>The whole <code>ErrantLauncher</code> folder unless asked: export the
-  configuration only at support's request and only after checking
-  its contents.</li>
+<li><strong>Passwords, keys, or tokens.</strong> The app does not store or request them, but they could accidentally appear in copied text or screenshots.</li>
+<li><strong>Full card contents containing personal information.</strong> Share only the relevant parts of file paths, commands, or links needed to understand the problem.</li>
+<li><strong>The entire <code>ErrantLauncher</code> folder</strong> unless necessary. If configuration files are needed to investigate a bug, attach only the relevant files and check them for personal information before sharing.</li>
 </ul>
-<h2 id="what-to-expect">What to expect</h2>
-<p>This is a free independent project at the beta stage: there are no
-promises about response times, but every clearly described report
-helps ship the stable version faster. Watch the releases page —
-fixes arrive in new versions.</p>
-<hr></div>
+<h2>What to Expect</h2>
+<p>Errant Launcher is a free, independent software project currently in beta testing. There are no fixed timelines for bug fixes or new releases. Fixes depend on the nature of the issue and the developer's available time and resources, so not every report will necessarily result in a change to the application.</p>
+<p>If you find a bug or want to suggest an improvement, please open an issue on GitHub. A detailed description of the problem helps identify its cause.</p>
+<p>Follow the <a href="https://github.com/errantlauncher/ErrantLauncher/releases" rel="noopener">Releases page</a> to stay informed about new versions and available fixes.</p>
+</div>
 </main>
+
 <footer class="site-footer" data-site-footer data-root="../" data-lang="en"></footer>
 <script src="../assets/js/site.js"></script>
 <!-- Cloudflare Web Analytics -->

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Privacy and data handling — Errant Launcher</title>
 <meta name="description" content="Privacy and data handling">
 <link rel="canonical" href="https://errantlauncher.com/privacy/">
@@ -16,10 +16,6 @@
 <meta name="theme-color" content="#1a1d24">
 <link rel="alternate" hreflang="en" href="https://errantlauncher.com/privacy/">
 <link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/privacy/">
-<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/privacy/">
-<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/privacy/">
-<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/privacy/">
-<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/privacy/">
 <link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/privacy/">
 <link rel="icon" type="image/svg+xml" href="../assets/img/app-icon.svg">
 <link rel="stylesheet" href="../assets/css/site.css">
@@ -28,121 +24,54 @@
 <body>
 <header class="site-header" data-site-header data-root="../" data-lang="en" data-page="privacy" data-active=""></header>
 <main>
-<div class="container page-body"><h1 id="privacy-and-data-handling">Privacy and data handling</h1>
+<div class="container page-body"><h1 id="privacy-and-data-handling">Privacy and Data Handling</h1>
 <hr>
-<h2 id="in-short">In short</h2>
+<h2 id="at-a-glance">At a Glance</h2>
 <ul>
-<li>All app data is stored <strong>locally</strong> — in the <code>ErrantLauncher</code> folder
-  next to the executable.</li>
-<li><strong>No telemetry.</strong> The app does not send statistics, usage reports
-  or diagnostics to the developer.</li>
-<li>The app itself <strong>makes no outbound network requests</strong> — not for
-  update checks, analytics or activation.</li>
-<li>The network is only used when you open it yourself: launching a
-  link card, a custom command, or a program with its own internet
-  access.</li>
-<li>No account, registration or internet connection is required.</li>
+<li>All data is stored locally in the <code>ErrantLauncher</code> folder next to the executable.</li>
+<li>No telemetry. The launcher does not send usage statistics, diagnostic information, or automatic error reports to the developer.</li>
+<li>The launcher does not contact the developer's servers on its own to check for updates, perform analytics, or activate the software.</li>
+<li>Network activity may occur when you choose to open links, launch programs, or run commands you have added to cards.</li>
+<li>No account, registration, or internet connection is required to use the launcher.</li>
 </ul>
-<h2 id="what-data-the-app-creates">What data the app creates</h2>
-<table>
-<thead>
-<tr>
-<th>Data</th>
-<th>Where it is stored</th>
-<th>Contents</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Sections, categories, cards</td>
-<td><code>ErrantLauncher\sections\*.json</code></td>
-<td>Names, paths to your files and programs, commands, links, launch settings, favorite marks, group composition</td>
-</tr>
-<tr>
-<td>Settings</td>
-<td><code>ErrantLauncher\settings.json</code></td>
-<td>Theme, accent color, language, startup section, card styles, tray behavior</td>
-</tr>
-<tr>
-<td>State</td>
-<td><code>ErrantLauncher\state.json</code></td>
-<td>Window position and state, last opened section, launch counters</td>
-</tr>
-<tr>
-<td>Icons</td>
-<td><code>ErrantLauncher\custom-icons\</code></td>
-<td>Icon files you added and icons extracted from programs</td>
-</tr>
-<tr>
-<td>Logs</td>
-<td><code>ErrantLauncher\logs\</code></td>
-<td>Local diagnostic logs <code>app.log</code> and <code>bootstrap.log</code> — technical messages about the app's operation and errors</td>
-</tr>
-<tr>
-<td>Service backups</td>
-<td><code>ErrantLauncher\.backup\</code>, <code>.mass-import-backups\</code></td>
-<td>Automatic backups of data files</td>
-</tr>
-</tbody>
-</table>
-<p>Everything listed stays on your computer or your drive.
-The app does not write to the Windows registry or the user profile.</p>
-<h2 id="what-is-sent-to-the-developer">What is sent to the developer</h2>
-<p><strong>Nothing.</strong> The app has no telemetry, analytics, automatic error
-reports, online update checks or statistics collection.</p>
-<p>The developer only receives what you <strong>voluntarily</strong> send yourself
-when contacting support — for example, the text of a message
-describing the problem or an attached log. What is useful to attach
-and what not to send: <a href="../support/">Support and bug reports</a>.</p>
-<h2 id="network-requests">Network requests</h2>
-<h3 id="the-app-itself">The app itself</h3>
-<p>The app code contains no network calls: Errant Launcher does not
-contact the developer's servers, does not check for updates and does
-not download data from the internet. The only network-related action
-is opening addresses in your browser at your command:</p>
+<h2 id="what-data-does-the-app-create">What Data Does the App Create?</h2>
+<p>The launcher stores its data locally in the <code>ErrantLauncher</code> folder next to the executable. This includes sections, categories and cards, settings, window state, custom icons, local logs, and internal backups.</p>
+<p>For a detailed breakdown of the folder contents, see <a href="../docs/data/">Data, backups and portability</a>.</p>
+<p>This data stays on your computer or on the storage device where the launcher is located. The app does not write to the Windows Registry or your user profile.</p>
+<h2 id="what-is-sent-to-the-developer">What Is Sent to the Developer?</h2>
+<p>The launcher itself sends nothing to the developer. It has no telemetry, analytics, automatic error reporting, network-based update checks, or usage statistics collection.</p>
+<p>The developer receives information only if you choose to send it voluntarily when contacting support — for example, a message describing a problem or an attached log file.</p>
+<p>For guidance on what to include in a support request and what you should avoid sharing, see <a href="../support/">Support and error reports</a>.</p>
+<h2 id="network-activity">Network Activity</h2>
+<h3 id="the-launcher-itself">The Launcher Itself</h3>
+<p>The launcher does not contact the developer's servers or check for updates over the network. Websites are opened only when you choose to follow a link, such as:</p>
 <ul>
-<li><strong>URL / URI</strong> card types;</li>
-<li>links in the <strong>"About"</strong> window (website, documentation, bug report
-  page, GitHub releases, project support).</li>
+<li>URL / URI cards;</li>
+<li>links in the About window, including the website, documentation, bug-report page, GitHub releases, and project support page.</li>
 </ul>
-<p>Opening a link is performed by the operating system and your
-browser — further interaction with the site follows their rules,
-not the launcher's.</p>
-<h3 id="through-user-cards">Through user cards</h3>
-<p>Keep in mind that cards launch <strong>your</strong> programs and commands:</p>
+<p>When you open a link, Windows launches your default browser or another application associated with that type of address. Any subsequent interaction with the website is governed by the website's and the application's own policies, not by the launcher.</p>
+<h3 id="through-user-configured-cards">Through User-Configured Cards</h3>
+<p>The launcher also lets you run programs and commands that you add to cards yourself. These may perform network operations:</p>
 <ul>
-<li>a launched program may access the internet under its own rules;</li>
-<li>command cards execute what you wrote in them — including network
-  commands;</li>
-<li>mass import can scan network paths (UNC) if you enable the
-  corresponding filter — the read is performed from your network
-  resources at your choice.</li>
+<li>A launched program may connect to the internet according to its own features and settings.</li>
+<li>Command cards run the commands you specify, including commands that access network resources.</li>
+<li>During bulk import, you can enable a filter to scan network paths (UNC). In that case, the launcher reads data from the network locations you selected.</li>
 </ul>
-<p>So "no telemetry" does not mean "no network activity at all":
-network activity is created by the programs and commands you launch,
-not by the launcher itself.</p>
+<p>Therefore, no telemetry does not mean no network activity at all. Network activity may occur when you open links, launch programs, run your own commands, or access selected network locations.</p>
 <h2 id="logs">Logs</h2>
-<p>Local logs are kept in <code>ErrantLauncher\logs\</code>. They may contain
-technical details: error messages, paths to data files and
-configuration file names. Logs are never sent anywhere — but before
-attaching them to a bug report, it makes sense to review the file
-and remove details you do not want to disclose (for example, paths
-containing folder names).</p>
-<h2 id="imported-files">Imported files</h2>
-<p>The "Import configuration" feature warns: the imported file is not
-checked by the launcher for safety and may contain commands and
-links. Import configuration files only from sources you trust.</p>
-<h2 id="deleting-data">Deleting data</h2>
+<p>Local logs are stored in <code>ErrantLauncher\logs\</code>. They may contain technical information such as error messages, paths to data files, and configuration file names.</p>
+<p>The launcher does not automatically send logs to the developer. If you choose to attach a log to a support request, review it first and remove any information you do not want to share, such as file paths containing your folder names.</p>
+<h2 id="imported-files">Imported Files</h2>
+<p>When you use the Import feature, the launcher warns you that it has not verified the imported file for safety. Such files may contain commands and links.</p>
+<p>Only import configurations from sources you trust, and review their contents before using them.</p>
+<h2 id="deleting-your-data">Deleting Your Data</h2>
 <ul>
-<li>Deleting the <code>ErrantLauncher</code> folder erases all local app data —
-  no copies exist on third-party servers.</li>
-<li>The "Delete all data" function in settings does the same from
-  inside the app (after two confirmations).</li>
-<li>Temporary unpacked files in <code>%TEMP%\.net\ErrantLauncher</code>
-  contain only the app's libraries and can be deleted manually
-  while the app is closed.</li>
+<li>Deleting the <code>ErrantLauncher</code> folder removes the launcher's local data stored in that folder, including cards, settings, icons, logs, and backups. The launcher does not send this data to the developer's servers or create cloud backups of it.</li>
+<li>The "Delete All Data" option in Settings removes local data from within the app. You must confirm the action twice before the data is deleted.</li>
+<li>.NET temporary files. The launcher is built using Native AOT, so .NET components are not extracted to <code>%TEMP%\.net\ErrantLauncher</code> at startup. If files from older versions remain in that location, you can delete them manually after closing the app.</li>
 </ul></div>
 </main>
+
 <footer class="site-footer" data-site-footer data-root="../" data-lang="en"></footer>
 <script src="../assets/js/site.js"></script>
 <!-- Cloudflare Web Analytics -->

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>System requirements and compatibility — Errant Launcher</title>
 <meta name="description" content="System requirements and compatibility">
 <link rel="canonical" href="https://errantlauncher.com/docs/requirements/">
@@ -16,10 +16,6 @@
 <meta name="theme-color" content="#1a1d24">
 <link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/requirements/">
 <link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/requirements/">
-<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/requirements/">
-<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/requirements/">
-<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/requirements/">
-<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/requirements/">
 <link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/requirements/">
 <link rel="icon" type="image/svg+xml" href="../../assets/img/app-icon.svg">
 <link rel="stylesheet" href="../../assets/css/site.css">
@@ -28,140 +24,36 @@
 <body>
 <header class="site-header" data-site-header data-root="../../" data-lang="en" data-page="docs/requirements" data-active="docs"></header>
 <main>
-<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="requirements"></aside><div class="docs-content page-body"><h1 id="system-requirements-and-compatibility">System requirements and compatibility</h1>
-<p>Errant Launcher is a portable app: it only needs a suitable Windows
-release and a little free space. Below are the <strong>confirmed
-requirements</strong>, <strong>recommendations</strong> and <strong>known limitations</strong> of the
-current beta version.</p>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="requirements"></aside><div class="docs-content page-body" style="grid-column:1/-1"><h1 id="req">System Requirements and Compatibility</h1>
 <hr>
-<h2 id="contents">Contents</h2>
-<ul>
-<li><a href="#minimum-requirements">Minimum requirements</a></li>
-<li><a href="#installation-and-launch">Installation and launch</a></li>
-<li><a href="#display-requirements">Display requirements</a></li>
-<li><a href="#disk-and-access-rights">Disk and access rights</a></li>
-<li><a href="#running-from-a-usb-drive">Running from a USB drive</a></li>
-<li><a href="#known-compatibility-limitations">Known compatibility limitations</a></li>
-</ul>
-<hr>
-<h2 id="minimum-requirements">Minimum requirements</h2>
+<p>Errant Launcher is a portable Windows application. No installation is required: download the ZIP archive, extract it, and launch the application.</p>
+<h2>Minimum Requirements</h2>
 <table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Requirement</th>
-</tr>
-</thead>
+<thead><tr><th>Component</th><th>Requirement</th></tr></thead>
 <tbody>
-<tr>
-<td>Operating system</td>
-<td>Windows 10 version 1607 or newer</td>
-</tr>
-<tr>
-<td>Architecture</td>
-<td>64-bit (x64)</td>
-</tr>
-<tr>
-<td>.NET</td>
-<td><strong>Not required</strong> — the runtime is built into the app file</td>
-</tr>
-<tr>
-<td>Installation</td>
-<td>Not required — a single executable</td>
-</tr>
-<tr>
-<td>Administrator rights</td>
-<td>Not required to launch or run</td>
-</tr>
+<tr><td>Operating system</td><td>Windows 10 version 1607 or later</td></tr>
+<tr><td>Architecture</td><td>64-bit (x64)</td></tr>
+<tr><td>.NET</td><td>No separate installation required — the runtime is built into the application using Native AOT</td></tr>
+<tr><td>Installation</td><td>Not required — the application runs directly from its extracted folder</td></tr>
+<tr><td>Free disk space</td><td>Sufficient space for the application, its required libraries, and user data</td></tr>
 </tbody>
 </table>
 <p><strong>Not supported:</strong></p>
 <ul>
-<li>Windows 7, 8 and 8.1 (a limitation of the .NET 8 platform used);</li>
-<li>32-bit Windows editions — no x86 build is provided;</li>
-<li>ARM64 processors — there is no dedicated build; on ARM64 devices
-  run the x64 version through the standard Windows emulation.</li>
+<li>Windows 7, Windows 8, and Windows 8.1</li>
+<li>32-bit versions of Windows</li>
+<li>Native ARM64 builds are not available</li>
 </ul>
-<h2 id="installation-and-launch">Installation and launch</h2>
-<p>There is no installer — the app ships as a single file
-<code>ErrantLauncher-x64.exe</code>.</p>
-<ol>
-<li>Copy the file to any folder: <code>Documents</code>, a separate directory on
-   a disk, or a USB drive.</li>
-<li>Run it with a double click.</li>
-<li>On first launch, an <code>ErrantLauncher</code> folder is created next to
-   the app file — it stores all cards, settings and service data.</li>
-</ol>
+<p>On ARM64 devices running Windows with x64 emulation support, the x64 version of Errant Launcher may run through emulation.</p>
+<h2>Display Requirements</h2>
+<p>The application window has a fixed size and cannot be resized.</p>
+<p>The window's physical pixel dimensions depend on your screen resolution and Windows display scaling. At higher scaling levels, the window occupies more physical pixels, so it may not fit entirely within the available screen area on lower-resolution displays.</p>
+<p>On typical desktop systems with a resolution of 1920 × 1080 and display scaling set to 100–150%, the window will generally fit on screen. At lower resolutions and higher scaling levels, such as 1366 × 768 at 150%, part of the window may extend beyond the visible desktop area.</p>
+<p>Check how the window appears on your display when launching the application for the first time, especially if you use a lower resolution or increased display scaling.</p>
 
-<div class="callout callout-warn"><b>Warning</b><p><strong>SmartScreen warning.</strong> The executable is not digitally signed,
-so Windows may show a warning — this is expected for a beta
-version. How to verify the file: <a href="../../docs/faq/">FAQ</a>.</p>
-</div>
-<h2 id="display-requirements">Display requirements</h2>
-<p>The app windows have a <strong>fixed size</strong> — it cannot be changed:</p>
-<ul>
-<li>window content: <strong>1000 × 620 DIP</strong>;</li>
-<li>outer window size including the decorative shadow: <strong>1028 × 648 DIP</strong>.</li>
-</ul>
-<p><strong>DIP</strong> is a logical unit of interface size, not physical screen
-pixels. The actual window size in pixels depends on the Windows
-scaling (for example, at 150% scaling the window takes about
-1540 × 970 physical pixels).</p>
-<p>For the interface to display fully, the <strong>screen work area</strong> (the
-screen without the taskbar) must fit the whole window. High scaling
-values reduce the work area in logical units and may require a
-higher screen resolution.</p>
-<p>If the work area is smaller than the window size, part of the window
-when centered may end up off the screen edges, including the top bar
-with the minimize and close buttons.</p>
-
-<div class="callout callout-tip"><b>Tip</b><p><strong>In practice:</strong> on typical desktops (1920 × 1080 and above) at
-100–150% scaling the window fits completely. On low-resolution
-screens with high scaling (for example, 1366 × 768 at 125–150%)
-the work area may not be enough — check the display on your screen
-at first launch.</p>
-</div>
-<h2 id="disk-and-access-rights">Disk and access rights</h2>
-<ul>
-<li><strong>Location.</strong> The app must be in a folder that allows reading;
-  saving data also requires write access.</li>
-<li><strong>Writing.</strong> If the <code>ErrantLauncher</code> folder is read-only, the app
-  opens in <strong>read-only mode</strong>: cards can be viewed and launched, but
-  changes are not saved — a clear notification is shown about this.</li>
-<li><strong>Registry and profile.</strong> The app writes nothing to the Windows
-  registry or user profile folders — all data lives only in
-  <code>ErrantLauncher\</code> next to the exe file.</li>
-<li><strong>Temp folder.</strong> On each launch the single-file app unpacks its
-  libraries into <code>%TEMP%\.net\ErrantLauncher</code>. These directories
-  accumulate and are not cleaned automatically; they can be safely
-  deleted manually while the app is closed.</li>
-</ul>
-<h2 id="running-from-a-usb-drive">Running from a USB drive</h2>
-<p>The app is designed to run from removable media:</p>
-<ul>
-<li>the whole package — the exe file and the <code>ErrantLauncher</code> folder —
-  is carried over as is;</li>
-<li>the drive letter may change between computers: data is looked up
-  next to the executable, not by an absolute path.</li>
-</ul>
-<p><strong>Limitations:</strong></p>
-<ul>
-<li>removing the USB drive while the app is running may terminate the
-  process — close the app before removing the drive;</li>
-<li>if the drive is temporarily unavailable, the app reports "No media"
-  and keeps changes in memory until it is reconnected;</li>
-<li>cards referencing files by drive letter (for example,
-  <code>D:\Tools\app.exe</code>) may not open on a computer where that letter
-  does not exist.</li>
-</ul>
-<h2 id="known-compatibility-limitations">Known compatibility limitations</h2>
-<ul>
-<li>Windows only; no macOS or Linux versions.</li>
-<li>x64 only; no x86 or ARM64 builds.</li>
-<li>The executable is unsigned — expect a SmartScreen warning.</li>
-</ul>
-<hr></div><aside class="docs-toc"><b>Contents</b><a href="#contents">Contents</a><a href="#minimum-requirements">Minimum requirements</a><a href="#installation-and-launch">Installation and launch</a><a href="#display-requirements">Display requirements</a><a href="#disk-and-access-rights">Disk and access rights</a><a href="#running-from-a-usb-drive">Running from a USB drive</a><a href="#known-compatibility-limitations">Known compatibility limitations</a></aside></div>
+</div></div>
 </main>
+
 <footer class="site-footer" data-site-footer data-root="../../" data-lang="en"></footer>
 <script src="../../assets/js/site.js"></script>
 <!-- Cloudflare Web Analytics -->

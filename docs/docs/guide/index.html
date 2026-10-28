@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Errant Launcher — User Guide</title>
 <meta name="description" content="Errant Launcher — User Guide">
 <link rel="canonical" href="https://errantlauncher.com/docs/guide/">
@@ -16,10 +16,6 @@
 <meta name="theme-color" content="#1a1d24">
 <link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/guide/">
 <link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/guide/">
-<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/docs/guide/">
-<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/docs/guide/">
-<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/docs/guide/">
-<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/docs/guide/">
 <link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/guide/">
 <link rel="icon" type="image/svg+xml" href="../../assets/img/app-icon.svg">
 <link rel="stylesheet" href="../../assets/css/site.css">
@@ -28,1008 +24,175 @@
 <body>
 <header class="site-header" data-site-header data-root="../../" data-lang="en" data-page="docs/guide" data-active="docs"></header>
 <main>
-<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="guide"></aside><div class="docs-content page-body"><h1 id="errant-launcher-user-guide">Errant Launcher — User Guide</h1>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="guide"></aside><div class="docs-content page-body" style="grid-column:1/-1"><h1>Errant Launcher — User Guide</h1>
 <hr>
-<h2 id="1-about-this-guide">1. About this guide</h2>
-<p><strong>What Errant Launcher is.</strong> It is a portable app for Windows that
-gathers cards for launching and opening frequently used items in one
-window: programs, scripts, folders, files, commands, links and MSI
-installers. Cards can be arranged into sections and categories. The
-app requires no installation; its folder can be carried around, for
-example on a flash drive.</p>
-<p><strong>How to use this guide.</strong> You can read it in order — starting from
-"Getting started" — or open the section you need when necessary.
-Links to related sections are provided throughout.</p>
-<h2 id="contents">Contents</h2>
+<h2 id="1">1. Getting to Know Errant Launcher</h2>
+<p>Errant Launcher is a portable Windows application. It brings together, in a single window, cards that launch everything you use often: applications, scripts, folders, files, commands, links, shortcuts, and MSI installers.</p>
+<p>No installation is required: simply extract the ZIP archive and run the executable. The application folder can be moved — for example, kept on a USB drive and launched on any computer running a compatible system (see <a href="../requirements/">System Requirements</a>: Windows 10 version 1607 or later, 64-bit).</p>
+<p>Cards can be organized into sections and categories, marked as favorites, searched, and launched individually or in groups.</p>
+<p><strong>How to read this guide.</strong> You can read it in order — from first launch to advanced features — or open only the chapter you need: each stands on its own, with links to related topics.</p>
+<p><strong>Notation:</strong> button and menu names appear in quotes ("Editor", "Save"). A block marked <strong>"Important"</strong> warns about actions that cannot be undone. A block marked <strong>"Tip"</strong> offers a convenience hint.</p>
+<h2 id="2">2. First Launch</h2>
+<ol>
+<li>Download the ZIP archive from the download page and extract it to any folder with write access — a USB drive works too.</li>
+<li>Make sure <code>ErrantLauncher-x64.exe</code>, <code>libSkiaSharp.dll</code>, and <code>av_libglesv2.dll</code> are together in the same folder — the app will not start without both DLLs.</li>
+<li>Run <code>ErrantLauncher-x64.exe</code>. An <code>ErrantLauncher</code> data folder will appear next to it — your cards and settings live there (details in Chapter 10).</li>
+</ol>
+<p>On first launch, Windows SmartScreen may warn about an unknown publisher — the file is not code-signed. Choose "More info" → "Run anyway".</p>
+<p>If the app is already running, a second instance is not created — the existing window opens (or is restored from the tray).</p>
+<h2 id="3">3. The Main Window</h2>
+<p>After launch you will see:</p>
 <ul>
-<li><a href="#1-about-this-guide">1. About this guide</a></li>
-<li><a href="#2-getting-started">2. Getting started</a></li>
-<li><a href="#3-interface-and-navigation">3. Interface and navigation</a></li>
-<li><a href="#4-sections-and-categories">4. Sections and categories</a></li>
-<li><a href="#5-cards-core-principles">5. Cards: core principles</a></li>
-<li><a href="#6-creating-cards-of-different-types">6. Creating cards of different types</a></li>
-<li><a href="#7-launching-and-opening-items">7. Launching and opening items</a></li>
-<li><a href="#8-card-groups">8. Card groups</a></li>
-<li><a href="#9-editing-and-organizing-cards">9. Editing and organizing cards</a></li>
-<li><a href="#10-favorites">10. Favorites</a></li>
-<li><a href="#11-icons-and-appearance">11. Icons and appearance</a></li>
-<li><a href="#12-mass-import">12. Mass import</a></li>
-<li><a href="#13-import-export-and-backups">13. Import, export and backups</a></li>
-<li><a href="#14-settings">14. Settings</a></li>
-<li><a href="#15-data-storage-and-portability">15. Data storage and portability</a></li>
-<li><a href="#16-keyboard-and-hotkeys">16. Keyboard and hotkeys</a></li>
-<li><a href="#17-troubleshooting">17. Troubleshooting</a></li>
-<li><a href="#18-resetting-and-restoring-data">18. Resetting and restoring data</a></li>
-<li><a href="#19-about-and-legal-information">19. About and legal information</a></li>
-<li><a href="#20-reference-materials">20. Reference materials</a></li>
+<li>the <strong>title bar</strong> on top — drag the window by its free area; the buttons on the right minimize, maximize, and close;</li>
+<li>the <strong>side panel</strong> on the left — "Favorites" and the list of sections;</li>
+<li><strong>category "pills"</strong> under the title — the categories of the selected section;</li>
+<li>the <strong>toolbar</strong> on the top right — the "Search…" field, and the "Editor", sort, and settings buttons;</li>
+<li>the <strong>card grid</strong> in the center;</li>
+<li>the <strong>status button</strong> at the bottom left — opens an info panel with counters and indicators.</li>
 </ul>
-<p><strong>Conventions used in the text:</strong></p>
+<p>Badges may appear at the bottom right: "Admin mode" (the app is running elevated), "Read-only" and "No storage" (data folder problems — see Chapter 10).</p>
+<p>Clicking empty space on the side panel collapses/expands it. Right-clicking a section opens a menu: "Rename", "Hide section", "Delete section"; right-clicking a category pill: "Rename", "Hide".</p>
+<p><strong>Search.</strong> Type into "Search…" — the grid filters. It searches card names, target file names, and descriptions; all words must match. Esc inside the field clears it. While a search is active, the "Editor" is unavailable — clear the search first.</p>
+<p><strong>Sorting.</strong> The sort button offers: "Custom order", "By name", "By type", "By launch frequency". The last option moves the cards you launch most often to the top.</p>
+<p><strong>System tray.</strong> If "Minimize to tray" is enabled in settings, the close button hides the window to the notification area instead of exiting. Clicking the icon brings the window back; its menu offers "Open" and "Exit". If you disable the setting while the window is hidden, it returns to the screen.</p>
+<h2 id="4">4. Your First Cards</h2>
+<p><strong>Four terms</strong> you will need:</p>
 <ul>
-<li>names of buttons, fields and menu items are given in quotes,
-  e.g. "Launch", "Editor", "Save";</li>
-<li><strong>Important</strong> — a warning about possible data loss or an
-  irreversible action;</li>
-<li><strong>Tip</strong> — a suggestion for using the app more conveniently.</li>
-</ul>
-<hr>
-<h2 id="2-getting-started">2. Getting started</h2>
-<h3 id="21-first-launch">2.1. First launch</h3>
-<p>Run the <code>ErrantLauncher-x64.exe</code> file. No installation is needed:
-the app is portable. Next to the file it will create its data folder —
-settings, cards and icons will be stored there (see the
-"Data storage" section for details).</p>
-<p>If you launch the app again while it is already running, no second
-window is created. The existing window is brought to the front (or
-restored from the system tray).</p>
-<h3 id="22-what-you-see-after-opening">2.2. What you see after opening</h3>
-<p>The main window consists of several areas:</p>
-<ul>
-<li><strong>top</strong> — the title bar with "minimize", "maximize/restore" and
-  "close" buttons;</li>
-<li><strong>left</strong> — a sidebar with the "Favorites" item and the list of
-  sections;</li>
-<li><strong>below the title</strong> — round category "pills" of the selected
-  section;</li>
-<li><strong>top right</strong> — the "Search…" field, the "Editor", sorting and
-  settings buttons;</li>
-<li><strong>center</strong> — the card grid;</li>
-<li><strong>bottom left</strong> — the status button that opens the info panel.</li>
-</ul>
-<p>The bottom-right corner may show indicator labels: "Administrator
-mode" (the app is running as administrator), "Read-only" and
-"No media" (data folder problems — see the
-<a href="#17-troubleshooting">"Troubleshooting"</a> section).</p>
-<h3 id="23-how-data-is-organized-in-simple-terms">2.3. How data is organized — in simple terms</h3>
-<ul>
-<li><strong>Card</strong> — a button in the grid that launches or opens a single
-  thing: a program, folder, link, etc.</li>
-<li><strong>Category</strong> — a subgroup inside a section (the pills above the
-  grid).</li>
+<li><strong>Card</strong> — a grid button that launches one item.</li>
+<li><strong>Category</strong> — a subgroup inside a section (the pills above the grid).</li>
 <li><strong>Section</strong> — the top grouping level (the list on the left).</li>
-<li><strong>Favorites</strong> — a separate view collecting marked cards from all
-  sections.</li>
+<li><strong>Favorites</strong> — a separate view of marked cards from all sections.</li>
 </ul>
-<h3 id="24-first-actions">2.4. First actions</h3>
+<p><strong>Three ways to add a card:</strong></p>
 <ol>
-<li>Open "Editor" → "Structure" tab → "Add section" and
-   "Add category" — build the frame for your tasks.</li>
-<li>Return to the main window, select a section and a category.</li>
-<li>Add your first card — using any method from section 6.</li>
-<li>Customize the appearance via the settings button (theme, accent
-   color).</li>
+<li><strong>Drag and drop.</strong> Drag a file or folder onto the window — the type is detected automatically (<code>.exe</code> → program, <code>.lnk</code> → shortcut, <code>.msi</code> → MSI, script → script, folder → folder, anything else → file). You can also drag an <code>http(s)://</code> link — a URL card is created.</li>
+<li><strong>Editor.</strong> "Editor" → "Add card" → choose a type → fill in the fields → "Save".</li>
+<li><strong>Bulk import.</strong> To add an entire folder of items at once — see Chapter 8.</li>
 </ol>
-<h3 id="25-how-to-create-your-first-card">2.5. How to create your first card</h3>
-<p>The fastest way — drag a program file (<code>.exe</code>) straight onto the
-Errant Launcher window: the card will appear in the current section
-and category. Second way: "Editor" → "Add card" →
-choose a type → fill in the fields → "Save". See section 6 for
-details.</p>
-<hr>
-<h2 id="3-interface-and-navigation">3. Interface and navigation</h2>
-<h3 id="31-main-window">3.1. Main window</h3>
-<p>The window can be dragged by a free area of the top bar. The buttons
-in the top-right corner minimize, maximize and close the window.
-If minimize-to-tray is enabled (see the
-<a href="#14-settings">"Settings"</a> section), the "Close" button hides the
-window to the system tray instead of exiting the app.</p>
-<h3 id="32-sidebar">3.2. Sidebar</h3>
-<p>The list on the left shows "Favorites" and all visible sections.
-Clicking a section selects it and shows its categories and cards.
-Clicking an empty area of the panel expands/collapses it; clicking
-the window background with the panel expanded collapses it back.
-Hidden sections are not shown here (see section 4).</p>
-<p>Right-clicking a section opens a menu: "Rename",
-"Hide section", "Delete section". On a category pill: "Rename",
-"Hide".</p>
-<h3 id="33-cards-and-their-indicators">3.3. Cards and their indicators</h3>
-<p>A card shows an icon, a name and may carry labels:</p>
+<p>The card appears in the current section and category. If no sections exist yet, a service section is created for incoming cards.</p>
+<p><strong>Suggested start:</strong> "Editor" → "Structure" tab → "Add section" and "Add category" → return to the main window, select them → add your first card.</p>
+<h2 id="5">5. Cards in Detail</h2>
+<h3>Common Fields</h3>
 <ul>
-<li>"Error" — the card's target is unavailable (file deleted, wrong path);</li>
-<li>"Admin" — the card is set to run as administrator;</li>
-<li>"Checking" — an availability check is in progress;</li>
-<li>architecture labels on programs: x86, x64, ARM64, Any;</li>
-<li>groups have a group mark (see section 8).</li>
+<li><strong>Name</strong> — required; shown on the card and searchable.</li>
+<li><strong>Description</strong> — optional; also searched.</li>
+<li><strong>Section and category</strong> — where the card belongs.</li>
+<li><strong>Icon</strong> — chosen via the icon picker (Chapter 9).</li>
+<li><strong>"Run as administrator"</strong> — where it makes sense (program, script, command, shortcut, MSI).</li>
 </ul>
-<p>A left click launches/opens the card, a right click opens its menu.
-If the text does not fit, hover the cursor — a tooltip with the full
-text appears.</p>
-<h3 id="34-search">3.4. Search</h3>
-<p>Type text into the "Search…" field — the grid filters with a short
-delay. Search matches the card name, the target file name and the
-description; all words of the query must match. Esc in the search
-field clears it, keeping focus in the field. The clear button does
-the same.</p>
-
-<div class="callout callout-tip"><b>Tip</b><p>While a search is active, the "Editor" button is unavailable —
-clear the search first.</p>
-</div>
-<h3 id="35-sorting">3.5. Sorting</h3>
-<p>The sorting button in the toolbar opens a list of options:
-"No sorting", "By name", "By type", "By launch frequency".
-Frequency sorting uses each card's launch counter — the more often
-you launch it, the higher it rises.</p>
-<h3 id="36-status-info-panel">3.6. Status info panel</h3>
-<p>The status button at the bottom left opens a panel with counters and
-indicators (administrator mode, storage mode, etc.). Pressing it
-again or Esc closes it. The panel and the settings window cannot be
-open at the same time — one closes the other.</p>
-<h3 id="37-system-tray">3.7. System tray</h3>
-<p>If minimize-to-tray is enabled in settings:</p>
+<p>Duplicate names are allowed — the app shows a hint about the match but does not block saving.</p>
+<p><strong>Paths.</strong> Both relative paths (from the app folder — better for portability) and absolute paths (<code>C:\…</code>) are accepted. Absolute paths may stop working on another computer — see Chapter 10.</p>
+<p>The "Save" button activates only when required fields are filled. Closing the editor with unsaved changes asks "Discard unsaved changes?".</p>
+<h3>5.1. Program</h3>
+<p>Launches an <code>.exe</code>. Fields: name, launch variants, arguments, working directory, icon, "run as administrator".</p>
+<p><strong>Launch variants</strong> — a card can hold several <code>.exe</code> files for different Windows architectures (x86, x64, ARM64). "Browse…" adds a file; the app detects the architecture and labels the row. Choosing the same architecture again replaces the path. At launch, the variant matching your system is used; the card menu can launch a specific one ("Run x64", etc.).</p>
+<p>Checks: at least one variant is required, the <code>.exe</code> file must exist, and the working directory must be an existing folder.</p>
+<h3>5.2. Script</h3>
+<p>Runs script files (bat, ps1, reg, vbs, and others — the type is detected by extension). Fields: name, file, working directory, icon, "run as administrator".</p>
+<p><strong>A confirmation dialog always appears when you launch a script</strong> — the script's name and description are shown. For <code>.reg</code>, a separate warning about registry changes appears.</p>
+<h3>5.3. Folder</h3>
+<p>Opens a directory in File Explorer. Fields: name, folder path, icon. The path must exist and point to a folder.</p>
+<h3>5.4. File</h3>
+<p>Opens a document/media with its associated application. Fields: name, path, icon. The file must exist; extensions with their own card types (<code>.exe</code>, <code>.lnk</code>, <code>.msi</code>, scripts) are reserved.</p>
+<h3>5.5. Windows Shortcut</h3>
+<p>Launches an existing <code>.lnk</code>. Fields: name, path to the <code>.lnk</code>, icon, "run as administrator". The file must end in <code>.lnk</code> and exist.</p>
+<h3>5.6. Command</h3>
+<p>Runs a text command (as in the command line). Fields: name, command text, "run as administrator".</p>
+<p><strong>At launch</strong> a confirmation dialog appears; after the command finishes, the console window stays open so you can read the output — close it manually. The "Copy command" menu item puts the text in the clipboard without running it.</p>
+<h3>5.7. URL / URI</h3>
+<p>Opens a link in the browser or handler app. Fields: name, address, icon. Only safe schemes are accepted — dangerous ones are rejected. "Copy link" puts the address in the clipboard.</p>
+<h3>5.8. MSI Package</h3>
+<p>Runs a <code>.msi</code> installer. Fields: name, path (browse with an "MSI package" filter), installer arguments, icon, "run as administrator". An invalid argument string (for example, an unclosed quotation mark, a switch without a value, or an argument that points to another package) triggers an error. Check the "Arguments" field.</p>
+<h3>5.9. Card Group</h3>
+<p>Launches several cards in sequence. Creation and launching are covered in Chapter 6.</p>
+<h2 id="6">6. Launching and Working with Cards</h2>
+<p><strong>Basic launch</strong> — left-click the card. <strong>Card menu</strong> — right-click; contents depend on the type: "Launch", launch a specific architecture variant, launch with or without elevation, "Open location" (Explorer with the file selected), "Copy path/command/link", "Edit", "Add to favorites", "Delete".</p>
+<p><strong>Confirmations</strong> — before scripts, commands, and groups containing them, the app asks for confirmation: protection against accidental launches.</p>
+<p><strong>Running as administrator.</strong> A card can have "Run as administrator" enabled — Windows then shows a UAC prompt; declining simply cancels the launch. If Errant Launcher itself runs elevated (the "Admin mode" badge), all applicable cards launch elevated automatically — regardless of their checkbox — and the "Admin" badge appears on all such cards. This does not apply to folders and links — they open normally. <strong>Recommendation:</strong> run the launcher with normal rights and elevate only the cards that need it.</p>
+<p><strong>Card groups.</strong> Created in the Editor → "Group" → pick members from the list (with search and filters). A group must have at least one member; nested groups are not allowed. Members can have an individual delay before the next launch. At launch, the "Group launch" dialog opens: an "N of M" counter, a "Next: … — in X s" countdown, and "launched / cancelled / not launched" rows. "Cancel remaining" or Esc stops the queue — what has already launched is not rolled back. Summary: "Launched: X · Errors: Y · Skipped: Z".</p>
+<p><strong>Arguments and working directory</strong> (program, script, MSI) are set in the card form; an empty working directory means the target's own folder.</p>
+<h2 id="7">7. Organizing Your Collection</h2>
+<p><strong>Sections and categories</strong> are managed in the Editor → "Structure": "Add section" / "Add category", rename, order ("up"/"down"), hiding (visibility toggle), changing a section icon, deleting.</p>
+<p>Rules: names cannot be empty and must be unique within their level — on a duplicate the app reports "already exists". A hidden section disappears from the side panel, a hidden category from the pills; nothing is deleted and they return when unhidden.</p>
+<p><strong>Important — deleting:</strong> deleting a section permanently deletes all its categories and cards; deleting a category deletes all its cards. The app warns you in a confirmation dialog.</p>
+<p><strong>Favorites.</strong> Right-click a card → "Add to favorites" / "Remove from favorites". The "Favorites" item in the side panel opens a view with type tabs ("All", "Programs", "Scripts"…). Search works here too. Favorite status is preserved when cards are exported or imported.</p>
+<p><strong>Working with cards.</strong> "Edit" in the card menu opens its form. "Editor" → "Edit cards" — a table of all cards: search, filters by type and section, column sorting, multi-select, "Move" (to another category), "Duplicate", "Delete". Deletion is permanent — the card disappears from the section, favorites, and all groups.</p>
+<h2 id="8">8. Bulk Import</h2>
+<p>To add an entire folder of items at once: "Editor" → "Bulk import" tab. Wizard steps: "Select folder" → "Scanning" → "Results" → "Where to add" → summary.</p>
+<p><strong>Filters:</strong> traversal depth (unlimited or 1–3 levels), recursion, a "Maximum candidates" limit, type pills (programs — with architecture selection, scripts — with type selection, files — with an include/exclude extension list, MSI and shortcuts — without extra filters), skipping hidden/system/junction entries, "Scan network paths (UNC)", and excluded folder names.</p>
+<p><strong>Scanning</strong> shows counters: "Objects scanned", "Candidates", "Warnings". "Stop" aborts the scan — everything found is kept.</p>
+<p><strong>Results</strong> — a table with statuses ("ready", "check", "missing", "error") and labels ("already exists", "cannot add") with reasons. Options: search, filters, "Recheck" for selected files without a new scan, expanding a row to edit fields, "Deselect"/"Exclude selected". Candidates with errors and duplicates are excluded automatically — but can be re-enabled manually.</p>
+<p><strong>"Where to add":</strong> section — an existing one or "New section…"; category — existing, "New category…", "No category", or "By parent folder name". The "Check" button shows an analysis: "Will be added / Skipped / Needs attention", name conflicts, and a warning about drive-letter paths.</p>
+<p><strong>"Import N cards"</strong> — writes in the background; a verified backup snapshot is created automatically beforehand. Summary: "Added", "Skipped during import", "Not selected". On a partial write or failure, the app points to the backup path for manual rollback.</p>
+<h2 id="9">9. Appearance and Settings</h2>
+<p>Settings open via the button at the top right — a panel appears over the window; Esc closes it.</p>
+<h3>Appearance</h3>
 <ul>
-<li>the "close" button hides the window to the tray together with all
-  open child windows (they return to their places on restore);</li>
-<li>clicking the tray icon shows/hides the window;</li>
-<li>the icon's menu: "Open" and "Exit";</li>
-<li>"Exit" asks every window with unsaved changes for confirmation —
-  for example, an editor with an unfilled form offers to save or
-  discard edits.</li>
+<li><strong>Theme</strong> — the window's color theme.</li>
+<li><strong>Accent color</strong> — the interface accent and tray icon color.</li>
+<li><strong>Card icon style</strong> — "Theme colors" / "Accent color" / "Multicolored".</li>
+<li><strong>Badge style</strong> — the look of card indicators.</li>
 </ul>
-<p>If you disable minimize-to-tray while the window is hidden, it
-immediately returns to the screen.</p>
-<hr>
-<h2 id="4-sections-and-categories">4. Sections and categories</h2>
-<p><strong>What for.</strong> Sections are large thematic groups ("Work",
-"Multimedia", "Tools"), categories are subgroups inside them
-("Browsers", "Editors"). Each card lives in one category of one
-section.</p>
-<p><strong>Management</strong> — in the editor, "Structure" tab:</p>
+<h3>Behavior</h3>
+<ul>
+<li><strong>Initial section</strong> — which section opens at startup.</li>
+<li><strong>Minimize to tray</strong> — closing hides the window to the tray instead of exiting (Chapter 3).</li>
+</ul>
+<h3>Language</h3>
+<ul>
+<li><strong>Language</strong> — the interface language, 6 options.</li>
+</ul>
+<p>All changes apply immediately and save automatically. In "Read-only" mode, settings apply until the app closes but are not saved.</p>
+<p><strong>Card and section icons</strong> — the icon button in the card form and in "Structure": built-in type icon, a collection of built-in icons, your own PNG, "Extract" from an <code>.exe</code>/<code>.lnk</code>, "Reset". If extraction fails or the file is not a PNG, an error appears and the icon stays unchanged.</p>
+<p>The same panel holds "Import", "Export", "Delete all data", and "About" (version, card statistics, licenses, links to the site and GitHub).</p>
+<h2 id="10">10. Data Storage, Moving, and Backups</h2>
+<p><strong>Where data lives.</strong> The <code>ErrantLauncher</code> folder next to the executable: section files with cards (<code>sections\</code>), settings (<code>settings.json</code>), app state (<code>state.json</code>), your icons (<code>custom-icons\</code>), logs (<code>logs\</code>), and service backups. Everything in one place — that is what makes the app portable.</p>
+<p><strong>Card paths.</strong> Relative paths survive moving with the app; absolute ones (<code>D:\Tools\app.exe</code>) work only where that path exists — on another computer with a different drive letter such a card shows "Error". The data folder itself is not tied to a drive letter.</p>
+<p><strong>Moving to another computer</strong> — copy everything: <code>ErrantLauncher-x64.exe</code> + both DLLs + the <code>ErrantLauncher</code> folder. Run it — your collection and settings are there. Make a full backup before moving.</p>
+<p><strong>Two export modes</strong> (settings → "Export"):</p>
+<ul>
+<li><strong>Full backup</strong> — everything: sections, icons, settings, and app state. <code>ErrantLauncher-Backup.zip</code>.</li>
+<li><strong>Share collection</strong> — selected sections, icons, and favorites, without settings. <code>ErrantLauncher-Collection.zip</code>.</li>
+</ul>
+<p><strong>Import</strong> (settings → "Import"): pick a <code>.zip</code> → confirm → check the data you want → if section names collide, choose "Replace / Rename / Skip". A backup snapshot is made before writing — on failure your data is rolled back.</p>
+<p><strong>USB drive.</strong> Supported. Removing the drive while the app runs switches it to "No storage" mode: data stays on screen, changes are held in memory and will be saved if the drive returns before the app closes. "Read-only" mode — when writing is impossible: cards remain visible and launchable, but changes apply only until the app closes.</p>
+<p>A detailed description of the folder layout and backup mechanisms is on the <a href="../data/">"Data, backups and portability"</a> page.</p>
+<h2 id="11">11. Resetting and Restoring Data</h2>
+<h3>Restoring from a backup</h3>
+<p>From an exported file: settings → "Import" → pick <code>ErrantLauncher-Backup.zip</code> → check "Settings" and the data you need → resolve conflicts → verify the result.</p>
+<p>From a folder copy: close the app, set the current <code>ErrantLauncher</code> folder aside just in case, restore the backup contents to their original location, and start the app.</p>
+<h3>Restoring a Data Folder</h3>
+<p>The <code>ErrantLauncher</code> folder can be moved and returned as a single unit — all cards, settings, and icons come back with it. Always replace it while the app is closed, and keep a copy of the folder you replace until you have checked the result.</p>
+<h3>Deleting all data</h3>
+<p><strong>Important — this action is irreversible.</strong> "Delete all data" removes all sections, categories, cards, favorites, settings, and state — the app restarts empty.</p>
+<p>Settings → "Delete all data" → <strong>two consecutive confirmation dialogs</strong>. Before resetting, save your data: a full backup via export or a copy of the <code>ErrantLauncher</code> folder — either lets you bring the collection back later.</p>
+<h2 id="12">12. Keyboard Shortcuts</h2>
 <table>
-<thead>
-<tr>
-<th>Action</th>
-<th>How to do it</th>
-</tr>
-</thead>
+<thead><tr><th>Key</th><th>Where</th><th>Action</th></tr></thead>
 <tbody>
-<tr>
-<td>Create a section</td>
-<td>"Add section" → enter a name</td>
-</tr>
-<tr>
-<td>Create a category</td>
-<td>select a section → "Add category" → enter a name</td>
-</tr>
-<tr>
-<td>Rename</td>
-<td>the rename button on the row, or the section menu in the sidebar</td>
-</tr>
-<tr>
-<td>Reorder</td>
-<td>the "up"/"down" buttons on the section row</td>
-</tr>
-<tr>
-<td>Hide/show</td>
-<td>the visibility button on the section or category row</td>
-</tr>
-<tr>
-<td>Change a section icon</td>
-<td>the icon button on the section row → icon picker (section 11)</td>
-</tr>
-<tr>
-<td>Delete</td>
-<td>the delete button on the row → confirmation</td>
-</tr>
+<tr><td>Esc</td><td>search field</td><td>clear search</td></tr>
+<tr><td>Esc</td><td>main window</td><td>close open panels</td></tr>
+<tr><td>Esc</td><td>editor / dialogs</td><td>close (asks when changes are unsaved)</td></tr>
+<tr><td>Esc</td><td>"Group launch"</td><td>stop the queue</td></tr>
+<tr><td>Enter</td><td>dialogs</td><td>confirm</td></tr>
+<tr><td>Enter / Space</td><td>a card</td><td>launch</td></tr>
+<tr><td>← → ↑ ↓</td><td>card grid</td><td>move focus</td></tr>
+<tr><td>Apps / Shift+F10</td><td>main window</td><td>context menu of the focused item</td></tr>
 </tbody>
 </table>
-<p><strong>Rules:</strong> a name cannot be empty; section names and category names
-within a section must be unique — on a clash the app reports
-"already exists".</p>
-<p><strong>Hiding.</strong> A hidden section disappears from the sidebar together
-with all its categories; a hidden category disappears from the pills.
-No data is deleted: everything stays in the structure editor and
-comes back via the visibility toggle.</p>
-
-<div class="callout callout-warn"><b>Warning</b><p><strong>Important — deleting:</strong></p>
-</div>
-<ul>
-<li>deleting a section <strong>irreversibly deletes all its categories and
-  cards</strong> — the app warns about this in the confirmation dialog;</li>
-<li>deleting a category <strong>deletes all its cards</strong> — also with a
-  warning.</li>
-</ul>
-<p>Order and visibility are saved automatically. If the write fails
-(for example, the storage is read-only), the app shows an error and
-re-reads the structure — see the "Troubleshooting" section.</p>
+<h2 id="ref">Reference</h2>
+<p><strong>Card types</strong> (details in Chapter 5): Program · Script · Folder · File · Shortcut · Command · URL/URI · MSI package · Group.</p>
+<p><strong>Badges and statuses:</strong> "Error" — target unavailable · "Admin" — elevated launch · "Checking" — availability check in progress · x86/x64/ARM64/Any — variant architecture · "Admin mode" · "Read-only" · "No storage".</p>
+<p><strong>Glossary:</strong> card — a launchable grid item · section/category — grouping levels · favorites — a view of marked cards · launch variant — an <code>.exe</code> for a specific architecture · candidate — an item found by bulk import.</p>
 <hr>
-<h2 id="5-cards-core-principles">5. Cards: core principles</h2>
-<p><strong>A card</strong> is a launchable item in the grid. Nine types are
-supported: program, script, folder, file, Windows shortcut, command,
-URL/URI, MSI package and card group.</p>
-<p><strong>Common fields</strong> (in almost all types):</p>
+<h2 id="problem">If Something Goes Wrong</h2>
 <ul>
-<li><strong>Name</strong> — required; shown on the card and in search;</li>
-<li><strong>Description</strong> — optional; also takes part in search;</li>
-<li><strong>Section and category</strong> — where to put the card;</li>
-<li><strong>Icon</strong> — can be chosen via the icon picker (section 11);</li>
-<li><strong>"Run as administrator"</strong> — where it makes sense
-  (programs, scripts, commands, MSI).</li>
-</ul>
-<p><strong>Names may repeat.</strong> If the chosen category already has a card with
-that name, a hint appears — it is not an error and does not block
-saving.</p>
-<p><strong>Paths.</strong> Both relative paths (from the app folder — better for
-portability) and absolute ones (<code>C:\…</code>) are accepted. Absolute paths
-are accepted but may stop working after moving to another computer —
-see section <a href="#15-data-storage-and-portability">"Data storage and portability"</a>.</p>
-<p><strong>Saving and cancelling.</strong> The "Save" button writes the card; it is
-inactive until the required fields are filled. When closing the
-editor with unsaved changes, the question "Discard unsaved changes?"
-appears — "Don't save" drops the edits.</p>
-<hr>
-<h2 id="6-creating-cards-of-different-types">6. Creating cards of different types</h2>
-<p>Two universal methods:</p>
-<ol>
-<li><strong>Drag-and-drop</strong> — drag a file or folder onto the main window.
-   The type is detected automatically (<code>.exe</code> → program, <code>.lnk</code> →
-   shortcut, <code>.msi</code> → MSI, scripts → script, folder → folder,
-   anything else → file). For programs and shortcuts the icon is
-   extracted automatically. Cards land in the current
-   section/category; if there are no sections yet, a service section
-   for incoming items is created. You can also drag link text
-   <code>http://</code> or <code>https://</code> — a URL card is created.</li>
-<li><strong>Via the editor</strong> — "Editor" → "Add card" → choose a type →
-   fill the form → "Save". If there are no sections/categories yet,
-   a hint panel appears with buttons to create them.</li>
-</ol>
-<p>After saving, the main window scrolls to the new card and highlights
-it.</p>
-<h3 id="61-program">6.1. Program</h3>
-<ul>
-<li><strong>Purpose:</strong> launching <code>.exe</code>.</li>
-<li><strong>Fields:</strong> name, section/category, launch variants, arguments,
-  working folder, icon, "as administrator".</li>
-<li><strong>Launch variants:</strong> a card can store several <code>.exe</code> files for
-  different Windows architectures — x86, x64, ARM64. The "Browse…"
-  button adds a file: the app detects the architecture itself and
-  labels the row. Choosing the same architecture again replaces the
-  path; each row can be deleted or edited manually.</li>
-<li><strong>Checks:</strong> at least one variant is required; the file must be an
-  existing <code>.exe</code>; the working folder must be an existing directory.</li>
-<li><strong>On launch</strong> the variant matching your system is chosen (for
-  example, on 64-bit Windows x64 first, then x86). The "Run x64" etc.
-  menu items launch a specific variant.</li>
-</ul>
-
-<div class="callout callout-tip"><b>Tip</b><p>You don't have to set the card icon manually — extract it from
-the chosen <code>.exe</code> via the icon picker.</p>
-</div>
-<h3 id="62-script">6.2. Script</h3>
-<ul>
-<li><strong>Purpose:</strong> launching script files (bat, ps1, reg, vbs and other
-  supported formats).</li>
-<li><strong>Fields:</strong> name, script file, section/category, working folder,
-  icon, "as administrator"; the script type is detected from the
-  extension automatically.</li>
-<li><strong>Checks:</strong> the file is required, must exist and have a supported
-  type.</li>
-<li><strong>On launch</strong> a confirmation is always asked — the script's name
-  and description are shown before execution. For <code>.reg</code> — a separate
-  warning that a registry file changes system settings.</li>
-</ul>
-<h3 id="63-folder">6.3. Folder</h3>
-<ul>
-<li><strong>Purpose:</strong> open a directory in Explorer.</li>
-<li><strong>Fields:</strong> name, folder path, section/category, icon.</li>
-<li><strong>Checks:</strong> the path must exist and point to a folder
-  (if a file sits at the path — an error).</li>
-</ul>
-<h3 id="64-file">6.4. File</h3>
-<ul>
-<li><strong>Purpose:</strong> open a document/media with the associated app.</li>
-<li><strong>Fields:</strong> name, file path, section/category, icon.</li>
-<li><strong>Checks:</strong> the file must exist; extensions that have their own
-  card types (<code>.exe</code>, <code>.lnk</code>, <code>.msi</code>, scripts) are reserved — choose
-  the matching type for them.</li>
-</ul>
-<h3 id="65-windows-shortcut">6.5. Windows shortcut</h3>
-<ul>
-<li><strong>Purpose:</strong> launching an existing <code>.lnk</code>.</li>
-<li><strong>Fields:</strong> name, <code>.lnk</code> path, section/category, icon,
-  "as administrator".</li>
-<li><strong>Checks:</strong> the path must end in <code>.lnk</code> and exist.</li>
-</ul>
-<h3 id="66-command">6.6. Command</h3>
-<ul>
-<li><strong>Purpose:</strong> run a text command (as in the command line).</li>
-<li><strong>Fields:</strong> name, command text, section/category, "as
-  administrator".</li>
-<li><strong>Checks:</strong> the command must not be empty.</li>
-<li><strong>On launch</strong> a confirmation dialog is shown. The "Copy command"
-  menu item puts its text into the clipboard without executing.</li>
-</ul>
-<h3 id="67-url-uri">6.7. URL / URI</h3>
-<ul>
-<li><strong>Purpose:</strong> open a link in a browser or a handler app.</li>
-<li><strong>Fields:</strong> name, address, section/category, icon.</li>
-<li><strong>Checks:</strong> only safe schemes are allowed — known dangerous ones
-  are rejected when saving. The "Copy link" menu item puts the
-  address into the clipboard.</li>
-</ul>
-<h3 id="68-msi-package">6.8. MSI package</h3>
-<ul>
-<li><strong>Purpose:</strong> launching an <code>.msi</code> installer.</li>
-<li><strong>Fields:</strong> name, path to <code>.msi</code> (a browse button with an
-  "MSI package" filter), installer arguments, icon, "as
-  administrator".</li>
-<li><strong>Checks:</strong> the file must be <code>.msi</code> and exist. On launch the
-  arguments are parsed: a broken string (an unclosed quote), a
-  switch without a value or an argument pointing at another package
-  produce an error message — then check the "Arguments" field.</li>
-</ul>
-<h3 id="69-card-group">6.9. Card group</h3>
-<p>A group launches several cards in sequence. Detailed instructions
-are in the <a href="#8-card-groups">"Card groups"</a> section.</p>
-<hr>
-<h2 id="7-launching-and-opening-items">7. Launching and opening items</h2>
-<p><strong>The main way to launch</strong> is a left click on a card. Additional
-actions are in the context menu (right click). Depending on the card
-type it may contain "Launch", launching a specific architecture
-variant, launching with elevated or normal rights, and actions for
-opening a folder, file, shortcut or link. The menu content depends
-on the card type.</p>
-<p><strong>Service actions in the card menu:</strong></p>
-<ul>
-<li>"Open location" — Explorer with the target file selected;</li>
-<li>"Copy path", "Copy command", "Copy link" — to the clipboard;</li>
-<li>favorites and editing — sections <a href="#9-editing-and-organizing-cards">"Editing and organizing
-  cards"</a> and
-  <a href="#10-favorites">"Favorites"</a>.</li>
-</ul>
-<p><strong>Arguments and working folder</strong> (programs, scripts, MSI) are set in
-the card form. If the working folder is empty — the target's own
-folder is used.</p>
-<p><strong>Confirmations.</strong> Before scripts, commands and groups containing
-them, the app asks for confirmation — protection against accidental
-launches. For <code>.reg</code> — a special warning. If a launch requires
-administrator rights, Windows shows the standard UAC prompt:
-declining it simply cancels the launch with an error message.</p>
-
-<div class="callout callout-tip"><b>Tip</b><p>If Errant Launcher itself runs as administrator (the
-"Administrator mode" label), the processes it launches also get
-elevated rights.</p>
-</div>
-<p><strong>Typical launch errors</strong> are described in the
-<a href="#17-troubleshooting">"Troubleshooting"</a> section.</p>
-<hr>
-<h2 id="8-card-groups">8. Card groups</h2>
-<p><strong>Purpose:</strong> one group card launches several cards in a row — for
-example, a "work environment": mail, browser, editor.</p>
-<p><strong>Creating:</strong> "Editor" → "Add card" → "Group" → the participant
-selection button opens a dialog listing all cards. It has search and
-filters by section and type; marks are kept while you filter the
-list. "OK"/Enter confirms the selection, Esc/"Cancel" dismisses it.
-A group must contain at least one member; nested groups are not
-allowed. Members can have individual delays before the next one
-launches.</p>
-<p><strong>Order:</strong> members run in the original order of the card list.</p>
-<p><strong>Launch and progress.</strong> If the group contains scripts or commands,
-a warning appears first. Then the "Launch group" dialog opens:</p>
-<ul>
-<li>an "N of M" counter and the current member's name;</li>
-<li>before the next one — a countdown "Next: … — in X s";</li>
-<li>as it runs, lines "Card "…" — launched / cancelled / not launched"
-  are added;</li>
-<li>the "Cancel remaining" button, Esc or closing the window stops the
-  queue — what has been launched is not rolled back.</li>
-</ul>
-<p><strong>Result:</strong> a summary "Launched: X · Errors: Y · Skipped: Z" with a
-line per card; on cancel — "Launch cancelled"; on errors — a dialog
-with the "error" kind.</p>
-<p><strong>Errors:</strong> a member whose target is gone is marked "not launched"
-with the reason — this does not bring down the rest of the queue.
-Deleted cards automatically disappear from groups.</p>
-<hr>
-<h2 id="9-editing-and-organizing-cards">9. Editing and organizing cards</h2>
-<p><strong>Edit a card:</strong> card menu → "Edit" → the same form as at creation,
-with filled fields → "Save".</p>
-<p><strong>The card table</strong> — "Editor" → "Edit cards":</p>
-<ul>
-<li>search in the table and "by type" / "by section" filters;</li>
-<li>sorting — click a column header;</li>
-<li>row checkboxes for multiselect; the "select all" / "clear
-  selection" buttons act on the current filtered list;</li>
-<li>"Edit" — only with a single row selected;</li>
-<li>"Delete", "Move", "Duplicate" — with one or more rows selected.</li>
-</ul>
-<p><strong>Deleting:</strong> one card asks "Delete card?", several — "Delete
-cards?" with a counter. Deletion is irreversible: the card
-disappears from the section, favorites and all groups.</p>
-<p><strong>Move:</strong> a section and category picker dialog — the selected cards
-move there.</p>
-<p><strong>Duplicate:</strong> a copy in the same category.</p>
-<hr>
-<h2 id="10-favorites">10. Favorites</h2>
-<p><strong>Add/remove:</strong> right-click a card → "Add to favorites" / "Remove
-from favorites".</p>
-<p><strong>Viewing:</strong> the "Favorites" item in the sidebar. Instead of
-category pills, type tabs appear here: "All", "Programs",
-"Scripts", "Folders", "Files", "Shortcuts", "Commands", "URL / URI",
-"MSI packages", "Groups" — favorites can be browsed by type. Search
-works here too (within favorites).</p>
-<p><strong>On import/export</strong> favorite marks travel together with the cards
-(on import — if the corresponding option is checked, see section
-<a href="#13-import-export-and-backups">"Import, export and backups"</a>).</p>
-<hr>
-<h2 id="11-icons-and-appearance">11. Icons and appearance</h2>
-<h3 id="111-card-and-section-icons">11.1. Card and section icons</h3>
-<p>The card form and the structure editor have an icon picker button.
-The picker window offers:</p>
-<ul>
-<li>the built-in type icon;</li>
-<li>an icon from the built-in set — a selection grid (arrow keys and
-  Enter/Space work inside the grid);</li>
-<li>your own PNG file;</li>
-<li>icon extraction from an <code>.exe</code> or <code>.lnk</code> — the "Extract" button;</li>
-<li>"Reset" — return to the default.</li>
-</ul>
-<p>"Save" applies the choice, "Cancel"/Esc does not. If extraction fails
-or the file is not a PNG — an error message appears, the previous
-icon is unaffected.</p>
-<h3 id="112-application-appearance">11.2. Application appearance</h3>
-<p>In settings (section 14): language, theme, accent color (it also
-recolors the tray icon), card icon style ("Theme colors" /
-"Accent color" / "Colorful") and label style. Changes apply
-immediately.</p>
-<hr>
-<h2 id="12-mass-import">12. Mass import</h2>
-<p><strong>What for.</strong> When you need to add not one card but a whole folder
-of programs — the wizard finds <code>.exe</code>, scripts, <code>.msi</code>, <code>.lnk</code>,
-files and subfolders itself, shows the list and lets you pick what
-to add.</p>
-<p><strong>Where:</strong> "Editor" → "Mass import" tab. The wizard walks through
-steps: "Choose folder" → "Scan" → "Results" → "Where to add" →
-summary.</p>
-<h3 id="121-choose-folder-step-and-filters">12.1. "Choose folder" step and filters</h3>
-<ul>
-<li><strong>Folder to scan</strong> — choose via "Browse folders…" or enter
-  manually. A non-existent folder is highlighted with the message
-  "Folder does not exist."</li>
-<li><strong>Traversal depth</strong> — "Unlimited" or 1–3 levels; "Recursive
-  traversal of nested folders"; "Maximum candidates" — when the
-  limit is reached, the scan stops (narrow the filters or increase
-  the value).</li>
-<li><strong>Type pills</strong> — which types to look for. Some types have their
-  own settings:</li>
-<li><em>Programs</em> — which architectures to include (including "Any"
-    for unrecognized ones);</li>
-<li><em>Scripts</em> — which script types;</li>
-<li><em>Files</em> — a list of extensions separated by ";" in "Exclude
-    listed" or "Search only listed" mode;</li>
-<li><em>MSI</em> and <em>Shortcuts</em> — no extra filters.</li>
-<li><strong>Traversal settings:</strong> skip hidden, system, junction points and
-  symlinks; "Scan network paths (UNC)"; a list of excluded folder
-  names.</li>
-<li><strong>Configuration folder</strong> — specify it if you want the app to check
-  candidate path portability.</li>
-</ul>
-<h3 id="122-scan-step">12.2. "Scan" step</h3>
-<p>Shows "Items viewed", "Candidates", "Warnings" and the current
-folder. The "Stop" button interrupts the scan — the found part is
-kept marked "scan interrupted". On error — a message and
-"Retry"/"Back" buttons. If the scan stopped on the limit, a mark
-appears — narrow the filters.</p>
-<h3 id="123-results-step">12.3. "Results" step</h3>
-<p>A table of found candidates with statuses: "ready", "check",
-"gone", "error", plus "already exists" and "cannot add" labels.
-Problem rows state the reason — for example, "file unavailable for
-reading", "duplicate: card already exists", "name already used in
-the target section", "network path disabled by filter".</p>
-<p>Features:</p>
-<ul>
-<li>search by name/path, filters by type and status, column sorting;</li>
-<li>"Clear selection" / "Exclude selected" — for the current filtered
-  list;</li>
-<li>"Re-check" — rechecks the selected files on disk without a new
-  scan: a file that came back can be restored;</li>
-<li>an expanded row lets you edit the name, arguments, description,
-  working folder, script type, icon and "as administrator";</li>
-<li>the row menu — "Copy path" and "Show location in folder".</li>
-</ul>
-<p>Candidates with errors and duplicates are excluded from selection
-automatically, but can be included manually.</p>
-
-<div class="callout callout-warn"><b>Warning</b><p>If you change the folder or filters after scanning, the results
-become "stale" — the wizard suggests rescanning and warns that
-your edits will apply to the same files if they are found again.</p>
-</div>
-<h3 id="124-where-to-add-step">12.4. "Where to add" step</h3>
-<ul>
-<li><strong>Target section</strong> — an existing one or "New section…";</li>
-<li><strong>Category</strong> — an existing one, "New category…", "No category"
-  or "By parent folder name" (candidates are sorted into categories
-  automatically);</li>
-<li>the "Check" button — analysis: "Will be added / Will skip / Need
-  attention", lists of path duplicates, name conflicts and broken
-  candidates; a note about drive-letter paths (they may not open on
-  another computer).</li>
-</ul>
-<p>Import is blocked if the storage does not accept writes (the message
-"Configuration is not available for writing"), no target is chosen,
-no candidate is checked or all selected ones have errors.</p>
-<h3 id="125-import-and-summary">12.5. Import and summary</h3>
-<p>"Import N cards" starts writing in the background. A data backup is
-created before writing. The summary page shows "Added", "Skipped on
-import", "Not selected" and details — for example, how many cards
-were added without their own icon.</p>
-
-<div class="callout callout-warn"><b>Warning</b><p>On a partial write or a failure the app reports it with separate
-messages and shows the backup path for manual rollback; until the
-state is acknowledged, repeating the import is paused — reopen the
-"Where to add" step for a recheck or restart the app.</p>
-</div>
-<p><strong>Cancelling:</strong> on the scan step "Cancel" stops the scan; on other
-steps, leaving the wizard with unfinished work asks "Edits and
-selection will be lost — leave?". Closing the editor with an
-unfinished import also asks for confirmation — background tasks are
-stopped cleanly.</p>
-<hr>
-<h2 id="13-import-export-and-backups">13. Import, export and backups</h2>
-<p><strong>Where:</strong> the settings button → "Import" / "Export" / "Reset all
-data".</p>
-<h3 id="131-export-types">13.1. Export types</h3>
-<ol>
-<li><strong>Full backup</strong> — everything at once: sections, cards, favorites,
-   settings, themes, icons and application state. No content
-   selection windows — straight to "Save as" with the name
-   <code>ErrantLauncher-Backup.zip</code>. Use it for backups and moving
-   between computers.</li>
-<li><strong>Share collection</strong> — content selection: "Icons" and "Themes"
-   checkboxes and a list of sections (with "Select all"). Settings
-   and state are not included; favorites travel with the cards. The
-   file name is <code>ErrantLauncher-Collection.zip</code>.</li>
-</ol>
-
-<div class="callout callout-warn"><b>Warning</b><p>If the checked sections contain groups referencing cards of
-unchecked sections, a warning appears — you can continue or cancel
-and adjust the marks.</p>
-</div>
-<p>On completion it shows what exactly was exported, with a button to
-open the file's folder.</p>
-<h3 id="132-import">13.2. Import</h3>
-<ol>
-<li>"Import" → choose a <code>.zip</code>.</li>
-<li>A warning that the import will change data — "Continue"/"Cancel".</li>
-<li>A selection window: "Settings", "Favorites", "Icons", "Themes"
-   checkboxes (only what exists in the archive) and the archive's
-   section list.</li>
-<li>If section names match existing ones — a conflict window: for
-   each section "Replace / Rename / Skip", and the choice can be
-   applied to all.</li>
-<li>A result dialog.</li>
-</ol>
-<p>A backup snapshot is made before writing — on error the data is
-rolled back. A full backup with "Settings" checked also restores
-the application state.</p>
-<p><strong>Errors:</strong> a non-zip or broken file — "invalid import file"; an
-archive newer than the app version — "newer format"; cancelling at
-any step imports nothing; invalid theme files are skipped and listed
-in the summary.</p>
-
-<div class="callout callout-tip"><b>Tip</b><p>Before moving: make a full backup at the old location and check
-that the file opens as an archive.</p>
-</div>
-<hr>
-<h2 id="14-settings">14. Settings</h2>
-<p>Opened by the settings button in the top-right corner of the main
-window — a panel appears on top. Esc closes it (if a field dropdown
-is open — the list closes first, then the panel).</p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Language</td>
-<td>Interface language — 6 options</td>
-</tr>
-<tr>
-<td>Startup section</td>
-<td>Which section is open at launch</td>
-</tr>
-<tr>
-<td>Theme</td>
-<td>Window color theme</td>
-</tr>
-<tr>
-<td>Accent color</td>
-<td>Interface and tray icon accent</td>
-</tr>
-<tr>
-<td>Card icon style</td>
-<td>"Theme colors" / "Accent color" / "Colorful"</td>
-</tr>
-<tr>
-<td>Badge style</td>
-<td>Styling of card indicators</td>
-</tr>
-<tr>
-<td>Minimize to tray</td>
-<td>Checkbox — closing hides the window to the tray (section 3.7)</td>
-</tr>
-</tbody>
-</table>
-<p>Selector fields open a dropdown: Enter/Space apply and close it,
-Esc only closes it. Changes apply immediately and are saved
-automatically.</p>
-
-<div class="callout callout-tip"><b>Tip</b><p>In "Read-only" mode, settings show a notification: changes take
-effect until the app is closed but are not saved.</p>
-</div>
-<p>The "Import", "Export", "Reset all data" and "About" buttons are
-also here (sections 13, 18, 19).</p>
-<hr>
-<h2 id="15-data-storage-and-portability">15. Data storage and portability</h2>
-<p><strong>Where data lives.</strong> The app is portable: its data folder sits next
-to the executable. Inside — settings files, section files with cards
-(<code>sections/*.json</code>), the custom icons folder (<code>custom-icons/</code>),
-backups (<code>.backup/</code>, <code>.rollback/</code>) and the <code>logs/app.log</code> log.</p>
-<p><strong>Card paths.</strong> The app tries to store relative paths — that way the
-setup survives being moved to another drive/computer together with
-the data folder and target files. Absolute paths (<code>C:\…</code>) are
-accepted but only work where they are valid.</p>
-<p><strong>Moving.</strong> Copy the whole app folder — the exe, data and preferably
-the target files. Before moving, make a full backup (section
-<a href="#13-import-export-and-backups">"Import, export and backups"</a>).</p>
-<p><strong>Removable drive</strong> — a normal scenario. If a flash drive is removed
-while the app is running, it switches to "No media" mode: on-screen
-data stays, but writing becomes impossible. When the drive returns,
-writing is restored automatically on the next save attempt — the
-app checks that its own data root came back.</p>
-<p><strong>Storage modes:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Indicator</th>
-<th>What it means</th>
-<th>Consequences</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>(none)</td>
-<td>everything is fine</td>
-<td>read and write</td>
-</tr>
-<tr>
-<td>"Read-only"</td>
-<td>data is readable, writing is impossible</td>
-<td>the editor and mutations are closed; settings apply until restart</td>
-</tr>
-<tr>
-<td>"No media"</td>
-<td>the data root is unavailable</td>
-<td>writes are rejected with an error message</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Manual file editing.</strong> <code>sections/*.json</code> files can be edited in a
-text editor while the app is closed; with the app running, external
-edits are picked up only after a restart. A broken file does not
-crash the app — at startup an "Keep/Delete" dialog appears for each
-damaged file (deleting makes a backup copy). If two files declare
-the same section, their contents are merged — a notification reports
-this.</p>
-<hr>
-<h2 id="16-keyboard-and-hotkeys">16. Keyboard and hotkeys</h2>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Where</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Esc</td>
-<td>search field</td>
-<td>clear the search</td>
-</tr>
-<tr>
-<td>Esc</td>
-<td>main window</td>
-<td>close a settings field dropdown → the settings panel → the info panel</td>
-</tr>
-<tr>
-<td>Esc</td>
-<td>editor</td>
-<td>close the window (asks for confirmation on unsaved edits)</td>
-</tr>
-<tr>
-<td>Esc</td>
-<td>dialogs and picker windows</td>
-<td>cancel without saving</td>
-</tr>
-<tr>
-<td>Esc</td>
-<td>"Launch group" dialog</td>
-<td>stop the remaining launches</td>
-</tr>
-<tr>
-<td>Enter</td>
-<td>name input dialogs, pickers</td>
-<td>confirm ("Save"/"OK")</td>
-</tr>
-<tr>
-<td>Enter / Space</td>
-<td>card in the grid</td>
-<td>launch</td>
-</tr>
-<tr>
-<td>Enter / Space</td>
-<td>icon in the picker grid</td>
-<td>choose the icon</td>
-</tr>
-<tr>
-<td>Enter / Space</td>
-<td>settings field dropdown</td>
-<td>apply the selection and close</td>
-</tr>
-<tr>
-<td>← → ↑ ↓</td>
-<td>card grid</td>
-<td>move focus between cards</td>
-</tr>
-<tr>
-<td>← →</td>
-<td>category/tab lists</td>
-<td>move between items</td>
-</tr>
-<tr>
-<td>↑ on the first section</td>
-<td>sidebar</td>
-<td>jump to "Favorites"</td>
-</tr>
-<tr>
-<td>↑ ↓</td>
-<td>group member list</td>
-<td>between row checkboxes</td>
-</tr>
-<tr>
-<td>Apps / Shift+F10 / RightCtrl</td>
-<td>main window</td>
-<td>context menu of the focused item</td>
-</tr>
-</tbody>
-</table>
-<p>No other special keyboard shortcuts are listed in this guide; the
-remaining actions are available through the mouse interface.</p>
-<hr>
-<h2 id="17-troubleshooting">17. Troubleshooting</h2>
-<p><strong>A card does not launch, "Error" label.</strong>
-The target is unavailable: the file/folder was deleted or the path
-is wrong. Menu →
-If the target exists, "Open location" helps you reach it. If the
-path is wrong or the object is deleted, open the card menu →
-"Edit", fix the path and save the changes, or recreate the card.</p>
-<p><strong>Error when launching with elevated rights.</strong>
-Declining the UAC prompt cancels the launch — repeat and confirm,
-or remove "as administrator" from the card.</p>
-<p><strong>Data is not saved, "Read-only" indicator.</strong>
-The storage is opened read-only: check that the app folder and data
-files are not marked with the "read-only" attribute, that write
-permissions exist and there is free space. The editor and changes
-stay unavailable until writing is restored.</p>
-<p><strong>"No media" indicator.</strong>
-The data folder is gone (removed flash drive, renamed folder,
-unavailable network path). Bring the drive/folder back — writing is
-restored on the next save attempt. A renamed empty folder will not
-"reattach": the app only accepts its real data root.</p>
-<p><strong>"Keep/Delete" dialog at startup.</strong>
-A configuration file is corrupt. "Keep" — the file is untouched
-(you can fix it manually; the dialog repeats on the next launch);
-"Delete" — the file is deleted with a backup copy. In "Read-only"
-mode there is no "Delete" button.</p>
-<p><strong>"Data created by a newer version" warning.</strong>
-The files were written by a newer Errant Launcher; the old version
-will not overwrite them. Update the app to that or a newer version.</p>
-<p><strong>Cannot get an icon.</strong>
-Extraction from <code>.exe</code>/<code>.lnk</code> failed or the file is not a PNG —
-choose another source or a built-in icon.</p>
-<p><strong>Import finished with an error or partially.</strong>
-Read the result text: it states what was written, which files were
-changed and where the rollback backup is. If you get a message about
-a paused re-import, reopen the "Where to add" step or restart the
-app.</p>
-<p><strong>A command or link does not open.</strong>
-For a command, check its text ("Copy command" → paste into the
-command line and test manually). For a link — that the scheme is
-allowed and a handler exists in the system; check the internet.</p>
-<p><strong>The app does not let me into the editor / settings are not saved.</strong>
-See the "Read-only" and "No media" items.</p>
-<hr>
-<h2 id="18-resetting-and-restoring-data">18. Resetting and restoring data</h2>
-
-<div class="callout callout-warn"><b>Warning</b><p><strong>Reset is irreversible.</strong> "Reset all data" deletes all sections,
-categories, cards, favorites, settings and state — the app
-restarts clean.</p>
-</div>
-<p><strong>How to do it:</strong> settings → "Reset all data" → go through
-<strong>two consecutive confirmation dialogs</strong>. Cancelling at any step
-aborts the reset; an error produces a message without a restart.</p>
-<p><strong>Preparation:</strong> before resetting, make a "Full backup" (section
-<a href="#13-import-export-and-backups">"Import, export and backups"</a>) —
-it is the only standard way to get everything back.</p>
-<p><strong>Restoring:</strong> "Import" → choose the backup file → check
-"Settings" and the types you need → resolve name conflicts →
-result. After restoring, check: did sections and cards appear, do
-the paths work ("Error" labels), did favorites and settings come
-back.</p>
-<hr>
-<h2 id="19-about-and-legal-information">19. About and legal information</h2>
-<p>The "About" button in settings opens a window with the name,
-version, copyright and card statistics by type. Inside:</p>
-<ul>
-<li>"License agreement" and "Third-party licenses" — separate windows
-  with the text and a "Copy" button;</li>
-<li>"Support the project";</li>
-<li>links "Official website", "GitHub releases", "Documentation",
-  "Report a bug" — they open in the browser.</li>
-</ul>
-<hr>
-<h2 id="20-reference-materials">20. Reference materials</h2>
-<h3 id="201-card-types">20.1. Card types</h3>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>What it does</th>
-<th>Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Program</td>
-<td>launches <code>.exe</code> (with architecture variants)</td>
-<td>≥1 <code>.exe</code> variant</td>
-</tr>
-<tr>
-<td>Script</td>
-<td>runs bat/ps1/reg/vbs etc. with confirmation</td>
-<td>script file</td>
-</tr>
-<tr>
-<td>Folder</td>
-<td>opens a directory</td>
-<td>existing folder</td>
-</tr>
-<tr>
-<td>File</td>
-<td>opens a file with the associated app</td>
-<td>existing file</td>
-</tr>
-<tr>
-<td>Shortcut</td>
-<td>runs a <code>.lnk</code></td>
-<td><code>.lnk</code> file</td>
-</tr>
-<tr>
-<td>Command</td>
-<td>runs a text command with confirmation</td>
-<td>command text</td>
-</tr>
-<tr>
-<td>URL / URI</td>
-<td>opens a link</td>
-<td>address with an allowed scheme</td>
-</tr>
-<tr>
-<td>MSI package</td>
-<td>runs an <code>.msi</code> installer</td>
-<td><code>.msi</code> file</td>
-</tr>
-<tr>
-<td>Group</td>
-<td>runs its members in sequence with progress</td>
-<td>≥1 member</td>
-</tr>
-</tbody>
-</table>
-<h3 id="202-indicators-and-states">20.2. Indicators and states</h3>
-<table>
-<thead>
-<tr>
-<th>Label/indicator</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>"Error" on a card</td>
-<td>the target is unavailable</td>
-</tr>
-<tr>
-<td>"Admin" on a card</td>
-<td>runs as administrator</td>
-</tr>
-<tr>
-<td>"Checking" on a card</td>
-<td>availability check in progress</td>
-</tr>
-<tr>
-<td>x86 / x64 / ARM64 / Any</td>
-<td>architecture of a program variant</td>
-</tr>
-<tr>
-<td>"Administrator mode"</td>
-<td>the launcher itself runs elevated</td>
-</tr>
-<tr>
-<td>"Read-only"</td>
-<td>the storage does not accept writes</td>
-</tr>
-<tr>
-<td>"No media"</td>
-<td>the data folder is unavailable</td>
-</tr>
-</tbody>
-</table>
-<h3 id="203-fields-and-parameters">20.3. Fields and parameters</h3>
-<ul>
-<li><strong>Name</strong> — required, duplicates allowed (a warning hint).</li>
-<li><strong>Description</strong> — free text, takes part in search and in the script
-  launch confirmation.</li>
-<li><strong>Working folder</strong> — the directory the process starts from; empty =
-  the target's folder.</li>
-<li><strong>Arguments</strong> — launch parameters (programs, MSI); for MSI they are
-  parsed per msiexec rules.</li>
-<li><strong>As administrator</strong> — elevated launch via UAC.</li>
-<li><strong>Group member delay</strong> — a pause before launching the next one.</li>
-</ul>
-<h3 id="204-hotkeys">20.4. Hotkeys</h3>
-<p>The full table is in section 16.</p>
-<h3 id="205-glossary">20.5. Glossary</h3>
-<ul>
-<li><strong>Card</strong> — a launchable grid element.</li>
-<li><strong>Section / category</strong> — the card grouping levels.</li>
-<li><strong>Favorites</strong> — a view with marked cards of all sections.</li>
-<li><strong>Launch variant</strong> — an <code>.exe</code> of a specific architecture in a
-  program card.</li>
-<li><strong>Candidate</strong> — an object found by the mass import wizard.</li>
-<li><strong>Backup / collection</strong> — the two export kinds (everything /
-  selected without settings).</li>
-<li><strong>Read-only / No media</strong> — degraded storage modes.</li>
-</ul>
-<h3 id="206-frequently-asked-questions">20.6. Frequently asked questions</h3>
-<ul>
-<li><strong>Why can't I open the editor?</strong> The storage is in
-  "Read-only"/"No media" mode or a search is active — clear the
-  search field or restore writing.</li>
-<li><strong>Why does the window hide to the tray instead of closing?</strong>
-  "Minimize to tray" is enabled — exit via the icon menu "Exit" or
-  disable the setting.</li>
-<li><strong>A section disappeared.</strong> It is hidden — re-enable it in the
-  structure editor.</li>
-<li><strong>How many cards can be imported at once?</strong> As many as the scan
-  finds within the "Maximum candidates" limit.</li>
-<li><strong>Can I keep the app on a flash drive?</strong> Yes — that is what makes
-  it portable; removing it mid-run switches to "No media".</li>
-</ul>
-<hr></div><aside class="docs-toc"><b>Contents</b><a href="#1-about-this-guide">1. About this guide</a><a href="#contents">Contents</a><a href="#2-getting-started">2. Getting started</a><a href="#3-interface-and-navigation">3. Interface and navigation</a><a href="#4-sections-and-categories">4. Sections and categories</a><a href="#5-cards-core-principles">5. Cards: core principles</a><a href="#6-creating-cards-of-different-types">6. Creating cards of different types</a><a href="#7-launching-and-opening-items">7. Launching and opening items</a><a href="#8-card-groups">8. Card groups</a><a href="#9-editing-and-organizing-cards">9. Editing and organizing cards</a><a href="#10-favorites">10. Favorites</a><a href="#11-icons-and-appearance">11. Icons and appearance</a><a href="#12-mass-import">12. Mass import</a><a href="#13-import-export-and-backups">13. Import, export and backups</a><a href="#14-settings">14. Settings</a><a href="#15-data-storage-and-portability">15. Data storage and portability</a><a href="#16-keyboard-and-hotkeys">16. Keyboard and hotkeys</a><a href="#17-troubleshooting">17. Troubleshooting</a><a href="#18-resetting-and-restoring-data">18. Resetting and restoring data</a><a href="#19-about-and-legal-information">19. About and legal information</a><a href="#20-reference-materials">20. Reference materials</a></aside></div>
+<li><a href="../faq/"><strong>FAQ &amp; troubleshooting</strong></a> — quick answers to common situations.</li>
+<li><a href="../../support/"><strong>Support</strong></a> — how to report a bug and what to include.</li>
+<li><a href="../requirements/"><strong>System requirements</strong></a> — compatibility and limitations.</li>
+</ul></div></div>
 </main>
+
 <footer class="site-footer" data-site-footer data-root="../../" data-lang="en"></footer>
 <script src="../../assets/js/site.js"></script>
 <!-- Cloudflare Web Analytics -->

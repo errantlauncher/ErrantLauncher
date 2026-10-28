@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Download Errant Launcher</title>
 <meta name="description" content="Download Errant Launcher">
 <link rel="canonical" href="https://errantlauncher.com/download/">
@@ -16,10 +16,6 @@
 <meta name="theme-color" content="#1a1d24">
 <link rel="alternate" hreflang="en" href="https://errantlauncher.com/download/">
 <link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/download/">
-<link rel="alternate" hreflang="uk" href="https://errantlauncher.com/uk/download/">
-<link rel="alternate" hreflang="az" href="https://errantlauncher.com/az/download/">
-<link rel="alternate" hreflang="es" href="https://errantlauncher.com/es/download/">
-<link rel="alternate" hreflang="pt-BR" href="https://errantlauncher.com/pt-BR/download/">
 <link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/download/">
 <link rel="icon" type="image/svg+xml" href="../assets/img/app-icon.svg">
 <link rel="stylesheet" href="../assets/css/site.css">
@@ -29,26 +25,24 @@
 <header class="site-header" data-site-header data-root="../" data-lang="en" data-page="download" data-active="download"></header>
 <main>
 <div class="container page-body"><h1 id="download-errant-launcher">Download Errant Launcher</h1>
-<p>The current version of Errant Launcher for Windows. The full version
-history is kept on GitHub Releases.</p>
-<hr>
-<h2 id="latest-version">Latest version</h2>
+
+<div class="dl-cols"><div class="dl-left"><h2 id="latest-version">Latest version</h2>
 <div class="dl-block" data-latest data-arch="x64">
   <div class="dl-os">Windows 10/11 · x64</div>
   <div class="dl-ver">Version <b data-rel-ver>…</b>
     <span class="dl-badge" data-rel-badge hidden>Beta</span></div>
   <div class="dl-actions">
     <a class="btn btn-primary btn-hero" data-dl
-       href="https://github.com/errantlauncher/ErrantLauncher/releases/download/v1.0.0-beta.1/ErrantLauncher-x64.exe">
+       href="https://github.com/errantlauncher/ErrantLauncher/releases/download/v1.0.0-beta.2/ErrantLauncher-1.0.0-beta.2-win-x64.zip">
       <i data-icon="download" data-size="20"></i>
       <span class="btn-hero-c">
         <span class="btn-hero-t">Download</span>
         <span class="btn-hero-s">Windows 10/11 · x64 <span data-size></span></span>
       </span>
     </a>
-    <a class="btn btn-ghost dl-eula" href="../eula/index.html">License agreement</a>
+    <a class="btn btn-ghost dl-eula" href="../license/index.html">License agreement</a>
   </div>
-  <div class="dl-sha-label">SHA-256</div>
+  <div class="dl-sha-label">SHA-256 of the ZIP archive</div>
   <div class="wallet-line dl-sha-line" data-sha-row>
     <div class="wallet-addr dl-sha-field"><code data-sha>Unavailable</code></div>
     <button class="copy-btn" data-copy type="button" disabled>Copy</button>
@@ -56,41 +50,20 @@ history is kept on GitHub Releases.</p>
   <div class="dl-hint">Latest release pulled from GitHub</div>
 </div>
 
-<div class="callout callout-warn"><b>Warning</b><p><strong>Beta version.</strong> This is a pre-release build of the app. Bugs and
-changes are possible. Please report issues <a href="../support/">here</a> — it
-helps us ship the stable release faster.</p>
-</div><div class="callout callout-note"><b>Note</b><p>You download a single exe — no installer, no archive.
-One file: Windows x64 (64-bit).</p>
-</div><div class="callout callout-note"><b>Note</b><p><strong>File verification.</strong> The executable is not digitally signed —
-verify the SHA-256 hash above or open the
-<a href="https://www.virustotal.com/gui/file/3fb2a84547eb69a25f8cd271645fce9bf780af9f9a58101f4735309c02e0a168">VirusTotal report</a>.</p>
-<p>One of approximately 70 antivirus engines (SecureAge) may report
-a false positive. This may be related to the executable being an
-unsigned, single-file .NET application. The other scanned engines
-did not detect any threats.</p>
-</div>
-<h2 id="requirements">Requirements</h2>
-<ul>
-<li>Windows 10 or 11, 64-bit (x64).</li>
-<li>A folder with write access — the app stores its data next to the exe.
-  Avoid <code>Program Files</code> and other protected locations unless you run
-  it as administrator.</li>
-<li>About 50 MB for the exe plus a little space for data.</li>
-<li>On first launch, Windows SmartScreen may warn about an unknown
-  publisher — click "More info" → "Run anyway". To be sure, compare
-  the SHA-256 hash above
-  (how to check: <a href="../docs/faq/#smartscreen-warning">FAQ</a>).</li>
-</ul>
-<h2 id="first-launch">First launch</h2>
+</div><div class="dl-side"><h2 id="first-launch">First launch</h2>
 <ol>
-<li><strong>Put the exe</strong> in a folder with write access — a flash drive works.</li>
-<li><strong>Run it.</strong> An <code>ErrantLauncher\</code> data folder appears next to it.</li>
-<li><strong>Add cards</strong> — drag files onto the window or use the Editor. Done.</li>
-</ol>
-<p>More details: <a href="../docs/guide/">User guide</a> ·
-<a href="../docs/data/#updating-without-data-loss">Updating &amp; uninstalling</a> ·
-<a href="../docs/guide/#14-settings">Appearance &amp; themes</a> ·
-<a href="https://github.com/errantlauncher/ErrantLauncher/releases">GitHub Releases</a></p></div>
+<li><strong>Unpack the ZIP</strong> into a folder with write access — a flash drive works. Keep the files together — <code>ErrantLauncher-x64.exe</code>, <code>libSkiaSharp.dll</code>, and <code>av_libglesv2.dll</code> must stay in the same folder.</li>
+<li><strong>Run it.</strong> An <code>ErrantLauncher\</code> data folder appears next to the exe.</li>
+<li>On first launch, Windows SmartScreen may warn about an unknown publisher — click "More info" → "Run anyway".</li>
+<li>Run <code>ErrantLauncher-x64.exe</code> — an <code>ErrantLauncher</code> data folder appears next to it. Open <strong>Editor</strong> to add sections, categories, and cards, or drag files in.</li>
+</ol><p>For details, see the <a href="../docs/guide/#2">user guide, Chapter 2</a>.</p></div></div><div class="callout callout-warn"><b>Warning</b><p><strong>Beta version.</strong> This is a pre-release build of the app. Bugs and
+changes are possible. See the <a href="../support/">help page</a> on how to report a bug.</p>
+</div><div class="callout callout-note"><b>Note</b><p><strong>File verification.</strong> The executable is not digitally signed —
+compare the SHA-256 hash of the ZIP archive shown above before running;
+the SHA-256 checksums for the EXE and DLLs are listed in <code>SHA256SUMS.txt</code> inside the archive.</p>
+</div>
+<h2>Changelog</h2><details class="clg"><summary>1.0.0-beta.2</summary><p>Beta 2 introduces a new way to build and launch the application, along with improvements to the interface and fixes for issues affecting settings, application launching, data imports, and window behavior.</p><h3>New Launch Method and Distribution Format</h3><ul><li><strong>Native AOT.</strong> In Beta 1, the application extracted .NET runtime components to a temporary folder every time it launched. Beta 2 uses <strong>Native AOT</strong>, which compiles the application code into native machine code ahead of time. The application no longer extracts .NET runtime components to <code>%TEMP%</code>, and the temporary <code>.net\ErrantLauncher</code> directories are no longer created.</li><li><strong>ZIP archive instead of a single EXE.</strong> In Beta 1, the application was distributed as a single executable file. Beta 2 is distributed as a ZIP archive that must be extracted in full. <code>ErrantLauncher-x64.exe</code>, <code>libSkiaSharp.dll</code>, and <code>av_libglesv2.dll</code> must be kept together in the same folder. The application will not launch if the EXE is separated from these DLLs.</li><li><strong>Larger distribution package.</strong> After extraction, Beta 2 takes up more disk space than the single EXE distributed with Beta 1. This is a trade-off of the new build and distribution method.</li></ul><h3>What's Included</h3><ul><li><code>ErrantLauncher-x64.exe</code> — the application executable. The .NET runtime is included, so no separate .NET installation is required.</li><li><code>libSkiaSharp.dll</code> and <code>av_libglesv2.dll</code> — libraries required to render the application interface.</li><li><code>README.txt</code> and <code>README-ru.txt</code> — extraction and launch instructions in English and Russian.</li><li><code>SHA256SUMS.txt</code> — SHA-256 checksums for the executable and both DLLs.</li><li><code>.zip.sha256</code> — the checksum for the ZIP archive itself.</li></ul><p>Checksums let you verify the integrity of downloaded files and confirm that they match the published versions.</p><h3>Interface Improvements</h3><ul><li><strong>Manual card ordering.</strong> Cards can now be reordered within a category using the context menu. The selected order is saved and restored after restarting the application.</li><li><strong>Reordering sections and categories.</strong> Sections and categories can be moved up, down, left, or right using their context menus.</li><li><strong>Faster theme switching.</strong> Changing the theme or accent color no longer causes noticeable window freezes.</li><li><strong>Visual feedback.</strong> Newly created or moved cards, categories, and sections briefly pulse with a highlight. The card grid also fades in smoothly when switching sections.</li><li><strong>Updated favorites indicator.</strong> The favorites star is now brighter and is no longer redundantly displayed on cards within the Favorites section itself.</li></ul><h3>Fixes and Reliability</h3><ul><li><strong>Protection against accidental settings loss.</strong> If <code>settings.json</code> temporarily cannot be read, for example because another application or antivirus software has locked the file, the application no longer overwrites it with default settings during the next configuration change. This reduces the risk of losing saved settings because of a temporary file access error.</li><li><strong>Window maximization is preserved.</strong> When the main window is maximized, launching the application again or opening its window from the system tray should no longer restore it to its normal size.</li><li><strong>More reliable handling of repeated launches.</strong> The command to show the application window is now handled even if the first instance is still starting up or displaying the license screen. Previously, the command could be lost in these situations.</li><li><strong>Accurate reporting when an elevated launch is canceled.</strong> When launching a group of cards, if a card configured to run as administrator is canceled at the Windows User Account Control (UAC) prompt, it is now reported as canceled rather than successfully launched.</li><li><strong>Launching commands and URLs no longer blocks the interface.</strong> Command and URL cards are no longer launched directly on the UI thread. For example, attempting to access an unavailable network drive should no longer freeze the window while waiting for a timeout.</li><li><strong>Folder imports now enforce the same limits as ZIP imports.</strong> Importing cards from a folder now uses the same size limits as importing from a ZIP archive: a maximum of 100 MB of data in total and 10 MB per file. This prevents excessively large imports from consuming unnecessary disk space in the data directory.</li><li><strong>Fixed ignored card clicks.</strong> In rare situations, when a launch was already in progress, the next ordinary click on a card could be ignored. This has been fixed.</li><li><strong>Fixed horizontal touchpad scrolling.</strong> The card scrolling handler no longer blocks horizontal touchpad swipes.</li><li><strong>Interface and stability fixes.</strong> Fixed a missing section of the window border to the right of the category panel and rare cases where a card displayed incorrect content in the grid. Improved the reliability of the corrupted-file list when files are read and written concurrently.</li><li><strong>Mass-import backups.</strong> The <code>.mass-import-backups</code> folder now retains only the most recent fully verified backup. Older backups are deleted after the new backup has been confirmed, preventing backups from accumulating with every import operation.</li><li><strong>Updated bug-report link.</strong> The application's <strong>Report a Problem</strong> link now opens <code>https://errantlauncher.com/support/</code> instead of linking directly to GitHub Issues.</li></ul></details><details class="clg"><summary>1.0.0-beta.1</summary><p>First public beta release.</p><ul><li>Portable launcher for Windows x64. No application installation or separate .NET runtime installation required.</li><li>Nine card types: applications, scripts, folders, files, Windows shortcuts, commands, URLs/URIs, MSI packages, and groups.</li><li>Sections, categories, favorites, and search.</li><li>Import wizard and sequential launching of card groups.</li><li>Collection export and import, read-only mode, and 15 themes.</li></ul></details>
+</div>
 </main>
 <footer class="site-footer" data-site-footer data-root="../" data-lang="en"></footer>
 <script src="../assets/js/site.js"></script>

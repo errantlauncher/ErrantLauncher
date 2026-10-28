@@ -12,7 +12,7 @@ Errant Launcher uses third-party libraries, fonts, and icon sets. The rights to 
 | SkiaSharp                                 | 3.119.4-preview\.1.1        | MIT                 |
 | Skia                                      | Included in libSkiaSharp    | BSD-3-Clause        |
 | HarfBuzzSharp                             | 8.3.1.3                     | MIT                 |
-| HarfBuzz                                  | Included in libHarfBuzzSharp | Old MIT             |
+| HarfBuzz                                  | 8.3.1, statically linked | Old MIT             |
 | ANGLE                                     | 2.1.25547                   | BSD-3-Clause        |
 | Svg.Skia / ShimSkiaSharp                  | 5.1.0                       | MIT                 |
 | ExCSS                                     | 4.3.1                       | MIT                 |
@@ -101,7 +101,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## HarfBuzz
 
 Source: https://github.com/harfbuzz/harfbuzz
-Version: bundled in libHarfBuzzSharp.dll
+Version: 8.3.1, statically linked into the executable
 License: "Old MIT"
 
 HarfBuzz is licensed under the so-called "Old MIT" license. Details follow.
