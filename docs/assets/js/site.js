@@ -35,8 +35,8 @@
         'lock': '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
         'arrow-up': '<path d="M12 19V5"/><path d="m5 12 7-7 7 7"/>',
         'circle-question-mark': '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
-        'heart': '<path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>',
         'globe': '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+        'heart': '<path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>',
         'menu': '<path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>',
         'x': '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
         'info': '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
@@ -77,6 +77,7 @@
     var L10N = {
         en: {
             navDownload: 'Download', navGuide: 'Documentation', navSupport: 'Help',
+            navShots: 'Screenshots',
             support: 'Donate',
             copied: 'Copied',
             footerTag: 'Portable launcher for Windows. Free, no installation.',
@@ -97,6 +98,7 @@
         },
         ru: {
             navDownload: 'Скачать', navGuide: 'Документация', navSupport: 'Помощь',
+            navShots: 'Скриншоты',
             support: 'Поддержать',
             copied: 'Скопировано',
             footerTag: 'Портативный лаунчер для Windows. Бесплатно, без установки.',
@@ -118,7 +120,7 @@
     };
 
     var LANGS = [
-        ['en', 'English'], ['ru', 'Р�?�?�?кий']
+        ['en', 'English'], ['ru', 'Р�?�?�?кий']
     ];
     var T = L10N.en;
 
@@ -130,6 +132,7 @@
         return [
             { id: 'download',    href: loc(root, 'download/index.html'),    label: T.navDownload, ic: 'download' },
             { id: 'docs',        href: loc(root, 'docs/guide/index.html'),        label: T.navGuide,    ic: 'notebook-text' },
+            { id: 'shots',       href: loc(root, 'screenshots/index.html'),   label: T.navShots,    ic: 'image' },
             { id: 'support',     href: loc(root, 'help/index.html'),     label: T.navSupport,  ic: 'circle-question-mark' }
         ];
     }
@@ -147,9 +150,7 @@
             var on = l[0] === lang ? ' class="on"' : '';
             return '<a href="' + href + '"' + on + '>' + l[0].toUpperCase() + '</a>';
         }).join('');
-        return '<span class="lang-switch">' +
-            '<span class="lang-switch-icon">' + icon('globe', 19) + '</span>' + items +
-        '</span>';
+        return '<span class="lang-switch">' + items + '</span>';
     }
 
     function renderHeader(root, active, pageId) {

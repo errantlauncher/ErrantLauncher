@@ -15,7 +15,9 @@
 
 Apps, files, scripts, commands, and links — organized into quick-launch cards. Arrange everything your way and keep the tools you need close at hand. Extract to a folder or a USB drive and your entire workspace travels with you.
 
-<img src="assets/app-main.png" alt="Errant Launcher — card grid workspace" width="900">
+<img src="assets/app-main.gif" alt="Errant Launcher — card grid workspace" width="900">
+
+**[→ More screenshots](https://errantlauncher.com/screenshots/)**
 
 </div>
 
