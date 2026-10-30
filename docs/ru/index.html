@@ -19,7 +19,8 @@
 <link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/">
 <link rel="icon" type="image/svg+xml" href="../assets/img/app-icon.svg">
 <link rel="stylesheet" href="../assets/css/site.css">
-<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Errant Launcher","operatingSystem":"Windows 10, Windows 11 (x64)","applicationCategory":"UtilitiesApplication","softwareVersion":"1.0.0-beta.2","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://errantlauncher.com/","downloadUrl":"https://github.com/errantlauncher/ErrantLauncher/releases","screenshot":"https://errantlauncher.com/assets/img/app/app_graphite.png","description":"Portable card-based launcher for Windows: organize apps, files, scripts, commands and links into quick-launch cards."}</script>
 </head>
 <body>
 <header class="site-header" data-site-header data-root="../" data-lang="ru" data-page="" data-active=""></header>

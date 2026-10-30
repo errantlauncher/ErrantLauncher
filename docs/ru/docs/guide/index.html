@@ -19,12 +19,12 @@
 <link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/guide/">
 <link rel="icon" type="image/svg+xml" href="../../../assets/img/app-icon.svg">
 <link rel="stylesheet" href="../../../assets/css/site.css">
-<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){document.documentElement.dataset.theme='dark'}</script>
 </head>
 <body>
 <header class="site-header" data-site-header data-root="../../../" data-lang="ru" data-page="docs/guide" data-active="docs"></header>
 <main>
-<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="guide"></aside><div class="docs-content page-body" style="grid-column:1/-1"><h1>Errant Launcher — Руководство пользователя</h1>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="guide"></aside><div class="docs-content page-body" style="grid-column:1/-1"><nav class="crumbs" aria-label="Breadcrumb"><a href="../guide/">Документация</a><span>/</span><span>Гайд</span></nav><h1>Errant Launcher — Руководство пользователя</h1>
 <hr>
 <h2 id="1">1. Знакомство с Errant Launcher</h2>
 <p>Errant Launcher — переносимая (portable) программа для Windows. Она собирает в одном окне карточки для запуска всего, чем вы часто пользуетесь: программ, скриптов, папок, файлов, команд, ссылок, ярлыков и установщиков MSI.</p>

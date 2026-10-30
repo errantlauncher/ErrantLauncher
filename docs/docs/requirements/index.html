@@ -19,12 +19,12 @@
 <link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/requirements/">
 <link rel="icon" type="image/svg+xml" href="../../assets/img/app-icon.svg">
 <link rel="stylesheet" href="../../assets/css/site.css">
-<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){document.documentElement.dataset.theme='dark'}</script>
 </head>
 <body>
 <header class="site-header" data-site-header data-root="../../" data-lang="en" data-page="docs/requirements" data-active="docs"></header>
 <main>
-<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="requirements"></aside><div class="docs-content page-body" style="grid-column:1/-1"><h1 id="req">System Requirements and Compatibility</h1>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="requirements"></aside><div class="docs-content page-body" style="grid-column:1/-1"><nav class="crumbs" aria-label="Breadcrumb"><a href="../guide/">Documentation</a><span>/</span><span>Requirements</span></nav><h1 id="req">System Requirements and Compatibility</h1>
 <hr>
 <p>Errant Launcher is a portable Windows application. No installation is required: download the ZIP archive, extract it, and launch the application.</p>
 <h2>Minimum Requirements</h2>
