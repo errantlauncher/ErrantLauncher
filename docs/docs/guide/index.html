@@ -51,7 +51,7 @@
 <li>the <strong>status button</strong> at the bottom left — opens an info panel with counters and indicators.</li>
 </ul>
 <p>Badges may appear at the bottom right: "Admin mode" (the app is running elevated), "Read-only" and "No storage" (data folder problems — see Chapter 10).</p>
-<p>Clicking empty space on the side panel collapses/expands it. Right-clicking a section opens a menu: "Rename", "Hide section", "Delete section"; right-clicking a category pill: "Rename", "Hide".</p>
+<p>Clicking empty space on the side panel collapses/expands it. Right-clicking a section opens a menu: "Rename", "Hide section", "Delete section"; right-clicking a category pill: "Rename", "Change icon", "Hide".</p>
 <p><strong>Search.</strong> Type into "Search…" — the grid filters. It searches card names, target file names, and descriptions; all words must match. Esc inside the field clears it. While a search is active, the "Editor" is unavailable — clear the search first.</p>
 <p><strong>Sorting.</strong> The sort button offers: "Custom order", "By name", "By type", "By launch frequency". The last option moves the cards you launch most often to the top.</p>
 <p><strong>System tray.</strong> If "Minimize to tray" is enabled in settings, the close button hides the window to the notification area instead of exiting. Clicking the icon brings the window back; its menu offers "Open" and "Exit". If you disable the setting while the window is hidden, it returns to the screen.</p>
@@ -112,7 +112,7 @@
 <p><strong>Card groups.</strong> Created in the Editor → "Group" → pick members from the list (with search and filters). A group must have at least one member; nested groups are not allowed. Members can have an individual delay before the next launch. At launch, the "Group launch" dialog opens: an "N of M" counter, a "Next: … — in X s" countdown, and "launched / cancelled / not launched" rows. "Cancel remaining" or Esc stops the queue — what has already launched is not rolled back. Summary: "Launched: X · Errors: Y · Skipped: Z".</p>
 <p><strong>Arguments and working directory</strong> (program, script, MSI) are set in the card form; an empty working directory means the target's own folder.</p>
 <h2 id="7">7. Organizing Your Collection</h2>
-<p><strong>Sections and categories</strong> are managed in the Editor → "Structure": "Add section" / "Add category", rename, order ("up"/"down"), hiding (visibility toggle), changing a section icon, deleting.</p>
+<p><strong>Sections and categories</strong> are managed in the Editor → "Structure": "Add section" / "Add category", rename, order ("up"/"down"), hiding (visibility toggle), changing a section or category icon, deleting.</p>
 <p>Rules: names cannot be empty and must be unique within their level — on a duplicate the app reports "already exists". A hidden section disappears from the side panel, a hidden category from the pills; nothing is deleted and they return when unhidden.</p>
 <p><strong>Important — deleting:</strong> deleting a section permanently deletes all its categories and cards; deleting a category deletes all its cards. The app warns you in a confirmation dialog.</p>
 <p><strong>Favorites.</strong> Right-click a card → "Add to favorites" / "Remove from favorites". The "Favorites" item in the side panel opens a view with type tabs ("All", "Programs", "Scripts"…). Search works here too. Favorite status is preserved when cards are exported or imported.</p>
@@ -143,7 +143,7 @@
 <li><strong>Language</strong> — the interface language, 6 options.</li>
 </ul>
 <p>All changes apply immediately and save automatically. In "Read-only" mode, settings apply until the app closes but are not saved.</p>
-<p><strong>Card and section icons</strong> — the icon button in the card form and in "Structure": built-in type icon, a collection of built-in icons, your own PNG, "Extract" from an <code>.exe</code>/<code>.lnk</code>, "Reset". If extraction fails or the file is not a PNG, an error appears and the icon stays unchanged.</p>
+<p><strong>Card, section, and category icons</strong> — the icon button in the card form and in "Structure": built-in type icon, a collection of built-in icons, your own PNG, "Extract" from an <code>.exe</code>/<code>.lnk</code>, "Reset". If extraction fails or the file is not a PNG, an error appears and the icon stays unchanged.</p>
 <p>The same panel holds "Import", "Export", "Delete all data", and "About" (version, card statistics, licenses, links to the site and GitHub).</p>
 <h2 id="10">10. Data Storage, Moving, and Backups</h2>
 <p><strong>Where data lives.</strong> The <code>ErrantLauncher</code> folder next to the executable: section files with cards (<code>sections\</code>), settings (<code>settings.json</code>), app state (<code>state.json</code>), your icons (<code>custom-icons\</code>), logs (<code>logs\</code>), and service backups. Everything in one place — that is what makes the app portable.</p>

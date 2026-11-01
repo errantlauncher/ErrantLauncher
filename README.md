@@ -47,7 +47,7 @@ Errant Launcher is for those who want to organize their own digital workspace. I
 
 - **Organization** — sections and categories, favorites, search by card name, file name, or description, and sorting by custom order, name, type, or launch frequency.
 - **Duplicate and hide** — duplicate cards and hide sections or categories without deleting them.
-- **Custom icons** — choose from the built-in icon collection, assign your own images to cards of any type, or use icons automatically extracted from EXE files and shortcuts.
+- **Custom icons** — choose from the built-in icon collection, assign your own images to cards, sections, and categories, or use icons automatically extracted from EXE files and shortcuts.
 - **Customize the look** — 15 themes, a separate accent color, and color styles for card icons and badges.
 - **6 interface languages** — Russian, English, Ukrainian, Azerbaijani, Spanish, and Brazilian Portuguese.
 

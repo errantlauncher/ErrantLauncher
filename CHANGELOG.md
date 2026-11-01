@@ -1,5 +1,48 @@
 # Changelog
 
+## 1.0.0-beta.3
+
+Beta 3 is a small update focused on fixes. It improves card icons, command and script launching, the look of dialogs and context menus, restoring backups, and resilience to failures.
+
+### Interface improvements
+
+- **Dialogs with long content.** Previously, a large amount of text could push a dialog's buttons off the screen. The header and buttons now always stay visible and only the content scrolls. Regular dialogs look the same as before.
+    
+- **Move buttons in context menus.** The "up", "down", "left" and "right" buttons now have a fixed size and are centered in the menu. They no longer stretch with the menu or depend on the interface language.
+    
+- **Clearer badge colors in the Multicolor style.** Badge and type-icon colors in the "Multicolor" badge style were reworked. The type icon is now a single flat color matching the type badge — previously the icon used a two-tone gradient and the badge a related pastel shade. Secondary badges (architecture, shell, admin, error) now use clearly distinct saturated colors instead of near-identical pastel tones. The "Theme colors" and "Accent color" styles are unchanged. The status indicators in the info panel (admin mode, read-only storage) now use the same flat badge style.
+    
+- **Icons for categories.** Categories can now have an icon, just like sections. Right-click a category tab or use the toolbar in Settings → Structure to add, change, or remove an icon. The icon is shown on the category tab and in the Structure list.
+    
+
+### Icons
+
+- **The icon follows the card's target.** If an icon was extracted automatically from a program or shortcut, it is now refreshed from the new target when you change the card's target. Previously the old program's icon could remain. Icons you picked manually are not changed. Existing cards behave as before.
+    
+- **The icon is no longer lost when saving fails.** If saving a card fails, the selected icon is no longer discarded and will be applied on the next save attempt.
+    
+
+### Launching cards
+
+- **Commands with a quoted path and quoted arguments.** Command cards (cmd) with commands such as `"C:\Program Files\app.exe" "argument"` now run. Previously such commands could fail because of how `cmd.exe` parses quotes. Other commands run unchanged.
+    
+- **`.bat` scripts in folders containing `&` and `^`.** Batch scripts whose path contains `&` or `^`, for example `Tom & Jerry\run.bat`, now launch. If a folder name contains a real environment variable such as `%PATH%`, `cmd.exe` still expands it and such a script cannot be launched.
+    
+
+### Backups and sections
+
+- **Restoring large backups.** Previously, a backup containing more than 1024 icons exported successfully but was rejected on import with a message about an invalid or damaged file. Import now accepts up to 4096 icons.
+    
+- **Sections with very long names.** Previously, a section whose name was a very long run of characters without spaces (about 250 characters or more) could not be created and a generic save error appeared. Such a section can now be created and its name is kept in full.
+    
+
+### Fixes and reliability
+
+- **Fewer crashes.** If an unexpected error occurs while handling a click or another interface event, it is now written to the log and the app keeps running instead of closing. Copying to the clipboard in the Mass Import wizard and the License window (when another program has locked the clipboard), the drag-and-drop hint, and icon refresh in the card editor are also protected separately. When the system runs out of memory, the app still closes.
+    
+- **Log privacy.** The error log no longer records URL parameters, credentials embedded in addresses, or command arguments: only the address without parameters and the program name are kept. File and folder paths are logged as before.
+    
+
 ## 1.0.0-beta.2
 
 Beta 2 introduces a new way to build and launch the application, along with improvements to the interface and fixes for issues affecting settings, application launching, data imports, and window behavior.

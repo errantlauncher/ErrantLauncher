@@ -514,9 +514,9 @@ html[data-theme="light"] .hero-title img { filter: invert(.85); }
 /* changelog accordion on download page */
 details.clg { border-radius: var(--radius); background: var(--base);
     box-shadow: var(--sh-raised-sm); border: 1px solid var(--divider);
-    margin-bottom: 14px; overflow: hidden; }
-details.clg summary { list-style: none; cursor: pointer; padding: 14px 18px;
-    font-size: 15px; font-weight: 600; color: var(--text-2);
+    margin-bottom: 8px; overflow: hidden; }
+details.clg summary { list-style: none; cursor: pointer; padding: 9px 16px;
+    font-size: 14px; font-weight: 600; color: var(--text-2);
     display: flex; align-items: center; gap: 10px;
     transition: color .15s ease; }
 details.clg summary::-webkit-details-marker { display: none; }
