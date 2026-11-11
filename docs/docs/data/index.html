@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Data, backups and portability — Errant Launcher</title>
+<meta name="description" content="How Errant Launcher stores data — portable JSON sections, settings, custom icons, backups, import and export, moving to another PC or USB drive.">
+<link rel="canonical" href="https://errantlauncher.com/docs/data/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Data, backups and portability — Errant Launcher">
+<meta property="og:description" content="How Errant Launcher stores data — portable JSON sections, settings, custom icons, backups, import and export, moving to another PC or USB drive.">
+<meta property="og:url" content="https://errantlauncher.com/docs/data/">
+<meta property="og:image" content="https://errantlauncher.com/assets/img/social-preview.png">
+<meta name="twitter:image" content="https://errantlauncher.com/assets/img/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1a1d24">
+<link rel="alternate" hreflang="en" href="https://errantlauncher.com/docs/data/">
+<link rel="alternate" hreflang="ru" href="https://errantlauncher.com/ru/docs/data/">
+<link rel="alternate" hreflang="x-default" href="https://errantlauncher.com/docs/data/">
+<link rel="icon" type="image/svg+xml" href="../../assets/img/app-icon.svg">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('el-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){document.documentElement.dataset.theme='dark'}</script>
+</head>
+<body>
+<header class="site-header" data-site-header data-root="../../" data-lang="en" data-page="docs/data" data-active="docs"></header>
+<main>
+<div class="container docs-layout"><aside class="docs-nav" data-docs-nav data-active="data"></aside><div class="docs-content page-body" style="grid-column:1/-1"><nav class="crumbs" aria-label="Breadcrumb"><a href="../guide/">Documentation</a><span>/</span><span>Data & portability</span></nav><h1>Data, Backups, and Portability</h1>
+<hr>
+<p>Errant Launcher is a portable application. User data is stored in an <code>ErrantLauncher</code> folder alongside the executable. This page explains where data is stored, how to create backups, how to move your collection between computers, and how to restore data when needed.</p>
+<h2>Where Data Is Stored</h2>
+<p>When you first launch the application, it creates an <strong><code>ErrantLauncher</code></strong> folder next to the executable. For example, if the application is located in <code>D:\Tools\</code>, its data will be stored in <code>D:\Tools\ErrantLauncher\</code>.</p>
+<p>The application does not write data to the Windows Registry or user profile folders such as <code>Documents</code> or <code>AppData</code>. Your collection, settings, and application data are stored in the data folder alongside the executable.</p>
+<h2>Data Folder Contents</h2>
+<table>
+<thead><tr><th>Path</th><th>Contents</th></tr></thead>
+<tbody>
+<tr><td><code>ErrantLauncher\sections\*.json</code></td><td>Sections, categories, and cards, stored in a separate file for each section</td></tr>
+<tr><td><code>ErrantLauncher\settings.json</code></td><td>Appearance and behavior settings, including theme, language, system tray options, and other preferences</td></tr>
+<tr><td><code>ErrantLauncher\state.json</code></td><td>Window state, the last opened section, and launch counters</td></tr>
+<tr><td><code>ErrantLauncher\custom-icons\</code></td><td>Icons you have added or extracted from applications</td></tr>
+<tr><td><code>ErrantLauncher\logs\</code></td><td>Local diagnostic logs, including <code>app.log</code> and <code>bootstrap.log</code></td></tr>
+<tr><td><code>ErrantLauncher\.backup\</code></td><td>A backup of the most recently deleted section</td></tr>
+<tr><td><code>ErrantLauncher\.mass-import-backups\</code></td><td>The latest backup created before a bulk import</td></tr>
+<tr><td><code>ErrantLauncher\.import-staging\</code></td><td>Temporary data used during imports</td></tr>
+</tbody>
+</table>
+<p>The <code>.backup</code>, <code>.mass-import-backups</code>, and <code>.import-staging</code> directories are used for internal operations. A leading dot does not make a directory hidden in Windows. Avoid deleting their contents unless necessary.</p>
+<h2>Backing Up Your Data</h2>
+<p>Errant Launcher supports configuration exports and creates internal backups before certain operations. These mechanisms serve different purposes and should not be treated as interchangeable.</p>
+<h3>1. Full Backup</h3>
+<p>Open <strong>Settings → Export Configuration</strong> and select the full backup option.</p>
+<p>A full backup includes:</p>
+<ul>
+<li>Sections and cards</li>
+<li>Custom icons</li>
+<li>Application settings</li>
+<li>Application state</li>
+</ul>
+<p>The suggested filename is <code>ErrantLauncher-Backup.zip</code>.</p>
+<p>This is the recommended way to preserve your data before updating the application, moving it to another computer, or making major changes to your collection.</p>
+<h3>2. Share Collection</h3>
+<p>Open <strong>Settings → Export Configuration</strong> and select <strong>Share Collection</strong>.</p>
+<p>This option is intended for transferring your collection and includes:</p>
+<ul>
+<li>Selected sections and cards</li>
+<li>Associated icons</li>
+<li>Favorites data</li>
+</ul>
+<p>Application settings and state are not included.</p>
+<p>The suggested filename is <code>ErrantLauncher-Collection.zip</code>.</p>
+<h3>3. Internal Backups</h3>
+<p>The application uses two directories to store internal backups.</p>
+<p><strong><code>.backup\</code> — Backup of the Most Recently Deleted Section</strong></p>
+<p>Before deleting a section file, the application creates a backup of it. Only the most recent backup is retained; creating a new one replaces the previous backup. This is not a full collection backup or a general-purpose backup system.</p>
+<p><strong><code>.mass-import-backups\</code> — Backup Before a Bulk Import</strong></p>
+<p>Before a bulk import, the application creates a backup of sections, settings, application state, and custom icons. After the backup is created, its integrity is verified using SHA-256.</p>
+<p>The application deletes previous bulk-import backups only after the new backup has been created and verified successfully. As a result, only the latest successfully created and verified backup is retained, preventing these backup directories from accumulating indefinitely.</p>
+<p>If creating or verifying a new backup fails, the previous backup is not deleted. If an old backup cannot be deleted, the cleanup error should not, by itself, interrupt the import.</p>
+<p>This backup is intended to help recover data if problems occur during a bulk import. It does not replace exporting a full backup to a separate, safe location.</p>
+<h2>Moving to Another Computer</h2>
+<h3>Method 1: Move the Application and All Its Data</h3>
+<ol>
+<li>Close Errant Launcher.</li>
+<li>Copy the application files, including <code>ErrantLauncher-x64.exe</code>, <code>libSkiaSharp.dll</code>, and <code>av_libglesv2.dll</code>.</li>
+<li>Copy the entire <code>ErrantLauncher</code> user data folder.</li>
+<li>Place the files on the new computer in a location where the application has the necessary write permissions.</li>
+<li>Launch <code>ErrantLauncher-x64.exe</code>.</li>
+<li>Check that your collection, settings, and icons are available.</li>
+</ol>
+<p>Before moving the application, we recommend creating a full backup using Export Configuration.</p>
+<p>The executable and required DLL files must remain together. Copying the entire data folder also preserves logs and any existing internal backups.</p>
+<h3>Method 2: Move Only Your Collection</h3>
+<ol>
+<li>On the original computer, open <strong>Settings → Export Configuration</strong>.</li>
+<li>Select <strong>Share Collection</strong> and save the archive.</li>
+<li>On the other computer, open <strong>Import Configuration</strong>.</li>
+<li>Select the archive and choose which data to import.</li>
+</ol>
+<p>This method is intended for transferring selected collection data. Settings and application state are not included in a Share Collection archive.</p>
+<p>Import supports ZIP archives, individual JSON files, and configuration folders.</p>
+<h3>Important Notes About File Paths</h3>
+<p>Cards may contain absolute paths to applications and files, such as <code>D:\Tools\app.exe</code>. After moving the application, these cards will work only if the referenced files are available at the specified paths.</p>
+<p>If the drive letter changes or a file is located in a different folder on the new computer, you will need to update the path. The bulk import wizard warns about cards with non-portable paths.</p>
+<p>The launcher's own data folder is resolved relative to the executable's location. Its location is therefore not tied to a specific drive letter, although paths stored inside cards may be.</p>
+<h2>Updating Without Losing Data</h2>
+<p>Automatic updates are not available. You can update the application manually:</p>
+<ol>
+<li>Close Errant Launcher.</li>
+<li>Create a full backup using Export Configuration.</li>
+<li>Download the latest Windows x64 ZIP package and extract it to a temporary folder.</li>
+<li>Replace the application files with the files from the new package. The executable and required DLL files must remain together.</li>
+<li>Keep your existing <code>ErrantLauncher</code> data folder. Do not delete or overwrite it unless you intend to reset your collection and settings.</li>
+<li>Launch <code>ErrantLauncher-x64.exe</code> and verify that your collection is available.</li>
+</ol>
+<p>Do not update the application by replacing only the EXE file. The DLL files included in the package are also required.</p>
+<h2>Before Reinstalling or Uninstalling</h2>
+<ul>
+<li><strong>To keep your data</strong>, copy the entire <code>ErrantLauncher</code> folder. If you do not need logs or internal backups, at minimum preserve <code>sections\</code>, <code>settings.json</code>, and <code>custom-icons\</code>.</li>
+<li><strong>To remove the application</strong>, delete the EXE file and the <code>ErrantLauncher</code> data folder. The project does not write to the Windows Registry or user profile folders.</li>
+<li>The current Native AOT version does not create <code>%TEMP%\.net\ErrantLauncher</code>. A directory from an older version may remain and can be deleted manually if it is no longer in use.</li>
+<li>The <strong>Delete All Data</strong> option in Settings requires two confirmations and deletes the contents of the data folder, including logs and backups. The operation may fail if the storage device is unavailable.</li>
+</ul>
+<p>Before deleting data, make sure you no longer need the backup.</p>
+<h2>If Files Are Inaccessible</h2>
+<p>The application handles access problems and damaged data as follows.</p>
+<table>
+<thead><tr><th>Situation</th><th>Behavior</th></tr></thead>
+<tbody>
+<tr><td>The data folder is read-only</td><td>The application switches to read-only mode. Cards remain available for viewing and launching, but changes are not saved to disk. Some changes may apply only for the current session</td></tr>
+<tr><td>The storage device is temporarily unavailable</td><td>A <strong>No storage</strong> indicator appears. Changes may remain in memory until the device is reconnected. If you close the application before access is restored, unsaved changes may be lost</td></tr>
+<tr><td>The data folder is completely inaccessible</td><td>The app displays a message indicating that the storage is unavailable, then closes.</td></tr>
+<tr><td>An individual data file is corrupted</td><td>A <strong>File Corrupted</strong> dialog appears. The file is not modified automatically; you can choose whether to delete it or keep it</td></tr>
+<tr><td>A file was created by a newer application version</td><td>The file can be read but is not overwritten. Updating the application is recommended</td></tr>
+<tr><td>Multiple files are found for the same section</td><td>Cards are merged. Section metadata, including the icon and hidden status, is taken from the first file</td></tr>
+</tbody>
+</table>
+<p>If you encounter an error, do not delete data files or internal backups before creating an accessible backup.</p>
+<h2>Restoring from a Backup</h2>
+<h3>From an Exported File</h3>
+<ol>
+<li>Open <strong>Settings → Import Configuration</strong>.</li>
+<li>Select the backup file.</li>
+<li>Select the available data categories you want to restore.</li>
+<li>Complete the import and verify the result.</li>
+</ol>
+<h3>From a Folder Backup</h3>
+<ol>
+<li>Close the application.</li>
+<li>Save the current <code>ErrantLauncher</code> folder to a separate location in case you need to restore its contents later.</li>
+<li>Restore the data folder from your backup.</li>
+<li>Launch the application and check your collection and settings.</li>
+</ol>
+<h3>After a Failed Bulk Import</h3>
+<p>Before a bulk import, the application creates a backup in <code>.mass-import-backups\</code>. The new backup is verified before the previous one is deleted, so the previous backup is retained if creation of the new one fails.</p>
+<p>After a new backup has been created successfully, it replaces the previous backup. The directory therefore contains only the latest bulk-import backup.</p>
+<p>If recovery is needed, locate the saved backup and follow the application's messages. Before restoring files manually, close Errant Launcher and save the current data folder separately. Copying a backup over the current data may overwrite newer changes.</p>
+<h2>Using USB Drives</h2>
+<p>Errant Launcher can be run from a USB drive. Its data folder is located alongside the executable, allowing you to move the application together with your collection and settings.</p>
+<p>If the drive is removed while the application is running, access to the data may be lost. If the <strong>No storage</strong> status appears, reconnect the drive and wait for access to be restored.</p>
+<p>Changes that exist only in memory may be written to the drive after access is restored. However, if you close the application or it crashes before the drive is reconnected, those changes may be lost.</p>
+<p>Also note that cards using absolute file paths may not work on another computer, even if the launcher and its data folder have been transferred correctly.</p>
+<hr>
+<p><em>See also: <a href="../requirements/">System Requirements and Compatibility</a>, <a href="../../privacy/">Privacy</a>.</em></p></div></div>
+</main>
+
+<footer class="site-footer" data-site-footer data-root="../../" data-lang="en"></footer>
+<script src="../../assets/js/site.js"></script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ceebfd3e7870475f8dce39e9d34f2419"}'></script>
+</body>
+</html>
